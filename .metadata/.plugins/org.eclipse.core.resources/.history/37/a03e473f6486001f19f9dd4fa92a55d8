@@ -1,0 +1,34 @@
+package calculadora;
+
+import javax.swing.JOptionPane;
+
+public class calculadora_combos {
+
+	public static void main(String[] args) {
+		
+		/* VARIABLES */
+		int operacion = 0;
+		int num1 = 0;
+		int num2 = 0;
+		/* VARIABLES */
+		
+		int suma = 0;
+		int resta = 0;
+		int multiplicacion = 0;
+		int division = 0;
+		int salir = 0;
+		
+		String cad = "";
+		boolean correcto = false;
+		Object seleccion1 = null;
+		
+		do {
+			
+			seleccion1 = JOptionPane.showInputDialog(null, "Selecciona una vocal", "Selector de opciones",
+					JOptionPane.QUESTION_MESSAGE, null, // null para icono defecto
+					new Object[] { "suma", "resta", "multiplicación", "división", "salir" }, "letra_a");
+			
+		}while(salir != 4);
+		
+	}
+}

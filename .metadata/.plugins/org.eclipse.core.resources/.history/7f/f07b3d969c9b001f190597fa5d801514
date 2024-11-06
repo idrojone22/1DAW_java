@@ -1,0 +1,30 @@
+package tema4_v4;
+
+import javax.swing.JOptionPane;
+
+public class test {
+
+	public static void main(String[] args) {
+			
+		public static Fecha crar_fecha_f(String titulo, Fecha fecha_i) {
+			
+			Fecha fecha = null;
+			JOptionPane.showMessageDialog(null,fecha_i.toString());
+			
+			
+			/*do {
+				String fecha_s =  validar_regex.validar_reg_fecha( titulo);
+				
+				fecha = new Fecha (fecha_s);
+				
+				fecha.comprobarFechas();
+				
+				if (!fecha.comprobarFechas()) {
+					JOptionPane.showMessageDialog(null, "Fecha Inválida");
+				}
+			}while(!fecha.comprobarFechas());*/
+			
+			return fecha;
+		}
+	}
+}

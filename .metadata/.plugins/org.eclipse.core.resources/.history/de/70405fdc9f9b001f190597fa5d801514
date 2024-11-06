@@ -1,0 +1,17 @@
+package tema4_v4;
+
+import javax.swing.JOptionPane;
+
+public class test {
+
+	public static void main(String[] args) {
+			
+		Fecha fecha_i =  func_fecha.craar("fecha_i");
+		Fecha fecha_f = func_fecha.crar_fecha_f("fecha_f", fecha_i);
+		Fecha fecha_inscripcion_i = func_fecha.crear_f_inscipcion_i("fecha_inscripcion_i", fecha_i, fecha_f);
+		
+		
+		JOptionPane.showMessageDialog(null, fecha_i.toString());
+		JOptionPane.showMessageDialog(null, fecha_f.toString());
+	}
+}

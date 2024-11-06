@@ -1,0 +1,61 @@
+package calculadora;
+
+import javax.swing.JOptionPane;
+
+public class calculadora_combos {
+
+	public static void main(String[] args) {
+		
+		/* VARIABLES */
+		int operacion = 0;
+		int num1 = 0;
+		int num2 = 0;
+		/* VARIABLES */
+		
+		int suma = 0;
+		int resta = 0;
+		int multiplicacion = 0;
+		int division = 0;
+		int salir = 0;
+		
+		String cad = "";
+		boolean correcto = false;
+		Object seleccion1 = null;
+		
+		do {
+			
+			seleccion1 = JOptionPane.showInputDialog(null, "Selecciona una vocal", "Selector de opciones",
+					JOptionPane.QUESTION_MESSAGE, null, // null para icono defecto
+					new Object[] { "suma", "resta", "multiplicación", "división", "salir" }, "letra_a");
+			
+			switch (seleccion1.toString()) {
+			case "suma":
+				num1 = validar.validar_int("Escribe un num1", "Num int");
+				num2 = validar.validar_int("Escribe un num2", "Num int");
+
+				/* MULTIPLICACION */
+				operacion = num1 * num2;
+				/* MULTIPLIACION */
+
+				JOptionPane.showMessageDialog(null, "La multiplicación es: " + operacion);
+				break;
+			case "resta":
+				//cont_e++;
+				break;
+			case "letra_i":
+				//cont_i++;
+				break;
+			case "letra_o":
+				//cont_o++;
+				break;
+			case "letra_u":
+				//cont_u++;
+				break;
+			default:
+				JOptionPane.showMessageDialog(null, "No has elegido ninguna de las anteirores opciones");
+			}// end_case
+			}
+		}while(salir != 4);
+		
+	}
+}

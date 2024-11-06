@@ -1,0 +1,26 @@
+package object_fecha;
+
+import java.text.ParseException;
+
+import javax.swing.JOptionPane;
+
+import tema4_v3.validar_regex;
+
+public class test {
+
+	public static void main(String[] args) throws ParseException {
+
+		Fecha fecha = null;
+		Fecha fecha2 = null;
+		
+		fecha = CRUD.create();
+		fecha2 = CRUD.create();
+		
+		fecha.RestarFechas(fecha2);
+		  JOptionPane.showMessageDialog(null, fecha.prova(fecha2));
+		  JOptionPane.showMessageDialog(null, fecha.toDate());
+		
+		
+	}
+
+}

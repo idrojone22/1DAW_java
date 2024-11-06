@@ -1,0 +1,21 @@
+package calculadora;
+
+import javax.swing.JOptionPane;
+
+public class calculadora_combos {
+
+	public static void main(String[] args) {
+		
+		/* VARIABLES */
+		int operacion = 0;
+		int num1 = 0;
+		int num2 = 0;
+		/* VARIABLES */
+		
+		int suma = 0;
+		int resta = 0;
+		int multiplicacion = 0;
+		int division = 0;
+	}
+
+}

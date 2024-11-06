@@ -1,0 +1,69 @@
+package tema4_v4;
+
+public class Fecha {
+	
+	/*ATRIBUTOS*/
+	private int dia;
+	private int mes;
+	private int anio;
+	private String fecha = "";
+	/*ATRIBUTOS*/
+	
+	/*METODOS*/
+	
+	/*CONSTRUCTOR*/
+	public Fecha(String fecha){
+		
+		String[] SepararArray = null;
+		
+		SepararArray = fecha.split("/");
+		
+		this.dia = Integer.parseInt(SepararArray[0]);
+		this.mes = Integer.parseInt(SepararArray[1]);
+		this.anio = Integer.parseInt(SepararArray[2]);
+		
+		this.fecha =  fecha;
+	}	
+	/*CONSTRUCTOR*/
+	
+	/*GET*/
+	int get_dia() {
+		return this.dia;
+	}
+	
+	int get_mes() {
+		return this.mes;
+	}
+	
+	int get_anio() {
+		return this.anio;
+	} 
+	
+	String get_fecha() {
+		return fecha;
+	}
+	/*GET*/
+	
+	/*SET*/
+	public int set_dia(int dia) {
+		this.dia = dia;
+		return dia;
+	}
+	
+	public int set_mes(int mes) {
+		this.mes = mes;
+		return mes;
+	}
+	
+	public int set_anio(int anio) {
+		this.anio = anio;
+		return anio;
+	}
+	
+	public String fecha(String fecha) {
+		this.fecha = fecha;
+		return fecha;
+	}
+	/*SET*/
+	/*METODOS*/
+}

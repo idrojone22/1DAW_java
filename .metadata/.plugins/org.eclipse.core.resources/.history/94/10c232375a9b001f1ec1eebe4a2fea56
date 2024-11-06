@@ -1,0 +1,30 @@
+package tema4_v4;
+
+public class Fecha {
+	
+	/*ATRIBUTOS*/
+	private int dia;
+	private int mes;
+	private int anio;
+	private String fecha = "";
+	/*ATRIBUTOS*/
+	
+	/*METODOS*/
+	
+	/*CONSTRUCTOR*/
+	public Fecha(String fecha){
+		
+		String[] SepararArray = null;
+		
+		SepararArray = fecha.split("/");
+		
+		this.dia = Integer.parseInt(SepararArray[0]);
+		this.mes = Integer.parseInt(SepararArray[1]);
+		this.anio = Integer.parseInt(SepararArray[2]);
+		
+		this.fecha =  fecha;
+	}	
+	/*CONSTRUCTOR*/
+	
+	/*METODOS*/
+}
