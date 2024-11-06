@@ -19,6 +19,7 @@ public class test {
 		Fecha fecha2 = func_fecha.crear_fecha_diferencia("fecha0", fecha1, dia);
 		dia = g_num[3];
 		Fecha fecha3 = func_fecha.crear_fecha_diferencia("fecha0", fecha2, dia);
+		Fecha fecha4 = func_fecha.crear_fecha_final("fecha0", fecha_i);
 		
 	
 		
@@ -27,6 +28,7 @@ public class test {
 		JOptionPane.showMessageDialog(null, fecha2.toString());
 		JOptionPane.showMessageDialog(null, fecha3.toString());
 		JOptionPane.showMessageDialog(null, fecha_i.toString());
+		JOptionPane.showMessageDialog(null, fecha4.toString());
 
 	}
 }

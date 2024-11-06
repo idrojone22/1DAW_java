@@ -201,6 +201,34 @@ public class func_fecha {
 		return fecha;
 	}
 	
+	public static Fecha crear_fecha_final(String titulo, Fecha fecha1) {
+		Fecha fecha = null;
+		boolean valido = false;
+		int dias = 0;
+		
+		do {
+			String fecha_s =  validar_regex.validar_reg_fecha(titulo);
+			
+			fecha = new Fecha (fecha_s);
+			
+			fecha.comprobarFechas();
+			
+			if (!fecha.comprobarFechas()) {
+				JOptionPane.showMessageDialog(null, "Fecha Inválida");
+			} else {
+				 dias = fecha.restarFechas(fecha1);
+				 
+				 if (dias == 20) {
+					 valido = true;
+				 } else {
+					 JOptionPane.showMessageDialog(null, "Fecha Inválida\nLa fecha debe de ser 20 dias despues de la fecha de fecha confirmacion incial" );
+				 } // end if 
+			}
+		}while(!valido);
+		
+		return fecha;
+	}
+	
 	public static  Fecha crear_fecha_diferencia(String titulo, Fecha fecha1, int dias) {
 		Fecha fecha = null;
 		boolean valido = false;
@@ -228,4 +256,5 @@ public class func_fecha {
 		
 		return fecha;
 	}
+	
 }
