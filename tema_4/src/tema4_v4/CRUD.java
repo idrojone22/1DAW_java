@@ -36,15 +36,15 @@ public class CRUD {
 		
 		if (curso == 1) {
 			
-			Fecha f_c_promocion_i =  func_fecha.craar("f_c_promocion_i");
-			Fecha f_c_promocion_f =  func_fecha.craar("f_c_promocion_f");
+			Fecha f_c_promocion_i =  func_fecha.crear_fecha_anterior("f_c_promocion_i", fecha_i);
+			Fecha f_c_promocion_f =  func_fecha.crear_entre2("f_c_promocion_f", f_c_promocion_i, fecha_i);
 			
 		 objeto = new Diseno_web(ID_course, titulo, descripcion, categoria, dificultad, precio,  fecha_i, fecha_f, f_c_promocion_i, f_c_promocion_f);
 		} 
 		if (curso == 2) {
 			
-			Fecha fecha_ultimas_plazas_i =  func_fecha.craar("fecha_ultimas_plazas_i");
-			Fecha fecha_ultimas_plazas_f =  func_fecha.craar("fecha_ultimas_plazas_f");
+			Fecha fecha_ultimas_plazas_i =  func_fecha.crear_fecha_anterior("fecha_ultimas_plazas_i", fecha_i);
+			Fecha fecha_ultimas_plazas_f =  func_fecha.crear_entre2("fecha_ultimas_plazas_f", fecha_ultimas_plazas_i, fecha_i);
 			
 			 objeto = new Desplegamiento_web(ID_course, titulo, descripcion, categoria, dificultad, precio,  fecha_i, fecha_f, fecha_ultimas_plazas_i, fecha_ultimas_plazas_f);
 		}

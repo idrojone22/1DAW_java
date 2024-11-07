@@ -86,6 +86,58 @@ public class func_fecha {
 		return fecha;
 	}
 	
+	public static Fecha crear_entre2(String titulo, Fecha fecha1, Fecha fecha2) {
+		Fecha fecha = null;
+		boolean valido = false;
+		boolean valido1 = false;
+		boolean valido2 = false;
+		int comprobar = 0;
+		int comprobar1 = 0;
+		
+		do {
+			
+			comprobar = 0;
+			comprobar1 = 0;
+			String fecha_s =  validar_regex.validar_reg_fecha( titulo);
+			
+			fecha = new Fecha (fecha_s);
+			
+			fecha.comprobarFechas();
+			
+			if (!fecha.comprobarFechas()) {
+				JOptionPane.showMessageDialog(null, "Fecha Inválida");
+			} else {
+				
+				comprobar = fecha1.compararFechas(fecha);
+				
+				if (comprobar == 1 ) {
+					valido1 = true;	
+				} else  if (comprobar == 0){
+					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser anterior");
+				} else {
+					JOptionPane.showMessageDialog(null, "Las fecha es posterior" + "\n" + "Debe de ser anterior");
+				}
+				
+				comprobar1 = fecha2.compararFechas(fecha);
+				
+				if (comprobar1 == -1 ) {
+					valido2 = true;	
+				} else  if (comprobar1 == 0){
+					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser posterior");
+				} else {
+					JOptionPane.showMessageDialog(null, "Las fecha es anterior" + "\n" + "Debe de ser posterior");
+				}
+			}
+			
+			if (valido1 == true && valido2 == true) {
+				valido = true;
+			}
+			
+		}while(!valido);
+		
+		return fecha;
+	}
+	
 	public static Fecha crear_fecha_inscripcion_i(String titulo, Fecha fecha1) {
 		Fecha fecha = null;
 		boolean valido = false;
