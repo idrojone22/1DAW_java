@@ -19,6 +19,8 @@ public class CRUD {
 		String categoria = (String) menu_dif_cat.combos_cat("Seleccione la categoria", "Categoria");
 		String dificultad = (String) menu_dif_cat.combos_dif("Selecciona la dificultad", "Dificultad");
 		int precio = validadors.validar_int("Dame num", "num");
+		// String fecha_i = validar_regex.validar_reg_fecha( "fecha_i");
+		// String fecha_f = validar_regex.validar_reg_fecha("fecha_f");
 		Fecha fecha_i = func_fecha.craar("fecha_i");
 		Fecha fecha_f = func_fecha.crear_fecha_dias_despues("fecha_f", fecha_i, 20);
 
