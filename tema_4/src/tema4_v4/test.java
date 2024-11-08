@@ -11,8 +11,8 @@ public class test {
 		Fecha fecha3 = null;
 		
 		fecha1 = func_fecha.craar("Fecha1");
-		fecha2 = func_fecha.crar_fecha_posterior("Fecha2", fecha1);
-		fecha3 = func_fecha.crear_entre2("Fecha3", fecha1, fecha2);
+		//fecha2 = func_fecha.crear_fecha_diferencia("Fecha2", fecha1, 3);
+		//fecha3 = func_fecha.crear_entre2("Fecha3", fecha1, fecha2);
 		
 		
 

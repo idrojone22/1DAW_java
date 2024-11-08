@@ -22,17 +22,17 @@ public class CRUD {
 		// String fecha_i = validar_regex.validar_reg_fecha( "fecha_i");
 		// String fecha_f = validar_regex.validar_reg_fecha("fecha_f");
 		Fecha fecha_i = func_fecha.craar("fecha_i");
-		Fecha fecha_f = func_fecha.crar_fecha_posterior("fecha_f", fecha_i);
+		Fecha fecha_f = func_fecha.crear_fecha_dias_despues("fecha_f", fecha_i, 20);
 
 		if (curso == 0) {
 
-			Fecha fecha_inscripcion_i = func_fecha.crear_fecha_inscripcion_i("fecha_inscripcion_i", fecha_i);
-			Fecha fecha_inscripcion_f = func_fecha.crear_fecha_inscripcion_f("fecha_inscripcion_f",
-					fecha_inscripcion_i);
-			Fecha fecha_confirmacion_i = func_fecha.crear_fecha_confirmacion_i("fecha_confirmacion_i",
-					fecha_inscripcion_f);
-			Fecha fecha_confirmacion_f = func_fecha.crear_fecha_confirmacion_f("fecha_confirmacion_i",
-					fecha_confirmacion_i);
+			Fecha fecha_inscripcion_i = func_fecha.crear_fecha_dias_antes("fecha_inscripcion_i", fecha_i, 7);
+			Fecha fecha_inscripcion_f = func_fecha.crear_fecha_dias_despues("fecha_inscripcion_f",
+					fecha_inscripcion_i,3);
+			Fecha fecha_confirmacion_i = func_fecha.crear_fecha_dias_despues("fecha_confirmacion_i",
+					fecha_inscripcion_f,1);
+			Fecha fecha_confirmacion_f = func_fecha.crear_fecha_dias_despues("fecha_confirmacion_i",
+					fecha_confirmacion_i, 2);
 
 			objeto = new Desarrollo_web(ID_course, titulo, descripcion, categoria, dificultad, precio, fecha_i, fecha_f,
 					fecha_confirmacion_i, fecha_confirmacion_f, fecha_inscripcion_i, fecha_inscripcion_f);
@@ -304,16 +304,16 @@ public class CRUD {
 							curso.set_fecha_f(func_fecha.crar_fecha_posterior("fecha_f", curso.get_fecha_i()));
 							break;
 						case "fecha_confirmacion_i":
-							((Desarrollo_web) curso).set_fecha_confirmacion_i(func_fecha.crear_fecha_confirmacion_i("fecha_confirmacion_i",((Desarrollo_web) curso).get_fecha_inscripcion_i()));
+							((Desarrollo_web) curso).set_fecha_confirmacion_i(func_fecha.crear_fecha_dias_despues("fecha_confirmacion_i",((Desarrollo_web) curso).get_fecha_inscripcion_i(), 1));
 							break;
 						case "fecha_confirmacion_f":
-							((Desarrollo_web) curso).set_fecha_confirmacion_f(func_fecha.crear_fecha_confirmacion_f("fecha_confirmacion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i()));
+							((Desarrollo_web) curso).set_fecha_confirmacion_f(func_fecha.crear_fecha_dias_despues("fecha_confirmacion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i(), 2));
 							break;
 						case "fecha_inscripcion_i":
-							((Desarrollo_web) curso).set_fecha_inscripcion_i(func_fecha.crear_fecha_inscripcion_i("fecha_inscripcion_i", curso.get_fecha_i()));
+							((Desarrollo_web) curso).set_fecha_inscripcion_i(func_fecha.crear_fecha_dias_antes("fecha_inscripcion_i", curso.get_fecha_i(), 7));
 							break;
 						case "fecha_inscripcion_f":
-							((Desarrollo_web) curso).set_fecha_inscripcion_f(func_fecha.crear_fecha_inscripcion_f("fecha_inscripcion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i()));
+							((Desarrollo_web) curso).set_fecha_inscripcion_f(func_fecha.crear_fecha_dias_despues("fecha_inscripcion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i(), 3));
 							break;
 						case "salir":
 							salir = 12;
