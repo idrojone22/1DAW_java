@@ -34,7 +34,6 @@ public class func_fecha {
 			fecha = new Fecha(fecha_s);
 
 			fecha.comprobarFechas();
-			JOptionPane.showMessageDialog(null, fecha);
 
 			if (!fecha.comprobarFechas()) {
 				JOptionPane.showMessageDialog(null, "Fecha Inválida");
@@ -45,9 +44,9 @@ public class func_fecha {
 					valido = true;
 
 				} else if (comprobar == 0) {
-					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser posterior");
+					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser posterior a  " + fecha1.toString());
 				} else {
-					JOptionPane.showMessageDialog(null, "Las fecha es anterior" + "\n" + "Debe de ser posterior");
+					JOptionPane.showMessageDialog(null, "Las fecha es anterior" + "\n" + "Debe de ser posterior a " +  fecha1.toString());
 				}
 			}
 		} while (!valido);
@@ -76,9 +75,9 @@ public class func_fecha {
 					valido = true;
 
 				} else if (comprobar == 0) {
-					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser anterior");
+					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser anterior a " + fecha1.toString());
 				} else {
-					JOptionPane.showMessageDialog(null, "Las fecha es posterior" + "\n" + "Debe de ser anterior");
+					JOptionPane.showMessageDialog(null, "Las fecha es posterior" + "\n" + "Debe de ser anterior a " + fecha1.toString());
 				}
 			}
 		} while (!valido);
@@ -87,55 +86,35 @@ public class func_fecha {
 	}
 
 	public static Fecha crear_entre2(String titulo, Fecha fecha1, Fecha fecha2) {
-		Fecha fecha = null;
-		boolean valido = false;
-		boolean valido1 = false;
-		boolean valido2 = false;
-		int comprobar = 0;
-		int comprobar1 = 0;
+	    Fecha fecha = null;
+	    boolean valido = false;
+	    int comprobarFecha1 = 0;
+	    int comprobarFecha2 = 0;
 
-		do {
+	    do {
+	        String fecha_s = validar_regex.validar_reg_fecha(titulo);
+	        fecha = new Fecha(fecha_s);
 
-			comprobar = 0;
-			comprobar1 = 0;
-			String fecha_s = validar_regex.validar_reg_fecha(titulo);
+	        if (!fecha.comprobarFechas()) {
+	            JOptionPane.showMessageDialog(null, "Fecha Inválida");
+	        } else {
+	            comprobarFecha1 = fecha1.compararFechas(fecha); 
+	           comprobarFecha2 = fecha2.compararFechas(fecha);  
 
-			fecha = new Fecha(fecha_s);
+	            if (comprobarFecha1 == -1 && comprobarFecha2 == 1) {
+	                valido = true;  
+	            } else {
+	                if (comprobarFecha1 != -1) {
+	                    JOptionPane.showMessageDialog(null, "La fecha debe ser posterior a " + fecha1.toString());
+	                }
+	                if (comprobarFecha2 != 1) {
+	                    JOptionPane.showMessageDialog(null, "La fecha debe ser anterior a " + fecha2.toString());
+	                }
+	            }
+	        }
+	    } while (!valido);
 
-			fecha.comprobarFechas();
-
-			if (!fecha.comprobarFechas()) {
-				JOptionPane.showMessageDialog(null, "Fecha Inválida");
-			} else {
-
-				comprobar = fecha1.compararFechas(fecha);
-
-				if (comprobar == 1) {
-					valido1 = true;
-				} else if (comprobar == 0) {
-					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser anterior");
-				} else {
-					JOptionPane.showMessageDialog(null, "Las fecha es posterior" + "\n" + "Debe de ser anterior");
-				}
-
-				comprobar1 = fecha2.compararFechas(fecha);
-
-				if (comprobar1 == -1) {
-					valido2 = true;
-				} else if (comprobar1 == 0) {
-					JOptionPane.showMessageDialog(null, "Las fechas son iguales" + "\n" + "Debe de ser posterior");
-				} else {
-					JOptionPane.showMessageDialog(null, "Las fecha es anterior" + "\n" + "Debe de ser posterior");
-				}
-			}
-
-			if (valido1 == true && valido2 == true) {
-				valido = true;
-			}
-
-		} while (!valido);
-
-		return fecha;
+	    return fecha;
 	}
 
 	public static Fecha crear_fecha_inscripcion_i(String titulo, Fecha fecha1) {
@@ -161,7 +140,7 @@ public class func_fecha {
 					valido = true;
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Fecha Inválida\n La fecha debe de ser 7 dias antes de la fecha inicial");
+							"Fecha Inválida\n La fecha debe de ser 7 dias antes de " + fecha1.toString());
 				} // end if
 			}
 
@@ -191,7 +170,7 @@ public class func_fecha {
 					valido = true;
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Fecha Inválida\nLa fecha debe de ser 3 dias despues de la fecha de inscipcion inicial");
+							"Fecha Inválida\nLa fecha debe de ser 3 dias despues de " + fecha1.toString());
 				} // end if
 			}
 		} while (!valido);
@@ -220,7 +199,7 @@ public class func_fecha {
 					valido = true;
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Fecha Inválida\nLa fecha debe de ser 1 dia despues de la fecha de inscipcion final");
+							"Fecha Inválida\nLa fecha debe de ser 1 dia despues de " + fecha.toString());
 				} // end if
 			}
 		} while (!valido);
@@ -249,7 +228,7 @@ public class func_fecha {
 					valido = true;
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Fecha Inválida\nLa fecha debe de ser 2 dias despues de la fecha de fecha confirmacion incial");
+							"Fecha Inválida\nLa fecha debe de ser 2 dias despues de " + fecha1.toString());
 				} // end if
 			}
 		} while (!valido);
@@ -278,7 +257,7 @@ public class func_fecha {
 					valido = true;
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Fecha Inválida\nLa fecha debe de ser 20 dias despues de la fecha de fecha confirmacion incial");
+							"Fecha Inválida\nLa fecha debe de ser 20 dias despues de " + fecha1.toString());
 				} // end if
 			}
 		} while (!valido);
@@ -307,7 +286,7 @@ public class func_fecha {
 					valido = true;
 				} else {
 					JOptionPane.showMessageDialog(null, "Fecha Inválida\nLa fecha debe de ser " + dias
-							+ "  dias despues de la fecha de fecha confirmacion incial");
+							+ "  dias despues de " + fecha.toString());
 				} // end if
 			}
 		} while (!valido);

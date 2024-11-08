@@ -301,19 +301,19 @@ public class CRUD {
 							curso.set_fecha_i(func_fecha.craar("fecha_i"));
 							break;
 						case "fecha_f":
-							curso.set_fecha_f(func_fecha.craar("fecha_i"));
+							curso.set_fecha_f(func_fecha.crar_fecha_posterior("fecha_f", curso.get_fecha_i()));
 							break;
 						case "fecha_confirmacion_i":
-							((Desarrollo_web) curso).set_fecha_confirmacion_i(func_fecha.craar("fecha_confirmacion_i"));
+							((Desarrollo_web) curso).set_fecha_confirmacion_i(func_fecha.crear_fecha_confirmacion_i("fecha_confirmacion_i",((Desarrollo_web) curso).get_fecha_inscripcion_i()));
 							break;
 						case "fecha_confirmacion_f":
-							((Desarrollo_web) curso).set_fecha_confirmacion_f(func_fecha.craar("fecha_confirmacion_f"));
+							((Desarrollo_web) curso).set_fecha_confirmacion_f(func_fecha.crear_fecha_confirmacion_f("fecha_confirmacion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i()));
 							break;
 						case "fecha_inscripcion_i":
-							((Desarrollo_web) curso).set_fecha_inscripcion_i(func_fecha.craar("fecha_inscripcion_i"));
+							((Desarrollo_web) curso).set_fecha_inscripcion_i(func_fecha.crear_fecha_inscripcion_i("fecha_inscripcion_i", curso.get_fecha_i()));
 							break;
 						case "fecha_inscripcion_f":
-							((Desarrollo_web) curso).set_fecha_inscripcion_f(func_fecha.craar("fecha_inscripcion_f"));
+							((Desarrollo_web) curso).set_fecha_inscripcion_f(func_fecha.crear_fecha_inscripcion_f("fecha_inscripcion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i()));
 							break;
 						case "salir":
 							salir = 12;
@@ -355,10 +355,10 @@ public class CRUD {
 							curso.set_fecha_f(func_fecha.craar("fecha_f"));
 							break;
 						case "f_c_promocion_i":
-							((Diseno_web) curso).set_f_c_promocion_i(func_fecha.craar("f_c_promocion_i"));
+							((Diseno_web) curso).set_f_c_promocion_i(func_fecha.crear_fecha_anterior("f_c_promocion_i", curso.get_fecha_f()));
 							break;
 						case "f_c_promocion_f":
-							((Diseno_web) curso).set_f_c_promocion_f(func_fecha.craar("f_c_promocion_f"));
+							((Diseno_web) curso).set_f_c_promocion_f(func_fecha.crear_entre2("f_c_promocion_f",((Diseno_web) curso).get_f_c_promocion_i(), curso.get_fecha_i() ));
 							break;
 						case "salir":
 							salir = 10;
@@ -401,11 +401,11 @@ public class CRUD {
 							break;
 						case "fecha_ultimas_plazas_i":
 							((Desplegamiento_web) curso)
-									.set_fecha_ultimas_plazas_i(func_fecha.craar("fecha_ultimas_plazas_i"));
+									.set_fecha_ultimas_plazas_i(func_fecha.crear_fecha_anterior("fecha_ultimas_plazas_i", curso.get_fecha_i()));
 							break;
 						case "fecha_ultimas_plazas_f":
 							((Desplegamiento_web) curso)
-									.set_fecha_ultimas_plazas_f(func_fecha.craar("fecha_ultimas_plazas_f"));
+									.set_fecha_ultimas_plazas_f(func_fecha.crear_entre2("fecha_ultimas_plazas_f", ((Desplegamiento_web) curso).get_fecha_ultimas_plazas_i(), curso.get_fecha_i()));
 							break;
 						case "salir":
 							salir = 10;
