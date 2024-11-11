@@ -20,7 +20,8 @@ public class CRUD {
 		String dificultad = (String) menu_dif_cat.combos_dif("Selecciona la dificultad", "Dificultad");
 		Fecha fecha_i = func_fecha.craar("fecha_i");
 		Fecha fecha_f = func_fecha.crear_fecha_dias_despues("fecha_f", fecha_i, 20);
-		int precio = validadors.validar_int("Dame num", "num");
+		int precioHora = validadors.validar_int("Dame num", "precioHora");
+		int horasDias = validar_regex.validar_horas();
 
 		if (curso == 0) {
 
@@ -31,27 +32,35 @@ public class CRUD {
 					fecha_inscripcion_f,1);
 			Fecha fecha_confirmacion_f = func_fecha.crear_fecha_dias_despues("fecha_confirmacion_i",
 					fecha_confirmacion_i, 2);
+			Fecha fecha_compra = func_fecha.crear_entre2("fecha_compra", fecha_inscripcion_i,fecha_inscripcion_f );
+			int precio = func_precio.calcular_precio(fecha_i, fecha_f, precioHora, horasDias);
 
-			objeto = new Desarrollo_web(ID_course, titulo, descripcion, categoria, dificultad, precio, fecha_i, fecha_f,
-					fecha_confirmacion_i, fecha_confirmacion_f, fecha_inscripcion_i, fecha_inscripcion_f);
+			objeto = new Desarrollo_web(ID_course, titulo, descripcion,categoria, dificultad,fecha_i,fecha_f, precioHora, horasDias,fecha_confirmacion_i, fecha_confirmacion_f, 
+					fecha_inscripcion_i, fecha_inscripcion_f, fecha_compra, precio);
 		}
 
 		if (curso == 1) {
 
 			Fecha f_c_promocion_i = func_fecha.crear_fecha_anterior("f_c_promocion_i", fecha_i);
 			Fecha f_c_promocion_f = func_fecha.crear_entre2("f_c_promocion_f", f_c_promocion_i, fecha_i);
-
-			objeto = new Diseno_web(ID_course, titulo, descripcion, categoria, dificultad, precio, fecha_i, fecha_f,
-					f_c_promocion_i, f_c_promocion_f);
+			Fecha fecha_compra = func_fecha.crear_fecha_anterior("fecha_compra", fecha_i );
+			int precio = func_precio.calcular_precio_ultimas_plazas(fecha_i, fecha_f, precioHora, horasDias,f_c_promocion_i,  f_c_promocion_f, fecha_compra);
+			objeto = new Diseno_web(ID_course, titulo, descripcion, categoria, dificultad, precio, fecha_f,
+					f_c_promocion_i, f_c_promocion_f,fecha_i, fecha_compra, precioHora, horasDias);
 		}
 		if (curso == 2) {
-
 			Fecha fecha_ultimas_plazas_i = func_fecha.crear_fecha_anterior("fecha_ultimas_plazas_i", fecha_i);
+			System.out.println(fecha_ultimas_plazas_i);
 			Fecha fecha_ultimas_plazas_f = func_fecha.crear_entre2("fecha_ultimas_plazas_f", fecha_ultimas_plazas_i,
 					fecha_i);
-
-			objeto = new Desplegamiento_web(ID_course, titulo, descripcion, categoria, dificultad, precio, fecha_i,
-					fecha_f, fecha_ultimas_plazas_i, fecha_ultimas_plazas_f);
+			Fecha fecha_compra = func_fecha.crear_fecha_anterior("fecha_compra", fecha_i );
+			System.out.println(fecha_compra);
+			System.out.println(fecha_compra + "fecha compra");
+			System.out.println(fecha_ultimas_plazas_i);
+			int precio = func_precio.calcular_precio(fecha_i, fecha_f, precioHora, horasDias);
+			System.out.println(fecha_compra + "fecha compra");
+			objeto = new Desplegamiento_web(ID_course, titulo, descripcion, categoria, dificultad, fecha_i,
+					fecha_f, fecha_ultimas_plazas_i ,fecha_ultimas_plazas_f, fecha_compra, precioHora, horasDias, precio);
 		}
 		return objeto;
 	}

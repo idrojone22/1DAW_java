@@ -1,9 +1,0 @@
-package object_fecha;
-
-public class CRUD {
-	public static Fecha create()  {
-		int dia = validadors.validar_int("Dime un dia", "dia");
-		int mes = validadors.validar_int("Dime un mes", "mes");
-		int ano = validadors.validar_int("Dime un ano", "ano");
-	}
-}

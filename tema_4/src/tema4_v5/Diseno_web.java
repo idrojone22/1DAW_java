@@ -9,10 +9,10 @@ public class Diseno_web extends Cursos {
 
 	/* CONSTRUCTOR */
 	public Diseno_web(String iD_course, String titulo, String descripcion, String categoria, String dificultad,
-			int precio, Fecha fecha_i, Fecha fecha_f, Fecha f_c_promocion_i2, Fecha f_c_promocion_f2) {
-		super(iD_course, titulo, descripcion, categoria, dificultad, precio, fecha_i, fecha_f);
-		this.f_c_promocion_i = f_c_promocion_i2;
-		this.f_c_promocion_f = f_c_promocion_f2;
+			int precio, Fecha fecha_i, Fecha fecha_f, Fecha f_c_promocion_i, Fecha f_c_promocion_f, Fecha fecha_compra, int precioHora, int horasDias ) {
+		super(iD_course, titulo, descripcion, categoria, dificultad, fecha_compra, fecha_i, fecha_f, precio, precioHora, horasDias);
+		this.f_c_promocion_i = f_c_promocion_i;
+		this.f_c_promocion_f = f_c_promocion_f;
 
 	}
 	/* CONSTRUCTOR */
@@ -45,9 +45,12 @@ public class Diseno_web extends Cursos {
 				"titulo: " + get_titulo() + "\n" +
 				"descripcion: " + get_descripcion() + "\n" +
 				"categorio: " + get_dificultad() + "\n" +
-				"precio: " + get_precio() + "\n" +
+				"precio: " + get_precio() + "€" + "\n" +
+				"precioHoras: " + get_precioHora() + "€" + "\n" +
+				"horasDias: " + get_horasDias() + "\n" +
 				"fecha_i: " + get_fecha_i() + "\n" +
 				"fecha_f: " + get_fecha_f() + "\n" +
+				"fecha_compra: " + get_fecha_compra() + "\n" +
 				"f_c_promocion_i: " + this.get_f_c_promocion_i() + "\n" +
 				"f_c_promocion_f: " + this.get_f_c_promocion_f();
 	}

@@ -9,23 +9,25 @@ public abstract class Cursos {
 	private String dificultad;
 	private Fecha fecha_i;
 	private Fecha fecha_f;
+	private Fecha fecha_compra;
 	private int precio;
 	private int precioHora;
 	private int horasDias;
 	/* ATRIBUTOS */
 
-	/* MÉTPDPS */
+	/* MÉTPOPS */
 
 	/* CONSTRUCTOR */
 	public Cursos(String iD_course, String titulo, String descripcion, String categoria, String dificultad,
-			Fecha fecha_i2, Fecha fecha_f2, int precioHora, int horasDias, int precio) {
+			Fecha fecha_i, Fecha fecha_f,int precioHora, int horasDias, Fecha fecha_compra, int precio) {
 		this.ID_course = iD_course;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.categoria = categoria;
 		this.dificultad = dificultad;
-		this.fecha_i = fecha_i2;
-		this.fecha_f = fecha_f2;
+		this.fecha_i = fecha_i;
+		this.fecha_f = fecha_f;
+		this.fecha_compra = fecha_compra;
 		this.precioHora = precioHora;
 		this.horasDias = horasDias;
 		this.precio = precio;
@@ -59,6 +61,10 @@ public abstract class Cursos {
 
 	Fecha get_fecha_f() {
 		return this.fecha_f;
+	}
+	
+	Fecha get_fecha_compra() {
+		return this.fecha_compra;
 	}
 	
 	int get_precioHora() {
@@ -108,6 +114,11 @@ public abstract class Cursos {
 	public Fecha set_fecha_f(Fecha fecha_f) {
 		this.fecha_f = fecha_f;
 		return fecha_f;
+	}	
+	
+	public Fecha set_fecha_compra(Fecha fecha_compra) {
+		this.fecha_compra = fecha_compra;
+		return fecha_compra;
 	}	
 	
 	public int set_precioHora(int precioHora) {

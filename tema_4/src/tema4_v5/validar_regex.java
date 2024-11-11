@@ -16,4 +16,14 @@ public class validar_regex {
 		}while(!regex.validar_fecha(fecha));
 		return fecha;
 	}
+	
+	public static int validar_horas( ) {
+		int horasDias = 0;
+		do {
+			horasDias = validadors.validar_int("¿Cuantas horas son el curso?", "horasDias");
+		}while(!regex.validar_horasDias(horasDias));
+		return horasDias;
+	}
+	
+	
 }
