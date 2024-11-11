@@ -230,6 +230,7 @@ public class func_fecha {
 	        fecha_s = String.format("%02d/%02d/%04d", dia, mes, anio); 
 	        fecha = new Fecha(fecha_s);
 	        
+	        // Verificamos la validez de la fecha
 	        if (!fecha.comprobarFechas()) {
 	            JOptionPane.showMessageDialog(null, "Fecha Inválida");
 	        }
