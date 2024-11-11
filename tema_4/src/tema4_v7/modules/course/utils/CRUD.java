@@ -53,15 +53,10 @@ public class CRUD {
 		}
 		if (curso == 2) {
 			Fecha fecha_ultimas_plazas_i = func_fecha.crear_fecha_anterior("fecha_ultimas_plazas_i", fecha_i);
-			//System.out.println(fecha_ultimas_plazas_i);
 			Fecha fecha_ultimas_plazas_f = func_fecha.crear_entre2("fecha_ultimas_plazas_f", fecha_ultimas_plazas_i,
 					fecha_i);
 			Fecha fecha_compra = func_fecha.crear_fecha_compra("fecha_compra", fecha_i );
-			//System.out.println(fecha_compra);
-			//System.out.println(fecha_compra + "fecha compra");
-			//System.out.println(fecha_ultimas_plazas_i);
 			int precio = func_precio.calcular_precio_ultimas_plazas(fecha_i, fecha_f, precioHora, horasDias,fecha_ultimas_plazas_i, fecha_ultimas_plazas_f, fecha_compra);
-			//System.out.println(fecha_compra + "fecha compra");
 			objeto = new Desplegamiento_web(ID_course, titulo, descripcion, categoria, dificultad, fecha_i, fecha_f, precioHora, horasDias, fecha_ultimas_plazas_i, fecha_ultimas_plazas_f,
 					fecha_compra, precio);
 		}
@@ -272,9 +267,9 @@ public class CRUD {
 	public static Cursos update(Cursos curso) {
 
 		Object menu_update = null;
-		Object atributos_dw[] = { "ID_course", "titulo", "descripcion", "categoria", "dificultad", "precio", "fecha_i",
+		Object atributos_dw[] = { "ID_course", "titulo", "descripcion", "categoria", "dificultad", "fecha_i",
 				"fecha_f", "fecha_confirmacion_ini ",  "fecha_confirmacion_i", "fecha_confirmacion_f", "fecha_inscripcion_i",
-				"fecha_inscripcion_f", "salir" };
+				"fecha_inscripcion_f", "precioHora", "horasDias","salir" };
 		Object atributos_diw[] = { "ID_course", "titulo", "descripcion", "categoria", "dificultad", "precio", "fecha_i",
 				"fecha_f", "f_c_promocion_i", "f_c_promocion_f", "salir" };
 		Object atributos_despw[] = { "ID_course", "titulo", "descripcion", "categoria", "dificultad", "precio",
@@ -285,7 +280,7 @@ public class CRUD {
 			if (curso instanceof Desarrollo_web) {
 				do {
 					menu_update = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_dw,
-							atributos_dw[12]);
+							atributos_dw[14]);
 					switch (menu_update.toString()) {
 						case "ID_course":
 							curso.set_ID_course(validar_regex.validar_reg_id());
@@ -304,8 +299,13 @@ public class CRUD {
 							curso.set_dificultad(
 									(String) menu_dif_cat.combos_dif("Selecciona la dificultad", "Dificultad"));
 							break;
-						case "precio":
-							curso.set_precio(validadors.validar_int("Dame un número", "num"));
+						case "precioHora":
+							//curso.set_fecha_i(func_updates.fecha_i("fecha_i",  curso ));
+							JOptionPane.showMessageDialog(null, "Hola");
+							break;
+						case "horasDias":
+							//curso.set_fecha_i(func_updates.fecha_i("fecha_i",  curso ));
+							JOptionPane.showMessageDialog(null, "Hola1");
 							break;
 						case "fecha_i":
 							curso.set_fecha_i(func_updates.fecha_i("fecha_i",  curso ));
@@ -323,22 +323,22 @@ public class CRUD {
 						////////////////////////////////
 						case "fecha_confirmacion_i":
 							 JOptionPane.showMessageDialog(null, "Hola i");
-							((Desarrollo_web) curso).set_fecha_confirmacion_i(func_updates.fecha_confirmacion_i("fecha_f", curso));
+							((Desarrollo_web) curso).set_fecha_confirmacion_i(func_updates.fecha_confirmacion_i("fecha_confirmacion_i", curso));
 							break;
 						case "fecha_confirmacion_f":
-							((Desarrollo_web) curso).set_fecha_confirmacion_f(func_fecha.crear_fecha_dias_despues("fecha_confirmacion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i(), 2));
+							((Desarrollo_web) curso).set_fecha_confirmacion_f(func_updates.fecha_confirmacion_i("fecha_confirmacion_f", curso));
 							break;
 						case "fecha_inscripcion_i":
-							((Desarrollo_web) curso).set_fecha_inscripcion_i(func_fecha.crear_fecha_dias_antes("fecha_inscripcion_i", curso.get_fecha_i(), 7));
+							((Desarrollo_web) curso).set_fecha_inscripcion_i(func_updates.fecha_inscripcion_i("fecha_inscripcion_i", curso));
 							break;
 						case "fecha_inscripcion_f":
-							((Desarrollo_web) curso).set_fecha_inscripcion_f(func_fecha.crear_fecha_dias_despues("fecha_inscripcion_f", ((Desarrollo_web) curso).get_fecha_confirmacion_i(), 3));
+							((Desarrollo_web) curso).set_fecha_inscripcion_f(func_updates.fecha_inscripcion_f("fecha_inscripcion_f", curso));
 							break;
 						case "salir":
-							salir = 13;
+							salir = 14;
 							break;
 					} // end switch
-				} while (salir != 13);
+				} while (salir != 14);
 				return curso;
 			} // end if
 
@@ -368,10 +368,10 @@ public class CRUD {
 							curso.set_precio(validadors.validar_int("Dame un número", "num"));
 							break;
 						case "fecha_i":
-							curso.set_fecha_i(func_fecha.craar("fecha_i"));
+							curso.set_fecha_i(func_updates.fecha_i("fecha_i",  curso ));
 							break;
 						case "fecha_f":
-							curso.set_fecha_f(func_fecha.craar("fecha_f"));
+							curso.set_fecha_f(func_updates.fecha_f("fecha_f", curso));
 							break;
 						case "f_c_promocion_i":
 							((Diseno_web) curso).set_f_c_promocion_i(func_fecha.crear_fecha_anterior("f_c_promocion_i", curso.get_fecha_f()));
