@@ -1,0 +1,25 @@
+package tema4_v7.modules.course.utils;
+
+import javax.swing.JOptionPane;
+
+import tema4_v7.classes.Fecha;
+import tema4_v7.modules.course.classes.Cursos;
+
+public class func_updates {
+	public static Fecha fecha_i(String titulo, Fecha fecha_confirmacion,Cursos curso) {
+			
+			Fecha fecha = null;
+			fecha = func_fecha.crear_entre2(titulo, , fecha_confirmacion, curso.get_fecha_f());
+		    
+		   curso.set_precio(func_precio.calcular_precio(fecha, fecha2, precioHora, horasDias));
+		    return fecha;
+	}
+	
+	public static Fecha fecha_f(String titulo, Cursos curso) {
+		Fecha fecha = null;
+		fecha = func_fecha.crar_fecha_posterior(titulo, curso.get_fecha_i());
+		
+		curso.set_precio(func_precio.calcular_precio(curso.get_fecha_i(), fecha, curso.get_precioHora(), curso.get_horasDias()));
+		return fecha;
+	}
+}

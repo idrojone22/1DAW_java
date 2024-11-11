@@ -1,0 +1,12 @@
+package tema4_v7.modules.course.utils;
+
+import tema4_v7.classes.Fecha;
+
+public class func_updates {
+	public static Fecha fecha_i() {
+		Fecha fecha = null;
+		
+		
+		return fecha;
+	}
+}

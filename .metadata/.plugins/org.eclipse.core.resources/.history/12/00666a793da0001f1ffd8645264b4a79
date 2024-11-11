@@ -1,0 +1,25 @@
+package tema4_v7.modules.course.utils;
+
+import javax.swing.JOptionPane;
+
+import tema4_v7.classes.Fecha;
+
+public class func_updates {
+	public static Fecha fecha_i() {
+		Fecha fecha = null;
+		
+		do {
+			String fecha_s = validar_regex.validar_reg_fecha(titulo);
+
+			fecha = new Fecha(fecha_s);
+
+			fecha.comprobarFechas();
+
+			if (!fecha.comprobarFechas()) {
+				JOptionPane.showMessageDialog(null, "Fecha Inválida");
+			}
+		} while (!fecha.comprobarFechas());
+		
+		return fecha;
+	}
+}
