@@ -1,5 +1,7 @@
 package tema4_v6;
 
+import java.util.GregorianCalendar;
+
 import javax.swing.JOptionPane;
 
 public class func_fecha {
@@ -210,4 +212,51 @@ public class func_fecha {
 
 		return fecha;
 	} 
+	
+	public static Fecha crear_fecha_automatic(String titulo, Fecha fecha_i, int dies) {
+	    Fecha fecha = null;
+	    String fecha_s;
+	    
+	    // Creamos el calendario con la fecha inicial proporcionada
+	    GregorianCalendar cal = new GregorianCalendar(fecha_i.get_anio(), fecha_i.get_mes() - 1, fecha_i.get_dia());
+	    
+	    // Restamos los días especificados
+	    cal.add(GregorianCalendar.DAY_OF_MONTH, -dies);
+	    
+	    do {
+	        // Formateamos la fecha resultante en un String adecuado para el constructor de Fecha
+	        int anio = cal.get(GregorianCalendar.YEAR);
+	        int mes = cal.get(GregorianCalendar.MONTH) + 1; // Meses en GregorianCalendar empiezan en 0
+	        int dia = cal.get(GregorianCalendar.DAY_OF_MONTH);
+	        
+	        fecha_s = String.format("%02d/%02d/%04d", dia, mes, anio); // Por ejemplo, en formato
+	        fecha = new Fecha(fecha_s);
+	        
+	        // Verificamos la validez de la fecha
+	        if (!fecha.comprobarFechas()) {
+	            JOptionPane.showMessageDialog(null, "Fecha Inválida");
+	        }
+	    } while (!fecha.comprobarFechas());
+	    
+	    return fecha;
+	}
+	
+	public static Fecha crear_fecha_automatic_suma(String titulo, Fecha fecha_i, int dies) {
+	    Fecha fecha = null;
+	    String fecha_s;
+	    
+	    GregorianCalendar cal = new GregorianCalendar(fecha_i.get_anio(), fecha_i.get_mes() - 1, fecha_i.get_dia());
+	    
+	    cal.add(GregorianCalendar.DAY_OF_MONTH, +dies);
+	    
+	    int anio = cal.get(GregorianCalendar.YEAR);
+        int mes = cal.get(GregorianCalendar.MONTH) + 1; 
+        int dia = cal.get(GregorianCalendar.DAY_OF_MONTH);
+        
+        fecha_s = String.format("%02d/%02d/%04d", dia, mes, anio);
+        fecha = new Fecha(fecha_s);
+
+	    
+	    return fecha;
+	}
 }

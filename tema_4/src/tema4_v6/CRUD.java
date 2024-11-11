@@ -19,19 +19,16 @@ public class CRUD {
 		String categoria = (String) menu_dif_cat.combos_cat("Seleccione la categoria", "Categoria");
 		String dificultad = (String) menu_dif_cat.combos_dif("Selecciona la dificultad", "Dificultad");
 		Fecha fecha_i = func_fecha.craar("fecha_i");
-		Fecha fecha_f = func_fecha.crear_fecha_dias_despues("fecha_f", fecha_i, 20);
+		Fecha fecha_f = func_fecha.crear_fecha_automatic_suma("fecha_f", fecha_i, 20);
 		int precioHora = validadors.validar_int("Dame num", "precioHora");
 		int horasDias = validar_regex.validar_horas();
 
 		if (curso == 0) {
 
-			Fecha fecha_inscripcion_i = func_fecha.crear_fecha_dias_antes("fecha_inscripcion_i", fecha_i, 7);
-			Fecha fecha_inscripcion_f = func_fecha.crear_fecha_dias_despues("fecha_inscripcion_f",
-					fecha_inscripcion_i,3);
-			Fecha fecha_confirmacion_i = func_fecha.crear_fecha_dias_despues("fecha_confirmacion_i",
-					fecha_inscripcion_f,1);
-			Fecha fecha_confirmacion_f = func_fecha.crear_fecha_dias_despues("fecha_confirmacion_i",
-					fecha_confirmacion_i, 2);
+			Fecha fecha_inscripcion_i =  func_fecha.crear_fecha_automatic("fecha_inscripcion_i", fecha_i, 7);
+			Fecha fecha_inscripcion_f =  func_fecha.crear_fecha_automatic("fecha_inscripcion_f", fecha_i, 4);
+			Fecha fecha_confirmacion_i =func_fecha.crear_fecha_automatic("fecha_confirmacion_i", fecha_i, 3);
+			Fecha fecha_confirmacion_f = func_fecha.crear_fecha_automatic("fecha_confirmacion_f", fecha_i, 1);
 			Fecha fecha_compra = func_fecha.crear_fecha_compra("fecha_compra",fecha_i);
 			int precio = func_precio.calcular_precio(fecha_i, fecha_f, precioHora, horasDias);
 
