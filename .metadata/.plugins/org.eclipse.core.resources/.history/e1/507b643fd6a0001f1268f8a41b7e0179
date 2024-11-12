@@ -29,7 +29,7 @@ public class func_updates {
 		
 		fecha = func_fecha.crear_fecha_compra(titulo, curso.get_fecha_i());
 		
-		curso.set_precio(func_precio.calcular_precio(fecha, fecha, 0, 0));
+		
 		
 		return fecha;
 	}
