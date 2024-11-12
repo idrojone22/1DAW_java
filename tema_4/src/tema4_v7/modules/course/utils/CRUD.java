@@ -312,10 +312,10 @@ public class CRUD {
 							JOptionPane.showMessageDialog(null, "Hola2");
 							break;
 						case "fecha_i":
-							curso.set_fecha_i(func_updates.fecha_i_1o("fecha_i",  curso ));
+							curso.set_fecha_i(func_updates.fecha_i("fecha_i",  curso ));
 							break;
 						case "fecha_f":
-							curso.set_fecha_f(func_updates.fecha_f_1o("fecha_f", curso));
+							curso.set_fecha_f(func_updates.fecha_f("fecha_f", curso));
 							break;
 							/////////////////////////////////
 							/*codigo fantasma*/
@@ -381,10 +381,10 @@ public class CRUD {
 							JOptionPane.showMessageDialog(null, "Hola2");
 							break;
 						case "fecha_i":
-							curso.set_fecha_i(func_updates.fecha_i("fecha_i",  curso ));
+							curso.set_fecha_i(func_updates.fecha_i_2("fecha_i", ((Diseno_web) curso).get_f_c_promocion_i() ,((Diseno_web) curso).get_f_c_promocion_f(),  curso ));
 							break;
 						case "fecha_f":
-							curso.set_fecha_f(func_updates.fecha_f("fecha_f", curso));
+							curso.set_fecha_f(func_updates.fecha_f_2("fecha_f", ((Diseno_web) curso).get_f_c_promocion_i() ,((Diseno_web) curso).get_f_c_promocion_f(),  curso ));
 							break;
 						case "f_c_promocion_i":
 							((Diseno_web) curso).set_f_c_promocion_i(func_fecha.crear_fecha_anterior("f_c_promocion_i", curso.get_fecha_f()));
