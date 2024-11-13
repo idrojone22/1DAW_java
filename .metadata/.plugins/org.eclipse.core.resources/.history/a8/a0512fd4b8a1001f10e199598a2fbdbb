@@ -1,0 +1,10 @@
+package tema4_v8.modules.courses.classes;
+
+public class Singleton {
+	
+	public static ArrayList <Desarrollo_web> desarrollo_web;
+	public static ArrayList <Diseno_web> diseno_web;
+	public static ArrayList <Desplegamiento_web> desplegamiento_web;
+
+	
+}

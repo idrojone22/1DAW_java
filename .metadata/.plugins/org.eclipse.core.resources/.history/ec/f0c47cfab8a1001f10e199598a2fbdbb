@@ -1,0 +1,12 @@
+package tema4_v8.modules.courses.classes;
+
+import java.util.ArrayList;
+
+public class Singleton {
+	
+	public static ArrayList <Desarrollo_web> desarrollo;
+	public static ArrayList <Diseno_web> diseno;
+	public static ArrayList <Desplegamiento_web> desplegamiento;
+	public static String ID_course;
+	
+}
