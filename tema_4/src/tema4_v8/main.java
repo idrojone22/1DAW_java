@@ -1,6 +1,9 @@
 package tema4_v8;
 
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 import tema4_v7.modules.course.classes.Cursos;
 import tema4_v7.modules.course.utils.CRUD;
 import tema4_v7.utils.menus;
@@ -8,6 +11,7 @@ import tema4_v8.modules.courses.classes.Desarrollo_web;
 import tema4_v8.modules.courses.classes.Diseno_web;
 import tema4_v8.modules.courses.classes.Desplegamiento_web;
 import tema4_v8.modules.courses.classes.Singleton;
+import tema4_v8.modules.courses.utils.F_CRUD.func_create;
 
 public class main {
 
@@ -19,8 +23,8 @@ public class main {
 		Object objetos[] =  {"Desarrollo web", "Diseño web", "Desplegament web", "Salir"};
 		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú princial" , "Salir"};
 		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
-		int salir = 0; 
-		int i = 0;
+		int salir = 0;
+		
 		Cursos objeto = null;
 		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
 		Singleton.array_diseno = new ArrayList <Diseno_web> ();
@@ -31,13 +35,14 @@ public class main {
 			
 			switch(primer_menu.toString()) {
 			case "Desarrollo web":
-				i = 0;
+				//JOptionPane.showMessageDialog(null, "Desarrollo");
 				do {
 					segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							objeto = CRUD.create(i);
+							func_create.crear_desarrollo();
+							//JOptionPane.showMessageDialog(null, "Desarrollo Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -49,7 +54,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							CRUD.readall(objeto);
+							JOptionPane.showMessageDialog(null, "Desarrollo ReadAll");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -61,7 +66,7 @@ public class main {
 						break;
 					case "ReadOne":
 						do {
-							CRUD.readone(objeto);
+							JOptionPane.showMessageDialog(null, "Desarrollo ReadOne");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -73,7 +78,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							objeto = CRUD.update(objeto);
+							JOptionPane.showMessageDialog(null, "Desarrollo Update");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -85,7 +90,7 @@ public class main {
 						break;
 					case "Delete":
 						do {
-							objeto = CRUD.delete(objeto);
+							JOptionPane.showMessageDialog(null, "Desarrollo Delete");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -107,13 +112,12 @@ public class main {
 				}while(segundo_menu != op_CRUD[6]);
 				break;
 			case "Diseño web":
-				i = 1;
 				do {
 					segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							objeto = CRUD.create(i);
+							JOptionPane.showMessageDialog(null, "Diseño Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -125,7 +129,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							CRUD.readall(objeto);
+							JOptionPane.showMessageDialog(null, "Diseño ReadAll");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -137,7 +141,7 @@ public class main {
 						break;
 					case "ReadOne":
 						do {
-							CRUD.readone(objeto);
+							JOptionPane.showMessageDialog(null, "Diseño One");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -149,7 +153,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							objeto = CRUD.update(objeto);
+							JOptionPane.showMessageDialog(null, "Diseño Update");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -161,7 +165,7 @@ public class main {
 						break;
 					case "Delete":
 						do {
-							objeto = CRUD.delete(objeto);
+							JOptionPane.showMessageDialog(null, "Diseño Delete");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -183,13 +187,12 @@ public class main {
 				}while(segundo_menu != op_CRUD[6]);
 				break;
 			case "Desplegament web":
-				i = 2;
 				do {
 					segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							objeto = CRUD.create(i);
+							JOptionPane.showMessageDialog(null, "Desplegament Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -201,7 +204,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							CRUD.readall(objeto);
+							JOptionPane.showMessageDialog(null, "Desplegament ReadALL");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -213,7 +216,7 @@ public class main {
 						break;
 					case "ReadOne":
 						do {
-							CRUD.readone(objeto);
+							JOptionPane.showMessageDialog(null, "Desplegament ReadOne");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -225,7 +228,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							objeto = CRUD.update(objeto);
+							JOptionPane.showMessageDialog(null, "Desplegament Update");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -237,7 +240,7 @@ public class main {
 						break;
 					case "Delete":
 						do {
-							objeto = CRUD.delete(objeto);
+							JOptionPane.showMessageDialog(null, "Desplegament Delete");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);

@@ -1,0 +1,29 @@
+package tema4_v8;
+
+import java.util.ArrayList;
+import tema4_v7.modules.course.classes.Cursos;
+import tema4_v7.modules.course.utils.CRUD;
+import tema4_v7.utils.menus;
+import tema4_v8.modules.courses.classes.Desarrollo_web;
+import tema4_v8.modules.courses.classes.Diseno_web;
+import tema4_v8.modules.courses.classes.Desplegamiento_web;
+import tema4_v8.modules.courses.classes.Singleton;
+
+public class main {
+
+	public static void main(String[] args) {
+		Object primer_menu = null;
+		Object objetos[] =  {"Desarrollo web", "Diseño web", "Desplegament web", "Salir"};
+		int salir = 0;
+		
+		Cursos objeto = null;
+		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
+		Singleton.array_diseno = new ArrayList <Diseno_web> ();
+		Singleton.array_desplegamiento = new ArrayList <Desplegamiento_web> ();
+		
+		do {
+			primer_menu = menus.combos("Selecciona el curso" , "Cursos" , objetos, objetos[3]);
+		}while (salir != 3);
+		
+	}
+}

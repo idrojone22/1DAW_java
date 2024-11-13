@@ -1,38 +1,28 @@
 package tema4_v8;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 import tema4_v7.classes.Fecha;
 import tema4_v7.modules.course.utils.func_fecha;
+import tema4_v8.modules.courses.classes.Cursos;
+import tema4_v8.modules.courses.classes.Desarrollo_web;
+import tema4_v8.modules.courses.classes.Singleton;
+import tema4_v8.modules.courses.utils.func_buscar;
+import tema4_v8.modules.courses.utils.func_cursos;
+import tema4_v8.modules.courses.utils.F_CRUD.func_create;
 
 public class test {
 
 	public static void main(String[] args) {
 	
-		/*Fecha fecha_i = func_fecha.craar("fecha_i");
-		Fecha fecha_f = func_fecha.crear_fecha_dias_despues("fecha_f", fecha_i, 20);
-
-		int preuPerHora = 20;
-		int horesPerDia = 8;
-
-		int diesCurs = fecha_i.restarFechas(fecha_f);
-
-		int preuTotal = diesCurs * horesPerDia * preuPerHora;
-
-		System.out.println("El preu total del curs és: " + preuTotal + " euros");*/
+		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
 		
-		/*int num = validar_regex.validar_horas();
-		System.out.println(num); */
-		
-		Fecha fecha_i =  func_fecha.craar("fecha_i");
-		Fecha fecha_f =  func_fecha.crear_fecha_automatic_suma("fecha_f", fecha_i, 20);
-		Fecha fecha_inscripcion_i = func_fecha.crear_fecha_automatic("fecha_inscripcion_i", fecha_i, 7);
-		Fecha fecha_inscripcion_f = func_fecha.crear_fecha_automatic("fecha_inscripcion_f", fecha_i, 5);
+		func_create.crear_desarrollo();
+		func_create.crear_desarrollo();
+		func_create.crear_desarrollo();
 		
 		
-		System.out.println(fecha_i + "fecha_i"); 
-		System.out.println(fecha_f + "fecha_f"); 
-		System.out.println(fecha_inscripcion_i +"fecha_inscripcion_i"); 
-		System.out.println(fecha_inscripcion_f +"fecha_inscripcion_f"); 
 	}
 }

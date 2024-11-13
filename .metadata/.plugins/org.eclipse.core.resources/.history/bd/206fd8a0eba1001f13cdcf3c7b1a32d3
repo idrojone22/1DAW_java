@@ -1,0 +1,20 @@
+package tema4_v8;
+
+import javax.swing.JOptionPane;
+
+import tema4_v7.classes.Fecha;
+import tema4_v7.modules.course.utils.func_fecha;
+import tema4_v8.modules.courses.classes.Cursos;
+import tema4_v8.modules.courses.utils.func_cursos;
+import tema4_v8.modules.courses.utils.F_CRUD.func_create;
+
+public class test {
+
+	public static void main(String[] args) {
+	
+		Cursos desarrollo_web = null;
+		desarrollo_web = func_cursos.crear_desarrollo(desarrollo_web);
+		
+		JOptionPane.showMessageDialog(null, desarrollo_web.toString());
+	}
+}

@@ -7,4 +7,22 @@
 		<item key="DIALOG_HEIGHT" value="870"/>
 		<item key="DIALOG_FONT_NAME" value="1|SF Pro Display|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|SF Pro Display"/>
 	</section>
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.jdt.internal.ui.fatjarpackager.JarPackageWizard"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.equinox.p2.category"/>
+			<item value="org.eclipse.jdt.ui.Java"/>
+			<item value="org.eclipse.debug.ui"/>
+			<item value="org.eclipse.mylyn.tasks.ui.wizards.export.category"/>
+			<item value="org.eclipse.team.ui.exportWizards"/>
+		</list>
+		<section name="ImportExportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="662"/>
+			<item key="DIALOG_Y_ORIGIN" value="190"/>
+			<item key="DIALOG_WIDTH" value="613"/>
+			<item key="DIALOG_HEIGHT" value="550"/>
+			<item key="DIALOG_FONT_NAME" value="1|SF Pro Display|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|SF Pro Display"/>
+		</section>
+	</section>
 </section>
