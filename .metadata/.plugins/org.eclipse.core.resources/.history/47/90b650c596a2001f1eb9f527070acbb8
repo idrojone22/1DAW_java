@@ -69,16 +69,16 @@ public static Desarrollo_web crear_desarrollo () {
 		Fecha fecha_f = func_fecha.crear_fecha_automatic_suma("fecha_f", fecha_i, 20);
 		int precioHora = 20; /*validadors.validar_int("Dame num", "precioHora");*/
 		int horasDias = 8; /* validar_regex.validar_horas();*/
-		Fecha fecha_ultimas_plazas_i = func_fecha.crear_fecha_anterior("fecha_ultimas_plazas_i", fecha_i);
-		Fecha fecha_ultimas_plazas_f = func_fecha.crear_entre2("fecha_ultimas_plazas_f", fecha_ultimas_plazas_i,fecha_i);
+		Fecha f_c_promocion_i = func_fecha.crear_fecha_anterior("f_c_promocion_i", fecha_i);
+		Fecha f_c_promocion_f = func_fecha.crear_entre2("f_c_promocion_f", f_c_promocion_i, fecha_i);
 		Fecha fecha_compra = func_fecha.crear_fecha_compra("fecha_compra", fecha_i );
-		int precio = func_precio.calcular_precio_ultimas_plazas(fecha_i, fecha_f, precioHora, horasDias,fecha_ultimas_plazas_i, fecha_ultimas_plazas_f, fecha_compra);
+		int precio = func_precio.calcular_precio_ultimas_plazas(fecha_i, fecha_f, precioHora, horasDias,f_c_promocion_i,  f_c_promocion_f, fecha_compra);
 		
-		return new Desplegamiento_web(ID_course, titulo, descripcion, categoria, dificultad, fecha_i, fecha_f, precioHora, horasDias, fecha_ultimas_plazas_i, fecha_ultimas_plazas_f,fecha_compra, precio);
+		return new Diseno_web(ID_course, titulo, descripcion, categoria, dificultad, fecha_i, fecha_f, precioHora, horasDias, f_c_promocion_i, f_c_promocion_f,fecha_compra, precio);
 	}
 
-	public static Desplegamiento_web preguntar_ID_desplegamiento () {
+	public static Diseno_web preguntar_ID_diseno () {
 		Singleton.ID_course = validar_regex.validar_reg_id();
-		return new Desplegamiento_web (Singleton.ID_course);
+		return new Diseno_web (Singleton.ID_course);
 	} 
 }

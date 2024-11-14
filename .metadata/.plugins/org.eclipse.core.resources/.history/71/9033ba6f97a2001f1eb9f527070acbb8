@@ -48,7 +48,7 @@ public class func_create {
 		}
 	}
 	
-	public static void crear_desplegamiento() {
+public static void crear_desplegamiento() {
 		
 		int localizacion = -1;
 		Desplegamiento_web ID = func_cursos.preguntar_ID_desplegamiento();

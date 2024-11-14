@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 import tema4_v7.utils.menus;
 import tema4_v8.modules.courses.classes.Desarrollo_web;
-import tema4_v8.modules.courses.classes.Desplegamiento_web;
 import tema4_v8.modules.courses.classes.Diseno_web;
 import tema4_v8.modules.courses.classes.Singleton;
 import tema4_v8.modules.courses.utils.func_buscar;
@@ -99,8 +98,8 @@ public class func_read {
 					}
 					break;
 				case "Leer_Uno":
-					 ID = func_cursos.preguntar_ID_desplegamiento();
-					localizacion =  func_buscar.find_desplegamiento(ID);
+					 ID = func_cursos.preguntar_ID_diseno();
+					localizacion =  func_buscar.find_diseno(ID);
 					if (localizacion != -1) {
 						ID = Singleton.array_desplegamiento.get(localizacion);
 						JOptionPane.showMessageDialog(null, ID.toString());

@@ -200,7 +200,7 @@ public class main {
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							func_create.crear_desplegamiento();
+							func_cursos.crear_desplegamiento();
 							//JOptionPane.showMessageDialog(null, "Desplegament Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -213,8 +213,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							func_read.read_desplegamiento();
-							//JOptionPane.showMessageDialog(null, "Desplegament ReadALL");
+							JOptionPane.showMessageDialog(null, "Desplegament ReadALL");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -238,8 +237,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							
-							//JOptionPane.showMessageDialog(null, "Desplegament Update");
+							JOptionPane.showMessageDialog(null, "Desplegament Update");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);

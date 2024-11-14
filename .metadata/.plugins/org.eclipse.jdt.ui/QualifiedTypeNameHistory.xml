@@ -10,8 +10,8 @@
     <fullyQualifiedTypeName name="tema4_v7.classes.Fecha"/>
     <fullyQualifiedTypeName name="tema4_v8.modules.courses.utils.F_CRUD.func_create"/>
     <fullyQualifiedTypeName name="tema4_v8.modules.courses.utils.func_buscar"/>
-    <fullyQualifiedTypeName name="tema4_v8.modules.courses.utils.func_cursos"/>
     <fullyQualifiedTypeName name="tema4_v8.modules.courses.classes.Singleton"/>
     <fullyQualifiedTypeName name="tema4_v8.modules.courses.utils.F_CRUD.func_read"/>
     <fullyQualifiedTypeName name="tema4_v8.modules.courses.utils.F_CRUD.func_delete"/>
+    <fullyQualifiedTypeName name="tema4_v8.modules.courses.utils.func_cursos"/>
 </qualifiedTypeNameHistroy>
