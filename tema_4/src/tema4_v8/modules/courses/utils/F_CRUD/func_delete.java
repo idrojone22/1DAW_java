@@ -1,5 +1,44 @@
 package tema4_v8.modules.courses.utils.F_CRUD;
 
-public class func_delete {
+import javax.swing.JOptionPane;
 
+import tema4_v8.modules.courses.classes.Desarrollo_web;
+import tema4_v8.modules.courses.classes.Diseno_web;
+import tema4_v8.modules.courses.classes.Singleton;
+import tema4_v8.modules.courses.utils.func_buscar;
+import tema4_v8.modules.courses.utils.func_cursos;
+
+public class func_delete {
+	public static void delete_desarrollo() {
+		int localizacion = -1;
+		Desarrollo_web ID = null;
+		if (Singleton.array_desarrollo.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Error");
+		} else {
+			 ID = func_cursos.preguntar_ID_course();
+			localizacion =  func_buscar.find_desarrollo(ID);
+			if (localizacion != -1) {
+				ID = Singleton.array_desarrollo.remove(localizacion);
+				JOptionPane.showMessageDialog(null, "Curso borrado");
+			} else {
+				JOptionPane.showMessageDialog(null, "Error el Curso no exsiste");
+			}
+		}
+	}
+	public static void delete_diseno() {
+		int localizacion = -1;
+		Diseno_web ID = null;
+		if (Singleton.array_diseno.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Error");
+		} else {
+			 ID = func_cursos.preguntar_ID_diseno();
+			localizacion =  func_buscar.find_diseno(ID);
+			if (localizacion != -1) {
+				ID = Singleton.array_diseno.remove(localizacion);
+				JOptionPane.showMessageDialog(null, "Curso borrado");
+			} else {
+				JOptionPane.showMessageDialog(null, "Error el Curso no exsiste");
+			}
+		}
+	}
 }

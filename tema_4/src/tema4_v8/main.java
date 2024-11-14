@@ -12,6 +12,8 @@ import tema4_v8.modules.courses.classes.Diseno_web;
 import tema4_v8.modules.courses.classes.Desplegamiento_web;
 import tema4_v8.modules.courses.classes.Singleton;
 import tema4_v8.modules.courses.utils.F_CRUD.func_create;
+import tema4_v8.modules.courses.utils.F_CRUD.func_delete;
+import tema4_v8.modules.courses.utils.F_CRUD.func_read;
 
 public class main {
 
@@ -54,7 +56,8 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							JOptionPane.showMessageDialog(null, "Desarrollo ReadAll");
+							//JOptionPane.showMessageDialog(null, "Desarrollo ReadAll");
+							func_read.read_desarrollo();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -90,7 +93,8 @@ public class main {
 						break;
 					case "Delete":
 						do {
-							JOptionPane.showMessageDialog(null, "Desarrollo Delete");
+							//JOptionPane.showMessageDialog(null, "Desarrollo Delete");
+							func_delete.delete_desarrollo();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -117,7 +121,8 @@ public class main {
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							JOptionPane.showMessageDialog(null, "Diseño Create");
+							//JOptionPane.showMessageDialog(null, "Diseño Create");
+							func_create.crear_diseno();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
