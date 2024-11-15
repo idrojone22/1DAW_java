@@ -99,7 +99,7 @@ public static Desarrollo_web crear_desarrollo () {
 					menu_update = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_dw, atributos_dw[14]);
 					switch (menu_update.toString()) {
 						case "ID_course":
-							curso.set_ID_course(validar_regex.validar_reg_id());
+							 update_ID_desarrollo( curso);
 							break;
 						case "titulo":
 							curso.set_titulo(validadors.validar_string("Dame un String", "titulo"));
@@ -160,7 +160,7 @@ public static Desarrollo_web crear_desarrollo () {
 					menu_update = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_diw, atributos_diw[11]);
 					switch (menu_update.toString()) {
 						case "ID_course":
-							curso.set_ID_course(validar_regex.validar_reg_id());
+								update_ID_diseno( curso);
 							break;
 						case "titulo":
 							curso.set_titulo(validadors.validar_string("Dame un String", "titulo"));
@@ -254,6 +254,39 @@ public static Desarrollo_web crear_desarrollo () {
 		} else {
 			JOptionPane.showMessageDialog(null, "No exsiste el objecto");
 			return null;
+		}
+	}
+	
+	public static void update_ID_desarrollo(Cursos curso) {
+		int localizacion = -1;
+		Desarrollo_web ID = preguntar_ID_course();
+		localizacion = func_buscar.find_desarrollo(ID);
+		if (localizacion != -1) {
+			JOptionPane.showMessageDialog(null, "Ya exsiste el objeto");
+		} else {
+			 curso.set_ID_course(Singleton.ID_course);   
+		}
+	}
+	
+	public static void update_ID_diseno(Cursos curso) {
+		int localizacion = -1;
+		Diseno_web ID = preguntar_ID_diseno();
+		localizacion = func_buscar.find_diseno(ID);
+		if (localizacion != -1) {
+			JOptionPane.showMessageDialog(null, "Ya exsiste el objeto");
+		} else {
+			 curso.set_ID_course(Singleton.ID_course);   
+		}
+	}
+	
+	public static void update_ID_desplegamiento(Cursos curso) {
+		int localizacion = -1;
+		Desplegamiento_web ID = preguntar_ID_desplegamiento();
+		localizacion = func_buscar.find_desplegamiento(ID);
+		if (localizacion != -1) {
+			JOptionPane.showMessageDialog(null, "Ya exsiste el objeto");
+		} else {
+			 curso.set_ID_course(Singleton.ID_course);   
 		}
 	}
 }

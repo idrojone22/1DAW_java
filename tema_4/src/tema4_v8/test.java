@@ -12,17 +12,11 @@ import tema4_v8.modules.courses.classes.Singleton;
 import tema4_v8.modules.courses.utils.func_buscar;
 import tema4_v8.modules.courses.utils.func_cursos;
 import tema4_v8.modules.courses.utils.F_CRUD.func_create;
+import tema4_v8.modules.courses.utils.F_CRUD.func_read;
 
 public class test {
 
 	public static void main(String[] args) {
-	
-		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
-		
-		func_create.crear_desarrollo();
-		func_create.crear_desarrollo();
-		func_create.crear_desarrollo();
-		
 		
 	}
 }
