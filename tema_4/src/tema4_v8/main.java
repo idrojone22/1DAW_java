@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import tema4_v7.modules.course.classes.Cursos;
-import tema4_v7.modules.course.utils.CRUD;
-import tema4_v7.utils.menus;
+
+import tema4_v8.utils.menus;
+import tema4_v8.modules.courses.classes.Cursos;
 import tema4_v8.modules.courses.classes.Desarrollo_web;
 import tema4_v8.modules.courses.classes.Diseno_web;
 import tema4_v8.modules.courses.classes.Desplegamiento_web;
 import tema4_v8.modules.courses.classes.Singleton;
-import tema4_v8.modules.courses.utils.func_cursos;
 import tema4_v8.modules.courses.utils.F_CRUD.func_create;
 import tema4_v8.modules.courses.utils.F_CRUD.func_delete;
 import tema4_v8.modules.courses.utils.F_CRUD.func_read;
+import tema4_v8.modules.courses.utils.F_CRUD.func_update;
 
 public class main {
 
@@ -82,7 +82,8 @@ public class main {
 						break;
 					case "Update":
 						do {
-							JOptionPane.showMessageDialog(null, "Desarrollo Update");
+							//JOptionPane.showMessageDialog(null, "Desarrollo Update");
+							func_update.update_desarrollo();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -160,7 +161,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							JOptionPane.showMessageDialog(null, "Diseño Update");
+							func_update.update_diseno();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -238,7 +239,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							
+							func_update.update_desplegamiento();
 							//JOptionPane.showMessageDialog(null, "Desplegament Update");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
