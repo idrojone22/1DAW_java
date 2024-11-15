@@ -1,7 +1,7 @@
 package tema4_v9.modules.courses.utils;
 
-import tema4_v8.utils.regex;
-import tema4_v8.utils.validadors;
+import tema4_v9.utils.regex;
+import tema4_v9.utils.validadors;
 
 public class validar_regex {
 	public static String validar_reg_id() {

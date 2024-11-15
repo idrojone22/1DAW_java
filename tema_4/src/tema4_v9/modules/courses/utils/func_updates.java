@@ -1,11 +1,11 @@
 package tema4_v9.modules.courses.utils;
 
-import tema4_v8.classes.Fecha;
-import tema4_v8.modules.courses.classes.Cursos;
-import tema4_v8.modules.courses.classes.Desarrollo_web;
-import tema4_v8.modules.courses.classes.Desplegamiento_web;
-import tema4_v8.modules.courses.classes.Diseno_web;
-import tema4_v8.utils.validadors;
+import tema4_v9.classes.Fecha;
+import tema4_v9.modules.courses.classes.Cursos;
+import tema4_v9.modules.courses.classes.Desarrollo_web;
+import tema4_v9.modules.courses.classes.Desplegamiento_web;
+import tema4_v9.modules.courses.classes.Diseno_web;
+import tema4_v9.utils.validadors;
 
 public class func_updates {
 	public static Fecha fecha_i(String titulo, Cursos curso) {
