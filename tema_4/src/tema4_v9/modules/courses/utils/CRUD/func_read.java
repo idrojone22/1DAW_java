@@ -3,6 +3,7 @@ package tema4_v9.modules.courses.utils.CRUD;
 import javax.swing.JOptionPane;
 
 import tema4_v9.utils.menus;
+import tema4_v9.modules.courses.classes.Cursos;
 import tema4_v9.modules.courses.classes.Desarrollo_web;
 import tema4_v9.modules.courses.classes.Desplegamiento_web;
 import tema4_v9.modules.courses.classes.Diseno_web;
@@ -16,24 +17,24 @@ public class func_read {
 		Object objetos[] =  {"Leer Todos", "Leer_Uno" ,"Salir"};
 		String cad = "";
 		int localizacion = -1;
-		Desarrollo_web ID = null;
+		Cursos ID = null;
 		int salir = 0;
-		if (Singleton.array_desarrollo.isEmpty()) {
+		if (Singleton.array_curso.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
 			primer_menu =  menus.combos("Selecciona que quieres hacer", "Leer", objetos, objetos[2]);
 			switch(primer_menu.toString()) {
 				case "Leer Todos":
-					for (int i = 0; i <Singleton.array_desarrollo.size(); i++) {
-						cad = (Singleton.array_desarrollo.get(i).toString());
+					for (int i = 0; i <Singleton.array_curso.size(); i++) {
+						cad = (Singleton.array_curso.get(i).toString());
 						JOptionPane.showMessageDialog(null, cad);
 					}
 					break;
 				case "Leer_Uno":
 					 ID = func_cursos.preguntar_ID_course();
-					localizacion =  func_buscar.find_desarrollo(ID);
+					localizacion =  func_buscar.find_curso(ID);
 					if (localizacion != -1) {
-						ID = Singleton.array_desarrollo.get(localizacion);
+						ID = Singleton.array_curso.get(localizacion);
 						JOptionPane.showMessageDialog(null, ID.toString());
 					} else {
 						JOptionPane.showMessageDialog(null, "Error el Curso no exsiste");
@@ -46,7 +47,7 @@ public class func_read {
 		}
 	}
 	
-	public static void read_diseno() {
+	/*public static void read_diseno() {
 		Object primer_menu = null;
 		Object objetos[] =  {"Leer Todos", "Leer_Uno" ,"Salir"};
 		String cad = "";
@@ -113,5 +114,5 @@ public class func_read {
 					break;
 			} // end switch
 		}
-	}
+	}*/
 }

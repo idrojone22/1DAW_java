@@ -16,28 +16,28 @@ public class func_create {
 		int localizacion = -1;
 		Desarrollo_web ID = func_cursos.preguntar_ID_course();
 		//JOptionPane.showMessageDialog(null, ID.toString());
-		localizacion =  func_buscar.find_desarrollo(ID);
+		localizacion =  func_buscar.find_curso(ID);
 		//JOptionPane.showMessageDialog(null, localizacion);
 		if (localizacion != -1) {
 			JOptionPane.showMessageDialog(null,"El ID ya exsiste");
 		} else {
 			ID =  func_cursos.crear_desarrollo();
-			Singleton.array_desarrollo.add(ID);
+			Singleton.array_curso.add(ID);
 			//JOptionPane.showMessageDialog(null, ID.toString());
 		}
 	}
-	public static void crear_diseno() {
+	/*public static void crear_diseno() {
 		
 		int localizacion = -1;
 		Diseno_web ID = func_cursos.preguntar_ID_diseno();
 		//JOptionPane.showMessageDialog(null, ID.toString());
-		localizacion =  func_buscar.find_diseno(ID);
+		localizacion =  func_buscar.find_curso(ID);
 		//JOptionPane.showMessageDialog(null, localizacion);
 		if (localizacion != -1) {
 			JOptionPane.showMessageDialog(null,"El ID ya exsiste");
 		} else {
 			ID =  func_cursos.crear_diseno();
-			Singleton.array_diseno.add(ID);
+			Singleton.array_curso.add(ID);
 			//JOptionPane.showMessageDialog(null, ID.toString());
 		}
 	}
@@ -47,14 +47,14 @@ public class func_create {
 		int localizacion = -1;
 		Desplegamiento_web ID = func_cursos.preguntar_ID_desplegamiento();
 		JOptionPane.showMessageDialog(null, ID.toString());
-		localizacion =  func_buscar.find_desplegamiento(ID);
+		localizacion =  func_buscar.find_curso(ID);
 		JOptionPane.showMessageDialog(null, localizacion);
 		if (localizacion != -1) {
 			JOptionPane.showMessageDialog(null,"El ID ya exsiste");
 		} else {
 			ID =  func_cursos.crear_desplegamiento();
-			Singleton.array_desplegamiento.add(ID);
+			Singleton.array_curso.add(ID);
 			JOptionPane.showMessageDialog(null, ID.toString());
 		}
-	}
+	}*/
 }

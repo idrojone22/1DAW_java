@@ -1,8 +1,0 @@
-package tema4_v5;
-
-public class func_precio {
-
-	public static int calcular_precio(Fecha fecha_i, Fecha fecha_f, int precioHora, int horasDia) {
-		
-	}
-}
