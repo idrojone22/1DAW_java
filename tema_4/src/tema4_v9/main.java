@@ -45,7 +45,7 @@ public class main {
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							func_create.crear_desarrollo();
+							func_create.crear_desarrollo(0);
 							//JOptionPane.showMessageDialog(null, "Desarrollo Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -125,7 +125,7 @@ public class main {
 					case "Create":
 						do {
 							//JOptionPane.showMessageDialog(null, "Diseño Create");
-							func_create.crear_desarrollo();
+							func_create.crear_desarrollo(1);
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -202,7 +202,7 @@ public class main {
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							func_create.crear_desarrollo();
+							func_create.crear_desarrollo(2);
 							//JOptionPane.showMessageDialog(null, "Desplegament Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
