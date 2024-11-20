@@ -29,10 +29,9 @@ public class main {
 		int salir = 0;
 		
 		Cursos objeto = null;
-		//Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
-		//Singleton.array_diseno = new ArrayList <Diseno_web> ();
-		//Singleton.array_desplegamiento = new ArrayList <Desplegamiento_web> ();
-		Singleton.array_curso = new ArrayList <Cursos> ();
+		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
+		Singleton.array_diseno = new ArrayList <Diseno_web> ();
+		Singleton.array_desplegamiento = new ArrayList <Desplegamiento_web> ();
 		
 		do {
 			primer_menu = menus.combos("Selecciona el objeto", "Objeto", objetos, objetos[3]);
@@ -45,7 +44,7 @@ public class main {
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							func_create.crear_desarrollo(0);
+							func_create.crear_desarrollo();
 							//JOptionPane.showMessageDialog(null, "Desarrollo Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -125,7 +124,7 @@ public class main {
 					case "Create":
 						do {
 							//JOptionPane.showMessageDialog(null, "Diseño Create");
-							func_create.crear_desarrollo(1);
+							func_create.crear_diseno();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -137,7 +136,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							func_read.read_desarrollo();
+							func_read.read_diseno();
 							//JOptionPane.showMessageDialog(null, "Diseño ReadAll");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -162,7 +161,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							func_update.update_desarrollo();
+							func_update.update_diseno();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -174,7 +173,7 @@ public class main {
 						break;
 					case "Delete":
 						do {
-							func_delete.delete_desarrollo();
+							func_delete.delete_diseno();
 							//JOptionPane.showMessageDialog(null, "Diseño Delete");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -202,7 +201,7 @@ public class main {
 					switch(segundo_menu.toString()) {
 					case "Create":
 						do {
-							func_create.crear_desarrollo(2);
+							func_create.crear_desplegamiento();
 							//JOptionPane.showMessageDialog(null, "Desplegament Create");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -215,7 +214,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							func_read.read_desarrollo();
+							func_read.read_desplegamiento();
 							//JOptionPane.showMessageDialog(null, "Desplegament ReadALL");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -240,7 +239,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							func_update.update_desarrollo();
+							func_update.update_desplegamiento();
 							//JOptionPane.showMessageDialog(null, "Desplegament Update");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
@@ -253,7 +252,7 @@ public class main {
 						break;
 					case "Delete":
 						do {
-							func_delete.delete_desarrollo();
+							func_delete.delete_desplegamiento();
 							//JOptionPane.showMessageDialog(null, "Desplegament Delete");
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {

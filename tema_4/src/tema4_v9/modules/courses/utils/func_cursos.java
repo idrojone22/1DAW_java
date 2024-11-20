@@ -4,13 +4,15 @@ package tema4_v9.modules.courses.utils;
 import javax.swing.JOptionPane;
 
 import tema4_v9.classes.Fecha;
-import tema4_v9.utils.menus;
-import tema4_v9.utils.validadors;
 import tema4_v9.modules.courses.classes.Cursos;
 import tema4_v9.modules.courses.classes.Desarrollo_web;
 import tema4_v9.modules.courses.classes.Desplegamiento_web;
 import tema4_v9.modules.courses.classes.Diseno_web;
 import tema4_v9.modules.courses.classes.Singleton;
+import tema4_v9.utils.menus;
+import tema4_v9.utils.validadors;
+
+
 
 public class func_cursos {
 public static Desarrollo_web crear_desarrollo () {
@@ -34,7 +36,7 @@ public static Desarrollo_web crear_desarrollo () {
 		return new Desarrollo_web(ID_course, titulo, descripcion,categoria, dificultad,fecha_i,fecha_f, precioHora, horasDias,fecha_confirmacion_i, fecha_confirmacion_f, fecha_inscripcion_i, fecha_inscripcion_f, fecha_compra, precio);
 	}
 	
-	public static Desarrollo_web preguntar_ID_course () {
+	public static Cursos preguntar_ID_course () {
 		Singleton.ID_course = validar_regex.validar_reg_id();
 		return new Desarrollo_web (Singleton.ID_course );
 	} 
@@ -160,7 +162,7 @@ public static Desarrollo_web crear_desarrollo () {
 					menu_update = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_diw, atributos_diw[11]);
 					switch (menu_update.toString()) {
 						case "ID_course":
-							update_ID_desarrollo( curso);
+								update_ID_diseno( curso);
 							break;
 						case "titulo":
 							curso.set_titulo(validadors.validar_string("Dame un String", "titulo"));
@@ -208,7 +210,7 @@ public static Desarrollo_web crear_desarrollo () {
 					menu_update = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_despw, atributos_despw[11]);
 					switch (menu_update.toString()) {
 						case "ID_course":
-							update_ID_desarrollo( curso);
+							curso.set_ID_course(validar_regex.validar_reg_id());
 							break;
 						case "titulo":
 							curso.set_titulo(validadors.validar_string("Dame un String", "titulo"));
@@ -259,8 +261,8 @@ public static Desarrollo_web crear_desarrollo () {
 	
 	public static void update_ID_desarrollo(Cursos curso) {
 		int localizacion = -1;
-		Desarrollo_web ID = preguntar_ID_course();
-		localizacion = func_buscar.find_curso(ID);
+		Cursos ID = preguntar_ID_course();
+		localizacion = func_buscar.find(ID);
 		if (localizacion != -1) {
 			JOptionPane.showMessageDialog(null, "Ya exsiste el objeto");
 		} else {
@@ -268,10 +270,10 @@ public static Desarrollo_web crear_desarrollo () {
 		}
 	}
 	
-	/*public static void update_ID_diseno(Cursos curso) {
+	public static void update_ID_diseno(Cursos curso) {
 		int localizacion = -1;
-		Diseno_web ID = preguntar_ID_diseno();
-		localizacion = func_buscar.find_curso(ID);
+		Cursos ID = preguntar_ID_diseno();
+		localizacion = func_buscar.find(ID);
 		if (localizacion != -1) {
 			JOptionPane.showMessageDialog(null, "Ya exsiste el objeto");
 		} else {
@@ -281,12 +283,21 @@ public static Desarrollo_web crear_desarrollo () {
 	
 	public static void update_ID_desplegamiento(Cursos curso) {
 		int localizacion = -1;
-		Desplegamiento_web ID = preguntar_ID_desplegamiento();
-		localizacion = func_buscar.find_curso(ID);
+		Cursos ID = preguntar_ID_desplegamiento();
+		localizacion = func_buscar.find(ID);
 		if (localizacion != -1) {
 			JOptionPane.showMessageDialog(null, "Ya exsiste el objeto");
 		} else {
 			 curso.set_ID_course(Singleton.ID_course);   
+		}
+	}
+	
+	/*public static void update_ID(Cursos curso) {
+		
+		if (curso instanceof Desarrollo_web) {
+			int localizacion = -1;
+			Desarrollo_web ID = preguntar_ID_course();
+			localizacion = func_buscar.find(curso);
 		}
 	}*/
 }
