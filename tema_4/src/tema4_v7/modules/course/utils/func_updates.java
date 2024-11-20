@@ -1,5 +1,5 @@
 package tema4_v7.modules.course.utils;
-import tema4_v3.validadors;
+import tema4_v03.validadors;
 import tema4_v7.classes.Fecha;
 import tema4_v7.modules.course.classes.Cursos;
 import tema4_v7.modules.course.classes.Desarrollo_web;

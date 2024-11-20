@@ -8,8 +8,8 @@ import java.util.GregorianCalendar;
 
 import javax.swing.JOptionPane;
 
-import tema4_v3.validadors;
-import tema4_v3.validar_regex;
+import tema4_v03.validadors;
+import tema4_v03.validar_regex;
 
 public class test {
 
