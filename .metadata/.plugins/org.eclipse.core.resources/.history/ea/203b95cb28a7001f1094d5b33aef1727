@@ -1,0 +1,11 @@
+package tema4_v9.modules.courses.utils.dummies;
+
+import tema4_v9.modules.courses.classes.Desarrollo_web;
+
+public class dummies {
+	public static Desarrollo_web dumm_desw (Desarrollo_web curso) {
+		
+		
+		return new Desarrollo_web(ID_course, titulo, descripcion,categoria, dificultad,fecha_i,fecha_f, precioHora, horasDias,fecha_confirmacion_i, fecha_confirmacion_f, fecha_inscripcion_i, fecha_inscripcion_f, fecha_compra, precio);
+	}
+}
