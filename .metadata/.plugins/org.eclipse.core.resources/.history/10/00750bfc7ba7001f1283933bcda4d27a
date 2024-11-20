@@ -1,10 +1,10 @@
-package tema4_v9.modules.courses.utils;
+package tema4_v10.modules.courses.utils;
 
-import tema4_v9.modules.courses.classes.Desarrollo_web;
-import tema4_v9.modules.courses.classes.Desplegamiento_web;
-import tema4_v9.modules.courses.classes.Diseno_web;
-import tema4_v9.modules.courses.classes.Singleton;
-import tema4_v9.modules.courses.classes.Cursos;
+import tema4_v10.modules.courses.classes.Desarrollo_web;
+import tema4_v10.modules.courses.classes.Desplegamiento_web;
+import tema4_v10.modules.courses.classes.Diseno_web;
+import tema4_v10.modules.courses.classes.Singleton;
+import tema4_v10.modules.courses.classes.Cursos;
 
 public class func_buscar {
 	
@@ -29,17 +29,17 @@ public class func_buscar {
 		return -1;
 	} 
 	
-	public static int find(Cursos curso) {
+	public static int find( iD) {
 		for (int i = 0; i <= (Singleton.array_desarrollo.size() -1); i++) {
-			if((Singleton.array_desarrollo.get(i).equals(curso)) ) return i;
+			if((Singleton.array_desarrollo.get(i).equals(iD)) ) return i;
 		}
 		
 		for (int i = 0; i <= (Singleton.array_diseno.size() -1); i++) {
-			if((Singleton.array_diseno.get(i).equals(curso)) ) return i;
+			if((Singleton.array_diseno.get(i).equals(iD)) ) return i;
 		}
 		
 		for (int i = 0; i <= (Singleton.array_desplegamiento.size() -1); i++) {
-			if((Singleton.array_desplegamiento.get(i).equals(curso)) ) return i;
+			if((Singleton.array_desplegamiento.get(i).equals(iD)) ) return i;
 		}
 		
 		return -1;

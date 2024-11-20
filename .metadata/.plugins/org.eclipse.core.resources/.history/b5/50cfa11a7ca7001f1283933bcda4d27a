@@ -27,19 +27,18 @@ public class func_buscar {
 			if((Singleton.array_desplegamiento.get(i).equals(desplegamiento)) ) return i;
 		}
 		return -1;
-	} 
-	
-	public static int find(Cursos curso) {
+	}
+	public static int find( iD) {
 		for (int i = 0; i <= (Singleton.array_desarrollo.size() -1); i++) {
-			if((Singleton.array_desarrollo.get(i).equals(curso)) ) return i;
+			if((Singleton.array_desarrollo.get(i).equals(iD)) ) return i;
 		}
 		
 		for (int i = 0; i <= (Singleton.array_diseno.size() -1); i++) {
-			if((Singleton.array_diseno.get(i).equals(curso)) ) return i;
+			if((Singleton.array_diseno.get(i).equals(iD)) ) return i;
 		}
 		
 		for (int i = 0; i <= (Singleton.array_desplegamiento.size() -1); i++) {
-			if((Singleton.array_desplegamiento.get(i).equals(curso)) ) return i;
+			if((Singleton.array_desplegamiento.get(i).equals(iD)) ) return i;
 		}
 		
 		return -1;
