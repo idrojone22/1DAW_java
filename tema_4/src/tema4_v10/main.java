@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-
+import tema4_v10.modules.courses.dummies.crear_dummies;
 import tema4_v9.utils.menus;
 import tema4_v9.modules.courses.classes.Cursos;
 import tema4_v9.modules.courses.classes.Desarrollo_web;
@@ -32,6 +32,11 @@ public class main {
 		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
 		Singleton.array_diseno = new ArrayList <Diseno_web> ();
 		Singleton.array_desplegamiento = new ArrayList <Desplegamiento_web> ();
+		
+		for (int i = 0; i < 2; i++) {
+			JOptionPane.showMessageDialog(null, "Desarrollo Create");
+			crear_dummies.cargarDesarrollo();
+		}
 		
 		do {
 			primer_menu = menus.combos("Selecciona el objeto", "Objeto", objetos, objetos[3]);

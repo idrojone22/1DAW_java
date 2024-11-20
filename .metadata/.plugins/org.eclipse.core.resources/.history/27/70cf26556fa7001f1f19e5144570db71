@@ -1,0 +1,30 @@
+package tema4_v10.modules.courses.dummies;
+
+import java.util.Random;
+
+import tema4_v10.modules.courses.classes.Cursos;
+import tema4_v10.modules.courses.utils.validar_regex;
+import tema4_v10.modules.courses.classes.Desarrollo_web;
+import tema4_v10.modules.courses.classes.Singleton;
+
+public class crear_dummies {
+	public static void cargarDesarrollo() {
+		String ID_course = Singleton.ID_course;
+	}
+	
+	public static Cursos crear_ID_desarrollo () {
+		
+		Random random = new Random();
+		char letra = (char) ('A' + random.nextInt(26));
+		 
+		 StringBuilder numeros = new StringBuilder();
+		 for (int i = 0; i < 4; i++) {
+			 numeros.append(random.nextInt(10));  
+	    }
+		 
+	   String resultado = letra + numeros.toString();
+	       
+	   Singleton.ID_course = resultado;
+	   return new Desarrollo_web (Singleton.ID_course );
+	} 
+}
