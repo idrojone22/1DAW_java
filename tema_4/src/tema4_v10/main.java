@@ -4,17 +4,20 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import tema4_v10.modules.courses.dummies.crear_dummies;
-import tema4_v9.utils.menus;
-import tema4_v9.modules.courses.classes.Cursos;
-import tema4_v9.modules.courses.classes.Desarrollo_web;
-import tema4_v9.modules.courses.classes.Diseno_web;
-import tema4_v9.modules.courses.classes.Desplegamiento_web;
-import tema4_v9.modules.courses.classes.Singleton;
-import tema4_v9.modules.courses.utils.CRUD.func_create;
-import tema4_v9.modules.courses.utils.CRUD.func_delete;
-import tema4_v9.modules.courses.utils.CRUD.func_read;
-import tema4_v9.modules.courses.utils.CRUD.func_update;
+import tema4_v10.modules.courses.dummies.desarrollo_dummies;
+import tema4_v10.modules.courses.dummies.desplegamiento_dummies;
+import tema4_v10.modules.courses.dummies.diseno_dummies;
+import tema4_v10.modules.courses.dummies.dummies;
+import tema4_v10.utils.menus;
+import tema4_v10.modules.courses.classes.Cursos;
+import tema4_v10.modules.courses.classes.Desarrollo_web;
+import tema4_v10.modules.courses.classes.Diseno_web;
+import tema4_v10.modules.courses.classes.Desplegamiento_web;
+import tema4_v10.modules.courses.classes.Singleton;
+import tema4_v10.modules.courses.utils.CRUD.func_create;
+import tema4_v10.modules.courses.utils.CRUD.func_delete;
+import tema4_v10.modules.courses.utils.CRUD.func_read;
+import tema4_v10.modules.courses.utils.CRUD.func_update;
 
 public class main {
 
@@ -34,8 +37,9 @@ public class main {
 		Singleton.array_desplegamiento = new ArrayList <Desplegamiento_web> ();
 		
 		for (int i = 0; i < 2; i++) {
-			JOptionPane.showMessageDialog(null, "Desarrollo Create");
-			crear_dummies.cargarDesarrollo();
+			desarrollo_dummies.crear_desarrollo();
+			diseno_dummies.crear_diseno();
+			desplegamiento_dummies.crear_desplegamiento();
 		}
 		
 		do {

@@ -1,6 +1,6 @@
 package tema4_v10.modules.courses.utils;
 
-import tema4_v9.classes.Fecha;
+import tema4_v10.classes.Fecha;
 
 public class func_precio {
 

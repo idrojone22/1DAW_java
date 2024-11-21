@@ -1,0 +1,26 @@
+package tema4_v10.modules.courses.dummies;
+
+import javax.swing.JOptionPane;
+
+import tema4_v10.modules.courses.classes.Cursos;
+import tema4_v10.modules.courses.classes.Desarrollo_web;
+import tema4_v10.modules.courses.classes.Singleton;
+import tema4_v10.modules.courses.utils.func_buscar;
+
+public class desarrollo_dummies {
+public static void crear_desarrollo() {
+		
+		int localizacion = -1;
+		Cursos ID = crear_dummies.crear_ID_desarrollo();
+		//JOptionPane.showMessageDialog(null, ID.toString());
+		localizacion =  func_buscar.find(ID);
+		//JOptionPane.showMessageDialog(null, localizacion);
+		if (localizacion != -1) {
+			JOptionPane.showMessageDialog(null,"El ID ya exsiste");
+		} else {
+			ID = cargarDesarrollo();
+			Singleton.array_desarrollo.add(((Desarrollo_web)ID));
+			//JOptionPane.showMessageDialog(null, ID.toString());
+		}
+	}
+}

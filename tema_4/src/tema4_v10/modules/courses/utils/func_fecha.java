@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 
 import javax.swing.JOptionPane;
 
-import tema4_v9.classes.Fecha;
+import tema4_v10.classes.Fecha;
 
 public class func_fecha {
 	public static Fecha craar(String titulo) {
