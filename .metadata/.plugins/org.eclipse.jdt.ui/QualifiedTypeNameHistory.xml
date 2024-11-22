@@ -24,4 +24,5 @@
     <fullyQualifiedTypeName name="tema4_v11.utils.validadors"/>
     <fullyQualifiedTypeName name="tema4_v11.modules.courses.dummies.dummies"/>
     <fullyQualifiedTypeName name="tema4_v11.utils.func_main"/>
+    <fullyQualifiedTypeName name="tema4_v11.modules.courses.utils.func_singleton"/>
 </qualifiedTypeNameHistroy>
