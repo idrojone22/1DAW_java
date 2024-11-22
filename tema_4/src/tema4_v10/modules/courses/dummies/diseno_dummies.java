@@ -37,7 +37,7 @@ public class diseno_dummies {
 		String descripcion = dummies.randomString();
 		String categoria =  "categoria" ; /*(String) menu_dif_cat.combos_cat("Seleccione la categoria", "Categoria");*/
 		String dificultad = "dificultad" ;/*(String) menu_dif_cat.combos_dif("Selecciona la dificultad", "Dificultad");*/
-		Fecha fecha_i = dummies.crear_random();
+		Fecha fecha_i = dummies.crear_fecha_random();
 		Fecha fecha_f = func_fecha.crear_fecha_automatic_suma("fecha_f", fecha_i, 20);
 		int precioHora = 20; /*validadors.validar_int("Dame num", "precioHora");*/
 		int horasDias = 8; /* validar_regex.validar_horas();*/

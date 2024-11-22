@@ -80,9 +80,6 @@ public class dummies {
 	        return fecha;
 	    }
 	 
-	 // Pasar fechaLimite
-	 //Crear Fecha nueva
-	 // Comparar
 	 public static Fecha generarFechaAleatoriaAnterior(String fechaLimite) {
 	        try {
 	        
@@ -100,8 +97,10 @@ public class dummies {
 
 	            Date fechaAleatoria = new Date(fechaAleatoriaMillis);
 
+	            // Convertir la fecha aleatoria a String en formato dd/MM/yyyy
 	            String fechaAleatoriaStr = sdf.format(fechaAleatoria);
 
+	            // Devolver el objeto Fecha con la fecha como String
 	            return new Fecha(fechaAleatoriaStr);
 	        } catch (Exception e) {
 	            e.printStackTrace();

@@ -80,28 +80,30 @@ public class dummies {
 	        return fecha;
 	    }
 	 
-	 // Pasar fechaLimite
-	 //Crear Fecha nueva
-	 // Comparar
 	 public static Fecha generarFechaAleatoriaAnterior(String fechaLimite) {
 	        try {
-	        
+	            // Formato de la fecha
 	            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	            Date fechaLimiteDate = sdf.parse(fechaLimite);  
+	            Date fechaLimiteDate = sdf.parse(fechaLimite);  // Parsear la fecha límite a tipo Date
 
+	            // Convertir la fecha límite a milisegundos
 	            long fechaLimiteMillis = fechaLimiteDate.getTime();
 
 	            Random random = new Random();
 	            
+	            // Generar un número aleatorio de milisegundos entre 0 y la fecha límite
 	            long fechaAleatoriaMillis = random.nextLong() % fechaLimiteMillis;
 	            if (fechaAleatoriaMillis < 0) {
 	                fechaAleatoriaMillis = -fechaAleatoriaMillis;
 	            }
 
+	            // Crear la fecha aleatoria
 	            Date fechaAleatoria = new Date(fechaAleatoriaMillis);
 
+	            // Convertir la fecha aleatoria a String en formato dd/MM/yyyy
 	            String fechaAleatoriaStr = sdf.format(fechaAleatoria);
 
+	            // Devolver el objeto Fecha con la fecha como String
 	            return new Fecha(fechaAleatoriaStr);
 	        } catch (Exception e) {
 	            e.printStackTrace();

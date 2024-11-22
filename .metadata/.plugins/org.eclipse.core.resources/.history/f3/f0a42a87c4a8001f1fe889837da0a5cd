@@ -80,10 +80,11 @@ public class dummies {
 	        return fecha;
 	    }
 	 
-	 // Pasar fechaLimite
-	 //Crear Fecha nueva
-	 // Comparar
 	 public static Fecha generarFechaAleatoriaAnterior(String fechaLimite) {
+		 
+		 do {
+			 
+		 }while()
 	        try {
 	        
 	            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
