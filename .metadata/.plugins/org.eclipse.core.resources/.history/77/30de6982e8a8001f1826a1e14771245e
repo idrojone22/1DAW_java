@@ -17,11 +17,8 @@ public class func_main {
 	}
 	
 	public static void dummies() {
-		Object manual_auto_menu = null;
-		Object manual_auto[] = {"auto", "manual"};
-		int n = 0;
 		
-		manual_auto_menu = menus.combos("Selecciona la opción", "Manual o Automático",manual_auto , manual_auto[0]);
+manual_auto_menu = menus.combos("Selecciona la opción", "Manual o Automático",manual_auto , manual_auto[0]);
 		
 		if (manual_auto_menu.toString() == "auto") {
 			n = validadors.validar_int("Cuántos objetos quieres automáticos", "Repeticiones");

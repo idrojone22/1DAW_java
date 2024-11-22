@@ -4,9 +4,15 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import tema4_v11.modules.courses.dummies.dummies;
 import tema4_v11.utils.func_main;
 import tema4_v11.utils.menus;
+import tema4_v11.utils.validadors;
 import tema4_v11.modules.courses.classes.Cursos;
+import tema4_v11.modules.courses.classes.Desarrollo_web;
+import tema4_v11.modules.courses.classes.Diseno_web;
+import tema4_v11.modules.courses.classes.Desplegamiento_web;
+import tema4_v11.modules.courses.classes.Singleton;
 import tema4_v11.modules.courses.utils.func_singleton;
 import tema4_v11.modules.courses.utils.CRUD.func_create;
 import tema4_v11.modules.courses.utils.CRUD.func_delete;

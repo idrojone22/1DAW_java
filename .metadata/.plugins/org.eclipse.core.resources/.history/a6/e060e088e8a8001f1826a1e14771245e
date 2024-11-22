@@ -4,10 +4,15 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import tema4_v11.modules.courses.dummies.dummies;
 import tema4_v11.utils.func_main;
 import tema4_v11.utils.menus;
+import tema4_v11.utils.validadors;
 import tema4_v11.modules.courses.classes.Cursos;
-import tema4_v11.modules.courses.utils.func_singleton;
+import tema4_v11.modules.courses.classes.Desarrollo_web;
+import tema4_v11.modules.courses.classes.Diseno_web;
+import tema4_v11.modules.courses.classes.Desplegamiento_web;
+import tema4_v11.modules.courses.classes.Singleton;
 import tema4_v11.modules.courses.utils.CRUD.func_create;
 import tema4_v11.modules.courses.utils.CRUD.func_delete;
 import tema4_v11.modules.courses.utils.CRUD.func_read;
@@ -19,18 +24,29 @@ public class main {
 		Object primer_menu = null;
 		Object segundo_menu = null;
 		Object tercer_menu = null;
-
+		Object manual_auto_menu = null;
+		
+		Object manual_auto[] = {"auto", "manual"};
 		Object objetos[] =  {"Desarrollo web", "Diseño web", "Desplegament web", "Salir"};
 		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú princial" , "Salir"};
 		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
 		
 		int salir = 0;
+		int n = 0;
 		
 		Cursos objeto = null;
-
-		func_singleton.crear_singleton();
+		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
+		Singleton.array_diseno = new ArrayList <Diseno_web> ();
+		Singleton.array_desplegamiento = new ArrayList <Desplegamiento_web> ();
 		
-		func_main.dummies();
+		manual_auto_menu = menus.combos("Selecciona la opción", "Manual o Automático",manual_auto , manual_auto[0]);
+		
+		if (manual_auto_menu.toString() == "auto") {
+			n = validadors.validar_int("Cuántos objetos quieres automáticos", "Repeticiones");
+			for (int i = 0; i < n; i++) {
+				dummies.crear_cursos();
+			} // end for
+		} // end if
 		
 		do {
 			primer_menu = menus.combos("Selecciona el objeto", "Objeto", objetos, objetos[3]);
