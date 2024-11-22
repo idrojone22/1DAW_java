@@ -2,6 +2,7 @@ package tema4_v11.modules.courses.utils.CRUD;
 
 import javax.swing.JOptionPane;
 
+import tema4_v11.modules.courses.classes.Cursos;
 import tema4_v11.modules.courses.classes.Desarrollo_web;
 import tema4_v11.modules.courses.classes.Desplegamiento_web;
 import tema4_v11.modules.courses.classes.Diseno_web;
@@ -10,13 +11,13 @@ import tema4_v11.modules.courses.utils.func_buscar;
 import tema4_v11.modules.courses.utils.func_cursos;
 
 public class func_update {
-	public static void update_desarrollo() {
+	public static void update_desarrollo(String ID_a) {
 		int localizacion = -1;
 		Desarrollo_web ID = null;
 		if (Singleton.array_desarrollo.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
-			 ID = (Desarrollo_web) func_cursos.preguntar_ID_course();
+			 ID = (Desarrollo_web) func_cursos.preguntar_ID_desarrollo(ID_a);
 			 localizacion =  func_buscar.find(ID);
 			 if (localizacion != -1) {
 				 ID = Singleton.array_desarrollo.get(localizacion);

@@ -1,23 +1,30 @@
 package tema4_v11;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import javax.swing.JOptionPane;
-
-import tema4_v02.menus;
-import tema4_v11.modules.courses.dummies.desarrollo_dummies;
-import tema4_v11.modules.courses.dummies.desplegamiento_dummies;
-import tema4_v11.modules.courses.dummies.diseno_dummies;
-import tema4_v11.modules.courses.dummies.dummies;
-import tema4_v11.utils.validadors;
-
+import java.util.ArrayList;
+import tema4_v11.modules.courses.classes.Singleton;
+import tema4_v11.modules.courses.classes.Desarrollo_web;
 
 public class test {
 
-	public static void main(String[] args) {
-		
-		
-		
-	}
+    public static void main(String[] args) {
+    	Singleton.array_desarrollo = new ArrayList<Desarrollo_web>();
+
+    	Singleton.array_desarrollo.add(new Desarrollo_web("auto"));
+    	Singleton.array_desarrollo.add(new Desarrollo_web("manual"));
+
+    	String[] manual_auto = new String[Singleton.array_desarrollo.size()];
+
+        for (int i = 0; i < Singleton.array_desarrollo.size(); i++) {
+            Desarrollo_web obj = Singleton.array_desarrollo.get(i);
+            manual_auto[i] = String.valueOf(obj.get_ID_course()); // Obtener solo el ID como String
+        }
+
+        // Imprimir el array
+        for (String s : manual_auto) {
+            System.out.println(s);
+        }
+    }
 }
+
+

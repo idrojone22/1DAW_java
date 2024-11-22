@@ -11,7 +11,7 @@ import tema4_v11.modules.courses.utils.func_buscar;
 import tema4_v11.modules.courses.utils.func_cursos;
 
 public class func_read {
-	public static void read_desarrollo() {
+	public static void read_desarrollo(String ID_a) {
 		Object primer_menu = null;
 		Object objetos[] =  {"Leer Todos", "Leer_Uno" ,"Salir"};
 		String cad = "";
@@ -30,7 +30,7 @@ public class func_read {
 					}
 					break;
 				case "Leer_Uno":
-					 ID = (Desarrollo_web) func_cursos.preguntar_ID_course();
+					 ID = (Desarrollo_web) func_cursos.preguntar_ID_desarrollo(ID_a);
 					localizacion =  func_buscar.find(ID);
 					if (localizacion != -1) {
 						ID = Singleton.array_desarrollo.get(localizacion);

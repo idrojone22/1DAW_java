@@ -1,0 +1,35 @@
+package tema4_v11;
+
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import tema4_v11.modules.courses.classes.Singleton;
+import tema4_v11.modules.courses.classes.Desarrollo_web;
+
+public class test {
+
+    public static void main(String[] args) {
+        // Inicializamos el ArrayList
+        Singleton.array_desarrollo = new ArrayList<>();
+
+        // Añadir elementos al ArrayList
+        Singleton.array_desarrollo.add(new Desarrollo_web("Hola"));
+        Singleton.array_desarrollo.add(new Desarrollo_web("Mundo"));
+        Singleton.array_desarrollo.add(new Desarrollo_web("Java"));
+
+        // Convertir el ArrayList a un array de Object
+        Object[] op_ID = convertirArray(Singleton.array_desarrollo);
+
+        // Mostrar los elementos
+        JOptionPane.showMessageDialog(null, String.join(", ", (CharSequence[]) op_ID));
+    }
+
+    public static Object[] convertirArray(ArrayList<Desarrollo_web> arrayDesarrollo) {
+        Object[] op_ID = new Object[arrayDesarrollo.size()];
+        for (int i = 0; i < arrayDesarrollo.size(); i++) {
+            op_ID[i] = arrayDesarrollo.get(i).toString();
+        }
+        return op_ID;
+    }
+}
+
+

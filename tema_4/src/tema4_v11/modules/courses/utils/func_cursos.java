@@ -40,6 +40,11 @@ public class func_cursos {
 			Singleton.ID_course = validar_regex.validar_reg_id();
 			return new Desarrollo_web (Singleton.ID_course );
 		} 
+		
+		public static Cursos preguntar_ID_desarrollo(String ID) {
+			Singleton.ID_course = ID;
+			return new Desarrollo_web (Singleton.ID_course );
+		}
 	
 	public static Diseno_web crear_diseno () {
 			

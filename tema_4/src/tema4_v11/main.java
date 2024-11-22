@@ -8,6 +8,7 @@ import tema4_v11.modules.courses.dummies.desarrollo_dummies;
 import tema4_v11.modules.courses.dummies.desplegamiento_dummies;
 import tema4_v11.modules.courses.dummies.diseno_dummies;
 import tema4_v11.modules.courses.dummies.dummies;
+import tema4_v11.utils.func_main;
 import tema4_v11.utils.menus;
 import tema4_v11.utils.validadors;
 import tema4_v11.modules.courses.classes.Cursos;
@@ -27,7 +28,7 @@ public class main {
 		Object segundo_menu = null;
 		Object tercer_menu = null;
 		Object manual_auto_menu = null;
-
+		
 		Object manual_auto[] = {"auto", "manual"};
 		Object objetos[] =  {"Desarrollo web", "Diseño web", "Desplegament web", "Salir"};
 		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú princial" , "Salir"};
@@ -72,7 +73,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							func_read.read_desarrollo();
+							func_read.read_desarrollo(func_main.mostrarID());
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -96,7 +97,7 @@ public class main {
 						break;
 					case "Update":
 						do {
-							func_update.update_desarrollo();
+							func_update.update_desarrollo(func_main.mostrarID());
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
