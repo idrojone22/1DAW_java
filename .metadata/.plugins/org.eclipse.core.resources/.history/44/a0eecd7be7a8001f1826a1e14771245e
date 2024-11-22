@@ -16,7 +16,6 @@ public class func_read {
 		Object primer_menu = null;
 		Object objetos[] =  {"Leer Todos", "Leer_Uno" ,"Salir"};
 		String cad = "";
-		String ID_a = "";
 		int localizacion = -1;
 		Desarrollo_web ID = null;
 		int salir = 0;

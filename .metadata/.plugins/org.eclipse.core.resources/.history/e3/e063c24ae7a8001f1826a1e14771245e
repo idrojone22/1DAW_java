@@ -73,7 +73,7 @@ public class main {
 						break;
 					case "ReadAll":
 						do {
-							func_read.read_desarrollo();
+							func_read.read_desarrollo(func_main.mostrarID());
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);

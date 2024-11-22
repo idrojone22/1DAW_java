@@ -16,7 +16,6 @@ public class func_read {
 		Object primer_menu = null;
 		Object objetos[] =  {"Leer Todos", "Leer_Uno" ,"Salir"};
 		String cad = "";
-		String ID_a = "";
 		int localizacion = -1;
 		Desarrollo_web ID = null;
 		int salir = 0;
@@ -32,7 +31,7 @@ public class func_read {
 					}
 					break;
 				case "Leer_Uno":
-					ID_a = func_main.mostrarID();
+					String ID_a = func_main.mostrarID();
 					 ID = (Desarrollo_web) func_cursos.preguntar_ID_desarrollo(ID_a);
 					localizacion =  func_buscar.find(ID);
 					if (localizacion != -1) {

@@ -32,7 +32,7 @@ public class func_read {
 					}
 					break;
 				case "Leer_Uno":
-					ID_a = func_main.mostrarID();
+					String ID_a = func_main.mostrarID();
 					 ID = (Desarrollo_web) func_cursos.preguntar_ID_desarrollo(ID_a);
 					localizacion =  func_buscar.find(ID);
 					if (localizacion != -1) {
