@@ -1,0 +1,25 @@
+package tema4_v11;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import tema4_v02.menus;
+import tema4_v11.utils.validadors;
+
+
+public class test {
+
+	public static void main(String[] args) {
+		Object manual_auto_menu = null;
+		Object manual_auto[] = {"auto", "manual"};
+		int n = 0;
+		
+		manual_auto_menu = menus.combos("Selecciona la opción", "Manual o Automático",manual_auto , manual_auto[0]);
+		
+		if (manual_auto_menu.toString() == "auto") {
+			n = validadors.validar_int(null, null)
+		}
+	}
+}

@@ -1,0 +1,20 @@
+package tema4_v11;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import tema4_v02.menus;
+
+
+public class test {
+
+	public static void main(String[] args) {
+		Object manual_auto_menu = null;
+		Object manual_auto[] = {"auto", "manual"};
+		
+		manual_auto_menu = menus.combos("Selecciona la opción", "Manual o Automático",manual_auto , manual_auto[0]);
+		
+	}
+}
