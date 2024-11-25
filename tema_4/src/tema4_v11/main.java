@@ -11,6 +11,7 @@ import tema4_v11.modules.courses.utils.func_singleton;
 import tema4_v11.modules.courses.utils.CRUD.func_create;
 import tema4_v11.modules.courses.utils.CRUD.func_delete;
 import tema4_v11.modules.courses.utils.CRUD.func_read;
+import tema4_v11.modules.courses.utils.CRUD.func_readone;
 import tema4_v11.modules.courses.utils.CRUD.func_update;
 
 public class main {
@@ -66,7 +67,7 @@ public class main {
 						break;
 					case "ReadOne":
 						do {
-							JOptionPane.showMessageDialog(null, "Desarrollo ReadOne");
+							func_readone.read_one_desarrollo();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);

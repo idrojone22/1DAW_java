@@ -33,7 +33,7 @@ public class func_read {
 					break;
 				case "Leer_Uno":
 					ID_a = func_main.mostrarID();
-					 ID = (Desarrollo_web) func_cursos.preguntar_ID_desarrollo(ID_a);
+					ID = (Desarrollo_web) func_cursos.preguntar_ID_desarrollo(ID_a);
 					localizacion =  func_buscar.find(ID);
 					if (localizacion != -1) {
 						ID = Singleton.array_desarrollo.get(localizacion);

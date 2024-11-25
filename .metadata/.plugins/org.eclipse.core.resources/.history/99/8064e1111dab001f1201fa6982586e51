@@ -1,0 +1,25 @@
+package tema4_v11.modules.courses.utils.CRUD;
+
+import javax.swing.JOptionPane;
+
+import tema4_v11.modules.courses.classes.Desarrollo_web;
+import tema4_v11.modules.courses.classes.Singleton;
+import tema4_v11.utils.func_main;
+
+public class func_readone {
+	
+	public static void read_one_desarrollo() {
+		Object menu_readone = null;
+		Object atributos_dw[] = { "ID_course", "titulo", "descripcion", "categoria", "dificultad", "fecha_i", "fecha_f", "fecha_confirmacion_i", "fecha_confirmacion_f", "fecha_inscripcion_i","fecha_inscripcion_f", "precioHora", "horasDias","fecha_compra", "precio", "salir" };
+		int salir = 0;
+		String ID_a = "";
+		Desarrollo_web ID = null;
+		
+		if (Singleton.array_desarrollo.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Error");
+		} else {
+			ID_a = func_main.mostrarID();
+		}
+		
+	}
+}
