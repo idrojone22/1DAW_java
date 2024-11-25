@@ -1,0 +1,5 @@
+package tema4_v13.modules.cursos;
+
+public class Singleton {
+
+}
