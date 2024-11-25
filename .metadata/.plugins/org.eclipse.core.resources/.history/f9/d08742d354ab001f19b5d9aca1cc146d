@@ -194,7 +194,7 @@ public class func_readone {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
 			ID_a = func_main.mostrarID();
-			ID = (Desplegamiento_web) func_cursos.preguntar_ID_desplegamiento1(ID_a);
+			ID = (Desplegamiento_web) func_cursos.preguntar_ID_desplegamiento(ID_a);
 			localizacion =  func_buscar.find(ID);
 			if (localizacion != -1) {
 				ID = Singleton.array_desplegamiento.get(localizacion);

@@ -99,8 +99,8 @@ public class func_cursos {
 		return new Desplegamiento_web (Singleton.ID_course);
 	} 
 	
-	public static Cursos preguntar_ID_desplegamiento1 (String ID) {
-		Singleton.ID_course = ID;
+	public static Cursos preguntar_ID_desplegamiento (String ID) {
+		Singleton.ID_course = validar_regex.validar_reg_id();
 		return new Desplegamiento_web (Singleton.ID_course);
 	}
 	

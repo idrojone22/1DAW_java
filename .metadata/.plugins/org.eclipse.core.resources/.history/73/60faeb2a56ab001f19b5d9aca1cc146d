@@ -53,7 +53,6 @@ public class func_read {
 		Object primer_menu = null;
 		Object objetos[] =  {"Leer Todos", "Leer_Uno" ,"Salir"};
 		String cad = "";
-		String ID_a = "";
 		int localizacion = -1;
 		Diseno_web ID = null;
 		int salir = 0;
@@ -70,7 +69,7 @@ public class func_read {
 					break;
 				case "Leer_Uno":
 					ID_a = func_main.mostrarID();
-					ID = (Diseno_web) func_cursos.preguntar_ID_diseno(ID_a);
+					ID = (Desarrollo_web) func_cursos.preguntar_ID_diseno(ID_a);
 					localizacion =  func_buscar.find(ID);
 					if (localizacion != -1) {
 						ID = Singleton.array_diseno.get(localizacion);
@@ -89,7 +88,6 @@ public class func_read {
 		Object primer_menu = null;
 		Object objetos[] =  {"Leer Todos", "Leer_Uno" ,"Salir"};
 		String cad = "";
-		String ID_a = "";
 		int localizacion = -1;
 		Desplegamiento_web ID = null;
 		int salir = 0;
@@ -105,9 +103,8 @@ public class func_read {
 					}
 					break;
 				case "Leer_Uno":
-					ID_a = func_main.mostrarID();
-					ID = (Desplegamiento_web) func_cursos.preguntar_ID_desplegamiento1(ID_a);
-					localizacion =  func_buscar.find(ID);
+					 ID = (Desplegamiento_web)  func_cursos.preguntar_ID_desplegamiento();
+					localizacion =  func_buscar.find_desplegamiento(ID);
 					if (localizacion != -1) {
 						ID = Singleton.array_desplegamiento.get(localizacion);
 						JOptionPane.showMessageDialog(null, ID.toString());

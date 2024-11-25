@@ -142,7 +142,7 @@ public class main {
 						break;
 					case "ReadOne":
 						do {
-							JOptionPane.showMessageDialog(null, "Diseño One");
+							func_readone.read_one_diseno();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -217,7 +217,7 @@ public class main {
 						break;
 					case "ReadOne":
 						do {
-							JOptionPane.showMessageDialog(null, "Desplegament ReadOne");
+							func_readone.read_one_desplegamiento();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);

@@ -70,7 +70,7 @@ public class func_cursos {
 		return new Diseno_web (Singleton.ID_course);
 	}
 
-	public static Cursos preguntar_ID_diseno(String ID) {
+	public static Cursos preguntar_ID_course(String ID) {
 		Singleton.ID_course = ID;
 		return new Diseno_web (Singleton.ID_course );
 	}
@@ -94,15 +94,10 @@ public class func_cursos {
 		return new Desplegamiento_web(ID_course, titulo, descripcion, categoria, dificultad, fecha_i, fecha_f, precioHora, horasDias, fecha_ultimas_plazas_i, fecha_ultimas_plazas_f,fecha_compra, precio);
 	}
 
-	public static Cursos preguntar_ID_desplegamiento () {
+	public static Desplegamiento_web preguntar_ID_desplegamiento () {
 		Singleton.ID_course = validar_regex.validar_reg_id();
 		return new Desplegamiento_web (Singleton.ID_course);
 	} 
-	
-	public static Cursos preguntar_ID_desplegamiento1 (String ID) {
-		Singleton.ID_course = ID;
-		return new Desplegamiento_web (Singleton.ID_course);
-	}
 	
 	public static Cursos update (Cursos curso) {
 		Object menu_update = null;
