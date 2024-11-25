@@ -2,8 +2,8 @@ package tema4_v12;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
-import tema4_v11.modules.courses.classes.Singleton;
-import tema4_v11.modules.courses.classes.Desarrollo_web;
+import tema4_v12.modules.cursos.classes.Singleton;
+import tema4_v12.modules.cursos.classes.Desarrollo_web;
 
 public class test {
 

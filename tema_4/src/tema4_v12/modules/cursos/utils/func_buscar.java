@@ -1,10 +1,10 @@
 package tema4_v12.modules.cursos.utils;
 
-import tema4_v11.modules.courses.classes.Desarrollo_web;
-import tema4_v11.modules.courses.classes.Desplegamiento_web;
-import tema4_v11.modules.courses.classes.Diseno_web;
-import tema4_v11.modules.courses.classes.Singleton;
-import tema4_v11.modules.courses.classes.Cursos;
+import tema4_v12.modules.cursos.classes.Desarrollo_web;
+import tema4_v12.modules.cursos.classes.Desplegamiento_web;
+import tema4_v12.modules.cursos.classes.Diseno_web;
+import tema4_v12.modules.cursos.classes.Singleton;
+import tema4_v12.modules.cursos.classes.Cursos;
 
 public class func_buscar {
 	

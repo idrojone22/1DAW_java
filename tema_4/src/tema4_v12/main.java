@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import tema4_v11.utils.func_main;
-import tema4_v11.utils.menus;
-import tema4_v11.modules.courses.classes.Cursos;
-import tema4_v11.modules.courses.utils.func_singleton;
-import tema4_v11.modules.courses.utils.CRUD.func_create;
-import tema4_v11.modules.courses.utils.CRUD.func_delete;
-import tema4_v11.modules.courses.utils.CRUD.func_read;
-import tema4_v11.modules.courses.utils.CRUD.func_readone;
-import tema4_v11.modules.courses.utils.CRUD.func_update;
+import tema4_v12.utils.func_main;
+import tema4_v12.utils.menus;
+import tema4_v12.modules.cursos.classes.Cursos;
+import tema4_v12.modules.cursos.utils.func_singleton;
+import tema4_v12.modules.cursos.utils.CRUD.func_create;
+import tema4_v12.modules.cursos.utils.CRUD.func_delete;
+import tema4_v12.modules.cursos.utils.CRUD.func_read;
+import tema4_v12.modules.cursos.utils.CRUD.func_readone;
+import tema4_v12.modules.cursos.utils.CRUD.func_update;
 
 public class main {
 

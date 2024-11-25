@@ -1,6 +1,6 @@
 package tema4_v12.modules.cursos.classes;
 
-import tema4_v11.classes.Fecha;
+import tema4_v12.classes.Fecha;
 
 public abstract class Cursos {
 	/* ATRIBUTOS */
