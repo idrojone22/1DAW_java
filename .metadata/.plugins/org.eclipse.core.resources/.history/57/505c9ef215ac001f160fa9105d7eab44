@@ -52,12 +52,6 @@ public class regex {
 	public static boolean validar_email(String email) {
 		Pattern pattern = Pattern.compile(refex_email);
 		Matcher matcher = pattern.matcher(email);
-		
-		if (matcher.matches()) {
-			return true;
-		} 
-		JOptionPane.showMessageDialog(null,"Dame un email válido");
-		return false;
 	}
 	
 }

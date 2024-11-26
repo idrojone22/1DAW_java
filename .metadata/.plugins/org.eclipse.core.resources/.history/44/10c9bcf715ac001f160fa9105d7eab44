@@ -56,7 +56,7 @@ public class regex {
 		if (matcher.matches()) {
 			return true;
 		} 
-		JOptionPane.showMessageDialog(null,"Dame un email válido");
+		JOptionPane.showMessageDialog(null,"Dame un String con formato 01/01/2013");
 		return false;
 	}
 	

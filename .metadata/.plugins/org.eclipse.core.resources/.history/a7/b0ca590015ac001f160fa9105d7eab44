@@ -21,7 +21,7 @@ public class Admin  extends User{
         this.dni = dni;
         this.telefono = telefono;
         this.fecha_alta = fecha_alta;
-        this.sueldo = sueldo; 
+        this.sueldo = sueldo;
     }
     /* CONSTRUCTOR */
 
