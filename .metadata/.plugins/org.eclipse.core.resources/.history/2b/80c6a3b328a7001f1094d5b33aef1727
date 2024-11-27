@@ -1,9 +1,0 @@
-package tema4_v9.modules.courses.utils.dummies;
-
-public class dummies {
-	public static Desarrollo_web dummies_cursos (Desarrollo_web curso) {
-		
-		
-		return new ()
-	}
-}

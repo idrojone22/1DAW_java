@@ -12,7 +12,7 @@ public class regex {
 	private static final String plan_id="^([A-Z]{1})([0-9]{4})$";
 	private static final String plan_fecha="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$";
 	private static final String regex_horasDias= "^[1-8]$";
-	private static final String refex_email ="[^ @]+@(gmail|hotmail).[a-z]{1,3}";
+	private static final String regex_email ="[^ @]+@(gmail|hotmail).[a-z]{1,3}";
 	
 
 	
@@ -24,6 +24,17 @@ public class regex {
 			return true;
 		} 
 		JOptionPane.showMessageDialog(null, "El formato debe de ser 1 letra mayuscula 4 digitos");
+		return false;
+	}
+	
+	public static boolean validar_email(String email) {
+		Pattern pattern = Pattern.compile(regex_email);
+		Matcher matcher = pattern.matcher(email);
+		
+		if (matcher.matches()) {
+			return true;
+		} 
+		JOptionPane.showMessageDialog(null,"Dame un email válido");
 		return false;
 	}
 	
@@ -48,16 +59,5 @@ public class regex {
 		JOptionPane.showMessageDialog(null,"El máximo de horas que se puden hacer al dia son 8 y el minimo 1");
 		return false;
 	}
-	
-	public static boolean validar_email(String email) {
-		Pattern pattern = Pattern.compile(refex_email);
-		Matcher matcher = pattern.matcher(email);
 		
-		if (matcher.matches()) {
-			return true;
-		} 
-		JOptionPane.showMessageDialog(null,"Dame un email válido");
-		return false;
-	}
-	
 }

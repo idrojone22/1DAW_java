@@ -1,24 +1,36 @@
 package tema4_v13;
 
-import javax.swing.JOptionPane;
 import java.util.ArrayList;
-import tema4_v12.modules.cursos.classes.Singleton;
-import tema4_v12.modules.cursos.classes.Desarrollo_web;
+
+import javax.swing.JOptionPane;
+
+import tema4_v13.modules.users.classes.Admin;
+import tema4_v13.modules.users.classes.Client;
+import tema4_v13.modules.users.classes.Singleton;
+import tema4_v13.modules.users.utils.CRUD.func_create;
+import tema4_v13.modules.users.utils.CRUD.func_delete;
+import tema4_v13.modules.users.utils.CRUD.func_read;
 
 public class test {
 
     public static void main(String[] args) {
-    	Singleton.array_desarrollo = new ArrayList<Desarrollo_web>();
 
-    	Singleton.array_desarrollo.add(new Desarrollo_web("auto"));
-    	Singleton.array_desarrollo.add(new Desarrollo_web("manual"));
+    	Singleton.array_admin = new ArrayList <Admin> ();
+    	Singleton.array_client = new ArrayList <Client> ();
+    	String cad ="";
+    	
+    	func_create.crear_admin();
+    	func_create.crear_client();
+    	
+    	func_read.read_admin();
+    	func_read.read_client();
+    	
+    	func_delete.delete_admin();
+    	func_delete.delete_client();
+    	
+      	func_read.read_admin();
+    	func_read.read_client();
 
-    	String[] manual_auto = new String[Singleton.array_desarrollo.size()];
-
-        for (int i = 0; i < Singleton.array_desarrollo.size(); i++) {
-            Desarrollo_web obj = Singleton.array_desarrollo.get(i);
-            manual_auto[i] = String.valueOf(obj.get_ID_course()); 
-        } // end for
     }
 }
 

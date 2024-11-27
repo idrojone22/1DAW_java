@@ -1,0 +1,15 @@
+package tema4_v13.modules.users.utils;
+
+import tema4_v13.classes.Fecha;
+import tema4_v13.modules.cursos.utils.func_fecha;
+import tema4_v13.modules.users.classes.Singleton;
+
+public class func_users {
+	public static Admin crear_admin() {
+		
+		String username = Singleton.username;
+		String password = "password";
+		String email = validar_regex.validar_email();
+		Fecha fecha_nacimiento =  func_fecha.craar("fecha nacimiento");
+	}
+}

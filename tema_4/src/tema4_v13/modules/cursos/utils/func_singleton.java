@@ -2,10 +2,10 @@ package tema4_v13.modules.cursos.utils;
 
 import java.util.ArrayList;
 
-import tema4_v12.modules.cursos.classes.Desarrollo_web;
-import tema4_v12.modules.cursos.classes.Desplegamiento_web;
-import tema4_v12.modules.cursos.classes.Diseno_web;
-import tema4_v12.modules.cursos.classes.Singleton;
+import tema4_v13.modules.cursos.classes.Desarrollo_web;
+import tema4_v13.modules.cursos.classes.Desplegamiento_web;
+import tema4_v13.modules.cursos.classes.Diseno_web;
+import tema4_v13.modules.cursos.classes.Singleton;
 
 public class func_singleton {
 	public static void crear_singleton() {

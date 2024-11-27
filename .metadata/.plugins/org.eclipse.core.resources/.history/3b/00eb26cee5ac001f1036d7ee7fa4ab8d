@@ -1,0 +1,15 @@
+package tema4_v13.modules.users.utils;
+
+import tema4_v13.utils.regex;
+import tema4_v13.utils.validadors;
+
+public class regex {
+	public static String validar_email() {
+		String email = "";
+		do {
+			email = validadors.validar_string("Dame un String", "ID_course");
+		}while(!regex.validar_id(email));
+		return email;
+	}
+
+}

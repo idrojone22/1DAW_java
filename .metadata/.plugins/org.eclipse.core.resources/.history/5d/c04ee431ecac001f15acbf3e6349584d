@@ -1,0 +1,18 @@
+package tema4_v13;
+
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import tema4_v12.modules.cursos.classes.Singleton;
+import tema4_v13.modules.users.classes.Admin;
+import tema4_v12.modules.cursos.classes.Desarrollo_web;
+
+public class test {
+
+    public static void main(String[] args) {
+
+    	Singleton.array_admin = new ArrayList <Admin>();
+
+    }
+}
+
+

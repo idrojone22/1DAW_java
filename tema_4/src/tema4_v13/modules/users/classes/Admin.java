@@ -8,13 +8,13 @@ public class Admin  extends User{
     private String nombre;
     private String apellidos;
     private String dni;
-    private String telefono;
+    private int telefono;
     private Fecha fecha_alta;
     private int sueldo;
     /* ATRIBUTOS */
 
     /* CONSTRUCTOR */
-    public Admin(String username, String password, String email , Fecha fecha_nacimiento,  int edad,  String nombre, String apellidos, String dni, String telefono, Fecha fecha_alta, int sueldo) {
+    public Admin(String username, String password, String email , Fecha fecha_nacimiento,  int edad,  String nombre, String apellidos, String dni, int telefono, Fecha fecha_alta, int sueldo) {
         super(username, password, email, fecha_nacimiento, edad);
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -23,6 +23,10 @@ public class Admin  extends User{
         this.fecha_alta = fecha_alta;
         this.sueldo = sueldo; 
     }
+    
+    public Admin(String username) {
+		super(username);
+	}
     /* CONSTRUCTOR */
 
     /* GET */
@@ -38,7 +42,7 @@ public class Admin  extends User{
         return this.dni;
     }
 
-    public String get_telefono() {
+    public int get_telefono() {
         return this.telefono;
     }
 
@@ -67,7 +71,7 @@ public class Admin  extends User{
         return this.dni;
     }
 
-    public String set_telefono(String telefono) {
+    public int set_telefono(int telefono) {
         this.telefono = telefono;
         return this.telefono;
     }
@@ -88,14 +92,14 @@ public class Admin  extends User{
         return "username: " + super.get_username() + "\n" +
                     "password: " + super.get_password() + "\n" +
                     "email: " + super.get_email() + "\n" +
-                    "fecha_nacimiento"  + super.get_fecha_nacimiento() + "\n" +
-                    "edad"  + super.get_edad() + "\n" +
-                    "nombre"  + get_nombre() + "\n" +
-                    "apellidos"  + get_apellidos() + "\n" +
-                    "dni"  + get_dni() + "\n" +
-                    "telefono"  + get_telefono() + "\n" +
-                    "fecha_alta"  + get_fecha_alta() + "\n" +
-                    "sueldo"  + get_sueldo() + "\n";
+                    "fecha_nacimiento: "  + super.get_fecha_nacimiento() + "\n" +
+                    "edad: "  + super.get_edad() + "\n" +
+                    "nombre: "  + get_nombre() + "\n" +
+                    "apellidos: "  + get_apellidos() + "\n" +
+                    "dni: "  + get_dni() + "\n" +
+                    "telefono: "  + get_telefono() + "\n" +
+                    "fecha_alta: "  + get_fecha_alta() + "\n" +
+                    "sueldo: "  + get_sueldo() + "\n";
     }
     /* TOSTRING */
 }

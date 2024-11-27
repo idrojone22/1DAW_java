@@ -15,6 +15,10 @@ public class Client  extends User {
         this.fecha_registro = fecha_registro;
         this.log = log;
     }
+    
+    public Client(String username) {
+		super(username);
+	}
     /* CONSTRUCTOR */
 
     /* GET */
@@ -44,10 +48,10 @@ public class Client  extends User {
         return "username: " + super.get_username() + "\n" +
                     "password: " + super.get_password() + "\n" +
                     "email: " + super.get_email() + "\n" +
-                    "fecha_nacimiento"  + super.get_fecha_nacimiento() + "\n" +
-                    "edad"  + super.get_edad() + "\n" +
-                    "log"  + this.log + "\n" +
-                    "fecha_registro"  + this.fecha_registro + "\n";
+                    "fecha_nacimiento: "  + super.get_fecha_nacimiento() + "\n" +
+                    "edad: "  + super.get_edad() + "\n" +
+                    "log: "  + this.log + "\n" +
+                    "fecha_registro: "  + this.fecha_registro + "\n";
     }
     /* TOSTRING */
 }

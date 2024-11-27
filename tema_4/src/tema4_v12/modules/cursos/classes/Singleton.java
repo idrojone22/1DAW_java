@@ -2,6 +2,8 @@ package tema4_v12.modules.cursos.classes;
 
 import java.util.ArrayList;
 
+import tema4_v13.modules.users.classes.Admin;
+
 public class Singleton {
 	
 	public static ArrayList <Desarrollo_web> array_desarrollo;
