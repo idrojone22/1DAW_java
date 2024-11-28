@@ -17,7 +17,6 @@ public class test {
 
     	Singleton.array_admin = new ArrayList <Admin> ();
     	Singleton.array_client = new ArrayList <Client> ();
-    	String cad ="";
     	
     	func_create.crear_admin();
     	func_create.crear_client();
