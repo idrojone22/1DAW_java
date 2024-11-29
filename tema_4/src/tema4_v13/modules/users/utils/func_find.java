@@ -16,4 +16,18 @@ public class func_find {
 		
 		return -1;
 	}
+	
+	public static int find_admin (User user) {
+		for (int i = 0; i <= (Singleton.array_admin.size() -1); i++) {
+			if((Singleton.array_admin.get(i).equals(user)) ) return i;
+		}
+		return -1;
+	}
+	
+	public static int find_client (User user) {
+		for (int i = 0; i <= (Singleton.array_client.size() -1); i++) {
+			if((Singleton.array_client.get(i).equals(user)) ) return i;
+		} 
+		return -1;
+	}
 }

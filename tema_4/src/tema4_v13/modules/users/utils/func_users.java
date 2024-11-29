@@ -1,5 +1,7 @@
 package tema4_v13.modules.users.utils;
 
+import javax.swing.JOptionPane;
+
 import tema4_v10.utils.validadors;
 import tema4_v13.classes.Fecha;
 import tema4_v13.modules.cursos.utils.func_fecha;
@@ -36,6 +38,28 @@ public class func_users {
 		Singleton.username = username;
 		return new Admin (Singleton.username );
 	}
+	
+	//SIGN UP
+	public static void log_in_admin() {
+		int localizacion = -1;
+		boolean contra = false;
+		Admin username = func_users.preguntar_username_admin();
+		localizacion =  func_find.find_admin(username);
+		if (localizacion != -1) {
+			do {
+				String password = validadors.validar_string("password", "password");
+				if (password.equals(Singleton.array_admin.get(localizacion).get_password())) {
+					JOptionPane.showMessageDialog(null, "Contraseña correcta");
+					contra = true;
+				} else {
+					JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+				}
+			}while(contra != true);
+		} else {
+			JOptionPane.showMessageDialog(null, "El usuario no exsiste");
+		}
+	}
+	
 	/*ADMIN*/
 	
 	/*CLIENT*/
@@ -61,6 +85,28 @@ public class func_users {
 		Singleton.username = username;
 		return new Client (Singleton.username );
 	}
+	
+	public static void log_in_client() {
+		int localizacion = -1;
+		boolean contra = false;
+		Client username = func_users.preguntar_username_client();
+		localizacion =  func_find.find_client(username);
+		if (localizacion != -1) {
+			do {
+				String password = validadors.validar_string("password", "password");
+				if (password.equals(Singleton.array_client.get(localizacion).get_password())) {
+					JOptionPane.showMessageDialog(null, "Contraseña correcta");
+					contra = true;
+				} else {
+					JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+				}
+			}while(contra != true);
+		} else {
+			JOptionPane.showMessageDialog(null, "El usuario no exsiste");
+		}
+	}
 	/*CLIENT*/
+	
+	
 	
 }

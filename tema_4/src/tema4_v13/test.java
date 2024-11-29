@@ -37,7 +37,7 @@ public class test {
     	Object segundo_menu_admin= null;
 		Object tercer_menu = null;
 		
-		Object opciones_pm[] = {"Log in", "Salir"};
+		Object opciones_pm[] = {"Log in","Sign up", "Salir"};
 		Object opciones_sm_client[] = {"Read All" , "Read One", "Perfil", "Log out"};
 		Object opciones_sm_admin[] = {"CRUD cursos", "CRUD usuaris", "Perfil", "Log out"};
 		
@@ -50,17 +50,14 @@ public class test {
 				case "Log in":
 					func_main.log_in();
 					break;
+				case "Sign up":
+					func_main.sign_up();
+					break;
 				case "Salir":
 					System.exit(0);
 					break;
 			} // END SWITCH
 		} while ( salir != 2);
-		
-    	
-    	
-    	
-    	
-    	
     }
 }
 

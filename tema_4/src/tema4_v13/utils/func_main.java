@@ -42,14 +42,36 @@ public class func_main {
 		int salir = 0;
 		
 		do {
-			primer_menu = menus.combos("Selecciona la opción", "Selector de opciones", opciones_pm, opciones_pm[0]);
+			primer_menu = menus.combos("Selecciona la opción", "Log in", opciones_pm, opciones_pm[0]);
+			switch (primer_menu.toString()) {
+				case "Client":
+					func_users. log_in_client();
+					break;
+				case "Admin":
+					func_users. log_in_admin();
+					break;
+				case "Salir al menú anterior":
+					salir = 3;
+					break;
+				case "Salir":
+					System.exit(0);
+					break;
+			} // END SWITCH
+		}while( salir != 3);
+	}
+	
+	public static void sign_up() {
+		Object primer_menu = null;
+		Object opciones_pm[] = {"Client", "Admin", "Salir al menú anterior", "Salir"};
+		int salir = 0;
+		
+		do {
+			primer_menu = menus.combos("Selecciona la opción", "Sign up", opciones_pm, opciones_pm[0]);
 			switch (primer_menu.toString()) {
 				case "Client":
 					func_create.crear_client();
-					//Client username = func_users.preguntar_username_client();
 					break;
 				case "Admin":
-					JOptionPane.showMessageDialog(null, "Admin");
 					func_create.crear_admin();
 					break;
 				case "Salir al menú anterior":
@@ -61,4 +83,5 @@ public class func_main {
 			} // END SWITCH
 		}while( salir != 3);
 	}
+	
 }
