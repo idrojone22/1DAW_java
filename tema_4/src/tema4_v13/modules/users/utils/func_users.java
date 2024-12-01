@@ -7,7 +7,7 @@ import tema4_v13.classes.Fecha;
 import tema4_v13.modules.cursos.utils.func_fecha;
 import tema4_v13.modules.users.classes.Admin;
 import tema4_v13.modules.users.classes.Client;
-import tema4_v13.modules.users.classes.Singleton;
+import tema4_v13.modules.users.classes.Singleton_users;
 import tema4_v13.utils.func_main;
 
 public class func_users {
@@ -15,7 +15,7 @@ public class func_users {
 	/*ADMIN*/
 	public static Admin crear_admin() {
 		
-		String username = Singleton.username;
+		String username = Singleton_users.username;
 		String password = "password";
 		String email = "ejemplo@gmail.com";
 		Fecha fecha_nacimiento =  func_fecha.craar("fecha nacimiento");
@@ -31,13 +31,13 @@ public class func_users {
 	}
 	
 	public static Admin preguntar_username_admin() {
-		Singleton.username = validadors.validar_string("Username", "Username");
-		return new Admin (Singleton.username );
+		Singleton_users.username = validadors.validar_string("Username", "Username");
+		return new Admin (Singleton_users.username );
 	}
 	
 	public static Admin username_admin_dummies(String username) {
-		Singleton.username = username;
-		return new Admin (Singleton.username );
+		Singleton_users.username = username;
+		return new Admin (Singleton_users.username );
 	}
 	
 	//SIGN UP
@@ -49,7 +49,7 @@ public class func_users {
 		if (localizacion != -1) {
 			do {
 				String password = validadors.validar_string("password", "password");
-				if (password.equals(Singleton.array_admin.get(localizacion).get_password())) {
+				if (password.equals(Singleton_users.array_admin.get(localizacion).get_password())) {
 					JOptionPane.showMessageDialog(null, "Contraseña correcta");
 					contra = true;
 				} else {
@@ -66,7 +66,7 @@ public class func_users {
 	/*CLIENT*/
 	public static Client crear_client() {
 		
-		String username = Singleton.username;
+		String username = Singleton_users.username;
 		String password = "password";
 		String email = "ejemplo.@gmail.com";
 		Fecha fecha_nacimiento =  func_fecha.craar("fecha nacimiento");
@@ -78,13 +78,13 @@ public class func_users {
 	}
 	
 	public static Client preguntar_username_client() {
-		Singleton.username = validadors.validar_string("Username", "Username");
-		return new Client (Singleton.username );
+		Singleton_users.username = validadors.validar_string("Username", "Username");
+		return new Client (Singleton_users.username );
 	}
 	
 	public static Client username_client_dummies(String username) {
-		Singleton.username = username;
-		return new Client (Singleton.username );
+		Singleton_users.username = username;
+		return new Client (Singleton_users.username );
 	}
 	
 	public static void log_in_client() {
@@ -95,9 +95,10 @@ public class func_users {
 		if (localizacion != -1) {
 			do {
 				String password = validadors.validar_string("password", "password");
-				if (password.equals(Singleton.array_client.get(localizacion).get_password())) {
+				if (password.equals(Singleton_users.array_client.get(localizacion).get_password())) {
 					JOptionPane.showMessageDialog(null, "Contraseña correcta");
-					func_main.menu_cliente();
+					username.set_log(true);
+					func_main.menu_cliente(username);
 					contra = true;
 				} else {
 					JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
