@@ -8,6 +8,7 @@ import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton;
 import tema4_v13.modules.users.utils.func_find;
 import tema4_v13.modules.users.utils.func_users;
+import tema4_v13.utils.func_main;
 
 public class func_create {
 	public static void crear_admin() {
@@ -31,6 +32,7 @@ public class func_create {
 		} else {
 			username = func_users.crear_client();
 			Singleton.array_client.add((Client) username);
+			func_main.menu_cliente();
 		}
 	}
 }

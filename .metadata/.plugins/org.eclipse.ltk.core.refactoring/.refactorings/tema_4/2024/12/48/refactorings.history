@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;func_singleton.java&apos; to &apos;tema_4/src/tema4_v13.utils&apos;&#x0D;&#x0A;- Original project: &apos;tema_4&apos;&#x0D;&#x0A;- Destination element: &apos;tema_4/src/tema4_v13.utils&apos;&#x0D;&#x0A;- Original element: &apos;tema4_v13.modules.cursos.utils.func_singleton.java&apos;" description="Copy compilation unit" destination="/src&lt;tema4_v13.utils" element1="/src&lt;tema4_v13.modules.cursos.utils{func_singleton.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1733070092709" units="1" version="1.0"/>
+</session>

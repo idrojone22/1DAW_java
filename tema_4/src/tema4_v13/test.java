@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import tema4_v13.utils.menus;
+import tema4_v13.modules.cursos.utils.func_singleton;
 import tema4_v13.modules.users.classes.Admin;
 import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton;
@@ -16,7 +17,7 @@ import tema4_v13.utils.func_main;
 public class test {
 
     public static void main(String[] args) {
-
+    	
     	Singleton.array_admin = new ArrayList <Admin> ();
     	Singleton.array_client = new ArrayList <Client> ();
     	/*
@@ -42,6 +43,9 @@ public class test {
 		Object opciones_sm_admin[] = {"CRUD cursos", "CRUD usuaris", "Perfil", "Log out"};
 		
 		int salir = 0;
+		
+		func_singleton.crear_singleton();
+		func_main.dummies();
 		
 		do {
 			primer_menu = menus.combos("Selecciona la opción", "Selector de opciones", opciones_pm, opciones_pm[0]);

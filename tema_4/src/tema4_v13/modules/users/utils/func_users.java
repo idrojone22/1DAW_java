@@ -8,6 +8,7 @@ import tema4_v13.modules.cursos.utils.func_fecha;
 import tema4_v13.modules.users.classes.Admin;
 import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton;
+import tema4_v13.utils.func_main;
 
 public class func_users {
 	
@@ -96,6 +97,7 @@ public class func_users {
 				String password = validadors.validar_string("password", "password");
 				if (password.equals(Singleton.array_client.get(localizacion).get_password())) {
 					JOptionPane.showMessageDialog(null, "Contraseña correcta");
+					func_main.menu_cliente();
 					contra = true;
 				} else {
 					JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
