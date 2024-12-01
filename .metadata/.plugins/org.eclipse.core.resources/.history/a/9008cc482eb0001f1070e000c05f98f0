@@ -1,0 +1,9 @@
+package tema4_v13.modules.users.utils.CRUD;
+
+import tema4_v13.modules.users.classes.Client;
+
+public class func_updates_users {
+	public static void update_client(Client username) {
+		
+	}
+}

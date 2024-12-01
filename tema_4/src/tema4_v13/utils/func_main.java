@@ -15,6 +15,7 @@ import tema4_v13.modules.users.utils.func_users;
 import tema4_v13.modules.users.utils.CRUD.func_create;
 import tema4_v13.modules.users.utils.CRUD.func_delete;
 import tema4_v13.modules.users.utils.CRUD.func_read_users;
+import tema4_v13.modules.users.utils.CRUD.func_updates_users;
 
 
 public class func_main {
@@ -187,7 +188,7 @@ public class func_main {
 			primer_menu = menus.combos("Selecciona la opción", "Perfil", opciones_pm, opciones_pm[0]);
 			switch (primer_menu.toString()) {
 				case "Editar":
-					JOptionPane.showMessageDialog(null, "Editar");
+					func_updates_users.update_client(username);
 					break;
 				case "Ver Perfil":
 					func_read_users.read_cliente_perfil(username);

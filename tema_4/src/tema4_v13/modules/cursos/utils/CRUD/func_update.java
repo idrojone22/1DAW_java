@@ -21,7 +21,7 @@ public class func_update {
 			 localizacion =  func_buscar.find(ID);
 			 if (localizacion != -1) {
 				 ID = Singleton.array_desarrollo.get(localizacion);
-				 JOptionPane.showMessageDialog(null, ID);
+				 //JOptionPane.showMessageDialog(null, ID);
 				 ID = (Desarrollo_web) func_cursos.update(ID);
 				 Singleton.array_desarrollo.set(localizacion, ID);
 			 } else {
