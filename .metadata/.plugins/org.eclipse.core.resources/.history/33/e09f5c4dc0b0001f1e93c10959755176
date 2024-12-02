@@ -65,14 +65,13 @@ public class func_read_users {
 				}
 				break;
 			case "Leer_Uno":
-				username = (Client) func_users.username_client_dummies(func_main.mostrar_username_client());
-				localizacion = func_find.find(username);
-				if (localizacion != 1) {
+				username =(Client) func_users.preguntar_username_client();
+				localizacion =  func_find.find(username);
+				if (localizacion != -1) {
 					username = Singleton_users.array_client.get(localizacion);
-					username = (Client) func_users.update(username);
-					Singleton_users.array_client.set(localizacion, username);
+					JOptionPane.showMessageDialog(null, username.toString());
 				} else {
-					JOptionPane.showMessageDialog(null, "El usuario no exsiste");
+					JOptionPane.showMessageDialog(null, "Error el Curso no exsiste");
 				}
 				break;
 			case "Salir":

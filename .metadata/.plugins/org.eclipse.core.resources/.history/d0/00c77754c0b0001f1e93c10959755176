@@ -65,12 +65,12 @@ public class func_read_users {
 				}
 				break;
 			case "Leer_Uno":
-				username = (Client) func_users.username_client_dummies(func_main.mostrar_username_client());
-				localizacion = func_find.find(username);
+				client = (Client) func_users.username_client_dummies(username);
+				localizacion = func_find.find(client);
 				if (localizacion != 1) {
-					username = Singleton_users.array_client.get(localizacion);
-					username = (Client) func_users.update(username);
-					Singleton_users.array_client.set(localizacion, username);
+					client = Singleton_users.array_client.get(localizacion);
+					client = (Client) func_users.update(client);
+					Singleton_users.array_client.set(localizacion, client);
 				} else {
 					JOptionPane.showMessageDialog(null, "El usuario no exsiste");
 				}
