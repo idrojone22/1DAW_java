@@ -1,0 +1,13 @@
+package tema4_v13.modules.users.utils.CRUD;
+
+import tema4_v13.modules.users.classes.Client;
+
+public class func_readone_users {
+	public static void read_one_client() {
+		Object menu_readone = null;
+		int salir = 0;
+		String username = "";
+		Client clinet = null;
+		int localizacion = -1;
+	}
+}

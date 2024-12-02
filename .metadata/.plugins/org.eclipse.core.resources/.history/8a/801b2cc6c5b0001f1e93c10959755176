@@ -1,0 +1,6 @@
+package tema4_v13.modules.users.utils.CRUD;
+
+public class func_readone_users {
+	public static void read_one_client() {}
+	
+}

@@ -27,15 +27,16 @@
     <fullyQualifiedTypeName name="tema4_v11.modules.courses.utils.func_singleton"/>
     <fullyQualifiedTypeName name="tema4_v11.modules.courses.utils.CRUD.func_readone"/>
     <fullyQualifiedTypeName name="tema4_v12.utils.menus"/>
-    <fullyQualifiedTypeName name="tema4_v13.utils.func_main"/>
     <fullyQualifiedTypeName name="tema4_v13.modules.users.classes.Singleton"/>
     <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.CRUD.func_create"/>
     <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.CRUD.func_read_users"/>
     <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.CRUD.func_delete"/>
-    <fullyQualifiedTypeName name="tema4_v13.modules.users.classes.Singleton_users"/>
-    <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.func_find"/>
-    <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.func_users"/>
     <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.CRUD.func_updates_users"/>
     <fullyQualifiedTypeName name="tema4_v13.modules.cursos.utils.CRUD.func_create"/>
     <fullyQualifiedTypeName name="tema4_v13.modules.cursos.utils.CRUD.func_delete"/>
+    <fullyQualifiedTypeName name="tema4_v13.modules.users.classes.Singleton_users"/>
+    <fullyQualifiedTypeName name="tema4_v13.utils.func_main"/>
+    <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.func_users"/>
+    <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.func_find"/>
+    <fullyQualifiedTypeName name="tema4_v13.modules.users.utils.CRUD.func_readone_users"/>
 </qualifiedTypeNameHistroy>

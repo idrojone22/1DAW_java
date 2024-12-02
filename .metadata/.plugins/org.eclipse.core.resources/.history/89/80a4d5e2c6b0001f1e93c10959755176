@@ -19,7 +19,6 @@ import tema4_v13.modules.users.utils.func_users;
 import tema4_v13.modules.users.utils.CRUD.func_create_users;
 import tema4_v13.modules.users.utils.CRUD.func_delete_users;
 import tema4_v13.modules.users.utils.CRUD.func_read_users;
-import tema4_v13.modules.users.utils.CRUD.func_readone_users;
 import tema4_v13.modules.users.utils.CRUD.func_updates_users;
 
 
@@ -551,7 +550,7 @@ public class func_main {
 							break;
 						case "ReadOne":
 							do {
-								func_readone_users.read_one_client();
+								//func_readone.read_one_desarrollo();
 								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 								if (tercer_menu == op[3]) {
 									System.exit(0);
