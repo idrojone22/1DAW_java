@@ -9,8 +9,8 @@ import tema4_v13.modules.cursos.utils.func_singleton;
 import tema4_v13.modules.users.classes.Admin;
 import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton_users;
-import tema4_v13.modules.users.utils.CRUD.func_create;
-import tema4_v13.modules.users.utils.CRUD.func_delete;
+import tema4_v13.modules.users.utils.CRUD.func_create_users;
+import tema4_v13.modules.users.utils.CRUD.func_delete_users;
 import tema4_v13.modules.users.utils.CRUD.func_read_users;
 import tema4_v13.utils.func_main;
 

@@ -53,6 +53,7 @@ public class func_users {
 				String password = validadors.validar_string("password", "password");
 				if (password.equals(Singleton_users.array_admin.get(localizacion).get_password())) {
 					JOptionPane.showMessageDialog(null, "Contraseña correcta");
+					func_main.menu_admin(username);
 					contra = true;
 				} else {
 					JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
