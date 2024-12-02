@@ -34,6 +34,28 @@ public class func_main {
 		 return ID_array.toString();
 	}
 	
+	public static String mostrar_username_client() {
+		Object username_array = null;
+		String[] recorrer_array = new String[Singleton_users.array_client.size()];
+		 for (int i = 0; i < Singleton_users.array_client.size(); i++) {
+	            Client obj = Singleton_users.array_client.get(i);
+	            recorrer_array[i] = String.valueOf(obj.get_username());
+	      }
+		 username_array =  menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
+		return username_array.toString();
+	}
+	
+	public static String mostrar_username_admin() {
+		Object username_array = null;
+		String[] recorrer_array = new String[Singleton_users.array_admin.size()];
+		 for (int i = 0; i < Singleton_users.array_admin.size(); i++) {
+	            Admin obj = Singleton_users.array_admin.get(i);
+	            recorrer_array[i] = String.valueOf(obj.get_username());
+	      }
+		 username_array =  menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
+		return username_array.toString();
+	}
+	
 	public static void dummies() {
 		Object manual_auto_menu = null;
 		Object manual_auto[] = {"auto", "manual"};
@@ -144,7 +166,7 @@ public class func_main {
 				func_main.CURD_cursos();
 				break;
 			case "CRUD users":
-				JOptionPane.showMessageDialog(null,"CURD users");
+				func_main.CURD_users();
 				break;
 			case "Salir":
 				System.exit(0);
@@ -485,6 +507,171 @@ public class func_main {
 	}
 	
 	public static void CURD_users() {
+		Object primer_menu = null;
+		Object segundo_menu = null;
+		Object tercer_menu = null;
+
+		Object objetos[] =  {"Client", "Admin", "Salir al menu anterior","Salir"};
+		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú princial" , "Salir"};
+		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
 		
+		int salir = 0;
+		
+		do {
+			primer_menu = menus.combos("Selecciona el objeto", "Objeto", objetos, objetos[3]);
+			switch(primer_menu.toString()) {
+				case "Client":
+					do {
+						segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
+						switch(segundo_menu.toString()) {
+						case "Create":
+							do {
+								func_create_users.crear_client_CURD();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadAll":
+							do {
+								func_read_users.read_client();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadOne":
+							do {
+								//func_readone.read_one_desarrollo();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Update":
+							do {
+								func_updates_users.update_client_CURD(func_main.mostrar_username_client());
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Delete":
+							do {
+								//func_delete.delete_desarrollo();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Salir al menú princial":
+							break;
+						case "Salir":
+							System.exit(0);
+							break;
+						} // end switch
+						if (segundo_menu == op_CRUD[5]) {
+							break;
+						} // end if 
+					}while(segundo_menu != op_CRUD[6]);
+					break;
+				case "Admin":
+					do {
+						segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
+						switch(segundo_menu.toString()) {
+						case "Create":
+							do {
+								//func_create.crear_desarrollo();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadAll":
+							do {
+								//func_read_users.read_client();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadOne":
+							do {
+								//func_readone.read_one_desarrollo();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Update":
+							do {
+								//func_update.update_desarrollo(func_main.mostrarID());
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Delete":
+							do {
+								//func_delete.delete_desarrollo();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Salir al menú princial":
+							salir = 1;
+							break;
+						case "Salir":
+							System.exit(0);
+							break;
+						} // end switch
+						if (segundo_menu == op_CRUD[5]) {
+							break;
+						} // end if 
+					}while(segundo_menu != op_CRUD[6]);
+					break;
+			}
+		}while(salir != 1);
 	}
 }

@@ -1,8 +1,0 @@
-package tema4_v11.modules.courses.utils.CRUD;
-
-public class func_readone {
-	
-	public static void read_one_desarrollo() {
-		
-	}
-}
