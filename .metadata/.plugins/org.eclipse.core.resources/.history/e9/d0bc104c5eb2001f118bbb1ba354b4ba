@@ -69,7 +69,8 @@ public class func_read_users {
 				localizacion = func_find.find(username);
 				if (localizacion != 1) {
 					username = Singleton_users.array_client.get(localizacion);
-					JOptionPane.showMessageDialog(null, username.toString());
+					username = (Client) func_users.update(username);
+					Singleton_users.array_client.set(localizacion, username);
 				} else {
 					JOptionPane.showMessageDialog(null, "El usuario no exsiste");
 				}

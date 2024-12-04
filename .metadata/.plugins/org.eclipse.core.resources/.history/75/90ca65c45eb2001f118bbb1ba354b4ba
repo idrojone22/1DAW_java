@@ -60,35 +60,6 @@ public class func_readone_users {
 							break;
 					} // end switch
 				}while(salir != 1);*/
-				do {
-					switch (menu_readone.toString()) {
-						case "username":
-							JOptionPane.showMessageDialog(null, client.get_username());
-							//break;
-							break;
-						case "password":
-							JOptionPane.showMessageDialog(null, client.get_password());
-							break;
-						case "email":
-							JOptionPane.showMessageDialog(null, client.get_email());
-							break;
-						case "fecha nacimiento":
-							JOptionPane.showMessageDialog(null, client.get_fecha_nacimiento());
-							break;
-						case "edad":
-							JOptionPane.showMessageDialog(null, client.get_edad());
-							break;
-						case "fecha_registro":
-							JOptionPane.showMessageDialog(null, ((Client)client).get_fecha_registro());
-							break;
-						case "log":
-							JOptionPane.showMessageDialog(null, ((Client)client).get_log());
-							break;
-						case "Salir":
-							salir = 1;
-							break;
-					} // end switch
-				}while(salir != 1);
 			}
 		}
 	}
