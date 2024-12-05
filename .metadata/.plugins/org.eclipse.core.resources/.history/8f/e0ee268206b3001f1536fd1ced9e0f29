@@ -64,7 +64,12 @@ public class func_readone_users {
 					menu_readone = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_client,atributos_client[0]);
 					switch (menu_readone.toString()) {
 						case "username":
+							do {
 								JOptionPane.showMessageDialog(null, client.get_username());
+								salir_prova = 1;
+								break;
+							}while(salir_prova != 1);
+							salir_prova = 0;
 							break;
 						case "password":
 							JOptionPane.showMessageDialog(null, client.get_password());

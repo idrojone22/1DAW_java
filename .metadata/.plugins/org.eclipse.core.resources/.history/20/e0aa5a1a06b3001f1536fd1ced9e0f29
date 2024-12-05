@@ -31,6 +31,7 @@ public class func_readone_users {
 			
 			if (localizacion != -1) {
 				client = Singleton_users.array_client.get(localizacion);
+				menu_readone = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_client,atributos_client[0]);
 				/*do {
 					switch (menu_readone.toString()) {
 						case "username":
@@ -61,10 +62,14 @@ public class func_readone_users {
 					} // end switch
 				}while(salir != 1);*/
 				do {
-					menu_readone = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_client,atributos_client[0]);
 					switch (menu_readone.toString()) {
 						case "username":
+							do {
 								JOptionPane.showMessageDialog(null, client.get_username());
+								salir_prova = 1;
+							}while(salir_prova != 1);
+							salir_prova = 0;
+							//break;
 							break;
 						case "password":
 							JOptionPane.showMessageDialog(null, client.get_password());

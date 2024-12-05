@@ -660,7 +660,7 @@ public class func_main {
 								} // end if 
 							}while(tercer_menu == op[0]);
 							break;
-						case "Salir al menu anterior":
+						case "Salir al menú princial":
 							salir = 1;
 							break;
 						case "Salir":

@@ -21,6 +21,9 @@ public class main {
 
 	public static void main(String[] args) {
     	
+    	Singleton_users.array_admin = new ArrayList <Admin> ();
+    	Singleton_users.array_client = new ArrayList <Client> ();
+    	
     	Object primer_menu = null;
     	Object segundo_menu_client = null;
     	Object segundo_menu_admin= null;

@@ -56,8 +56,7 @@ public class func_create_users {
 		localizacion = func_find.find(username);
 		
 		if (localizacion != -1) {
-			username = func_users.crear_admin();
-			Singleton_users.array_admin.add((Admin)username);
+			
 		}
 	}
 }
