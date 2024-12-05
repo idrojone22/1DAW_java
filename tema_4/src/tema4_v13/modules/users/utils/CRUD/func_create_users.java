@@ -56,6 +56,8 @@ public class func_create_users {
 		localizacion = func_find.find(username);
 		
 		if (localizacion != -1) {
+			JOptionPane.showMessageDialog(null,"El username ya esta en uso");
+		} else {
 			username = func_users.crear_admin();
 			Singleton_users.array_admin.add((Admin)username);
 		}
