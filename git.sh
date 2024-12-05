@@ -3,9 +3,13 @@
 fechaActual=$(date +"%d-%m-%Y %H:%M:%S")
 
 GITHUB_USER="idrojone22"
-GITHUB_TOKEN=$(cat /home/idrojone/Escritorio/tokens/.token)
+GITHUB_TOKEN=$(grep "GITHUB_TOKEN=" /home/idrojone/Dev/.env | cut -d '=' -f2)
 
-# Codifiquem l'encapçalament amb el format base64
+if [[ -z "$GITHUB_TOKEN" ]]; then
+    echo "Error: El GITHUB_TOKEN no està configurat o és buit."
+    exit 1
+fi
+
 auth_header=$(echo -n "$GITHUB_USER:$GITHUB_TOKEN" | base64)
 
 git -c http.extraHeader="Authorization: Basic $auth_header" pull
