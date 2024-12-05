@@ -513,7 +513,7 @@ public class func_main {
 		Object tercer_menu = null;
 
 		Object objetos[] =  {"Client", "Admin", "Salir al menu anterior","Salir"};
-		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú princial" , "Salir"};
+		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú anterior" , "Salir"};
 		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
 		
 		int salir = 0;
@@ -563,82 +563,7 @@ public class func_main {
 							break;
 						case "Update":
 							do {
-								func_updates_users.update_client_CURD(func_main.mostrar_username_client());
-								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-								if (tercer_menu == op[3]) {
-									System.exit(0);
-								} else if (tercer_menu == op[1]) {
-									segundo_menu = op_CRUD[5];
-									break;
-								} // end if 
-							}while(tercer_menu == op[0]);
-							break;
-						case "Delete":
-							do {
-								//func_delete.delete_desarrollo();
-								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-								if (tercer_menu == op[3]) {
-									System.exit(0);
-								} else if (tercer_menu == op[1]) {
-									segundo_menu = op_CRUD[5];
-									break;
-								} // end if 
-							}while(tercer_menu == op[0]);
-							break;
-						case "Salir al menú princial":
-							break;
-						case "Salir":
-							System.exit(0);
-							break;
-						} // end switch
-						if (segundo_menu == op_CRUD[5]) {
-							break;
-						} // end if 
-					}while(segundo_menu != op_CRUD[6]);
-					break;
-				case "Admin":
-					do {
-						segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
-						switch(segundo_menu.toString()) {
-						case "Create":
-							do {
-								//func_create.crear_desarrollo();
-								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-								if (tercer_menu == op[3]) {
-									System.exit(0);
-								} else if (tercer_menu == op[1]) {
-									segundo_menu = op_CRUD[5];
-									break;
-								} // end if 
-							}while(tercer_menu == op[0]);
-							break;
-						case "ReadAll":
-							do {
-								//func_read_users.read_client();
-								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-								if (tercer_menu == op[3]) {
-									System.exit(0);
-								} else if (tercer_menu == op[1]) {
-									segundo_menu = op_CRUD[5];
-									break;
-								} // end if 
-							}while(tercer_menu == op[0]);
-							break;
-						case "ReadOne":
-							do {
-								//func_readone.read_one_desarrollo();
-								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-								if (tercer_menu == op[3]) {
-									System.exit(0);
-								} else if (tercer_menu == op[1]) {
-									segundo_menu = op_CRUD[5];
-									break;
-								} // end if 
-							}while(tercer_menu == op[0]);
-							break;
-						case "Update":
-							do {
-								//func_update.update_desarrollo(func_main.mostrarID());
+								func_updates_users.update_client_CRUD(func_main.mostrar_username_client());
 								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 								if (tercer_menu == op[3]) {
 									System.exit(0);
@@ -661,7 +586,6 @@ public class func_main {
 							}while(tercer_menu == op[0]);
 							break;
 						case "Salir al menu anterior":
-							salir = 1;
 							break;
 						case "Salir":
 							System.exit(0);
@@ -671,6 +595,87 @@ public class func_main {
 							break;
 						} // end if 
 					}while(segundo_menu != op_CRUD[6]);
+					break;
+				case "Admin":
+					do {
+						segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
+						switch(segundo_menu.toString()) {
+						case "Create":
+							do {
+								func_create_users.crear_admin_CRUD();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadAll":
+							do {
+								func_read_users.read_admin();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadOne":
+							do {
+								func_readone_users.read_one_admin();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Update":
+							do {
+								func_updates_users.update_admin_CRUD(func_main.mostrar_username_admin());
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Delete":
+							do {
+								func_delete_users.delete_admin();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Salir al menu anterior":
+							break;
+						case "Salir":
+							System.exit(0);
+							break;
+						} // end switch
+						if (segundo_menu == op_CRUD[5]) {
+							break;
+						} // end if 
+					}while(segundo_menu != op_CRUD[6]);
+					break;
+				case "Salir al menu anterior":
+					salir = 1;
+					break;
+				case "Salir":
+					System.exit(0);
 					break;
 			}
 		}while(salir != 1);

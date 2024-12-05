@@ -15,8 +15,5 @@ public class func_singleton {
 		Singleton.array_desarrollo = new ArrayList <Desarrollo_web> ();
 		Singleton.array_diseno = new ArrayList <Diseno_web> ();
 		Singleton.array_desplegamiento = new ArrayList <Desplegamiento_web> ();
-		Singleton_users.array_admin = new ArrayList <Admin> ();
-    	Singleton_users.array_client = new ArrayList <Client> ();
-		
 	}
 }

@@ -31,6 +31,8 @@ public class main {
 		Object opciones_sm_admin[] = {"CRUD cursos", "CRUD usuaris", "Perfil", "Log out"};
 		
 		int salir = 0;
+		Singleton_users.array_admin = new ArrayList <Admin> ();
+    	Singleton_users.array_client = new ArrayList <Client> ();
 		
 		func_singleton.crear_singleton();
 		func_main.dummies();
