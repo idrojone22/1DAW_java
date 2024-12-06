@@ -55,8 +55,8 @@ public class dummies_admin {
 
 			return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, dni, telefono, fecha_alta, sueldo);
 		} else {
-			JOptionPane.showMessageDialog(null, "Error");
-			return null;
+			JOptionPane.showMessageDialog(null, "Error")
+			retunr null;
 		}
 	}
 }

@@ -14,7 +14,6 @@ import tema4_v13.modules.cursos.utils.CRUD.func_update;
 import tema4_v13.modules.users.classes.Admin;
 import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton_users;
-import tema4_v13.modules.users.dummies.dummies_admin;
 import tema4_v13.modules.users.utils.func_find;
 import tema4_v13.modules.users.utils.func_users;
 import tema4_v13.modules.users.utils.CRUD.func_create_users;
@@ -72,8 +71,8 @@ public class func_main {
 			} // end for
 		} // end if
 
-		dummies_admin.crear_admin("idrojone");
-		dummies_admin.crear_admin("yomogan");
+		dummies_admin.crear_admin("idrojone")
+		dummies_admin.crear_admin("yomogan")
 	}
 	
 	public static void log_in() {

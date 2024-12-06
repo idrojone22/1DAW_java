@@ -36,7 +36,7 @@ public class dummies_admin {
 			String apellidos = "Valls";
 			String dni = "12345678A";
 			int telefono = 666666666;
-			Fecha fecha_alta =  null;	
+			Fecha fecha_alta =  null;;	
 			int sueldo = 1400;	
 
 			return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, dni, telefono, fecha_alta, sueldo);
@@ -44,19 +44,19 @@ public class dummies_admin {
 			String username = Singleton_users.username;
 			String password = "1234";
 			String email = "superadmin@gmail.com";
-			Fecha fecha_nacimiento =  null;
+			Fecha fecha_nacimiento = ;
 			int edad = 18;
 			String nombre = "Yolanda";
 			String apellidos = "Yolanda";
 			String dni = "12345678A";
 			int telefono = 666666666;
-			Fecha fecha_alta = null;	
+			Fecha fecha_alta = ;	
 			int sueldo = 1400;	
 
 			return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, dni, telefono, fecha_alta, sueldo);
 		} else {
-			JOptionPane.showMessageDialog(null, "Error");
-			return null;
+			JOptionPane.showMessageDialog(null, "Error")
+			retunr null;
 		}
 	}
 }
