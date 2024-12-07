@@ -639,6 +639,7 @@ public class func_main {
 							}while(tercer_menu == op[0]);
 							break;
 						case "Salir al menu anterior":
+							segundo_menu = op_CRUD[5];
 							break;
 						case "Salir":
 							System.exit(0);
