@@ -562,7 +562,7 @@ public class func_main {
 					do {
 						func_delete_users.delete_client();
 						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-						if (segundo_menu == op[2]) {
+						if (segundo_menu == op[3]) {
 							System.exit(0);
 							break;
 						}

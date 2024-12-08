@@ -11,6 +11,10 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
+			<item value="CRUD_client"/>
+			<item value="client"/>
+			<item value="update_username"/>
+			<item value="update"/>
 			<item value="log in"/>
 		</list>
 	</section>

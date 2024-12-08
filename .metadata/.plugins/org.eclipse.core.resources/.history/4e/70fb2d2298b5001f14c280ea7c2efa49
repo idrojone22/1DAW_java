@@ -218,7 +218,7 @@ public class func_main {
 				case "Diseno":
 					func_readone.read_one_diseno();
 					break;
-				case "Desplegamiento":
+				case "Desplegamineto":
 					func_readone.read_one_desplegamiento();
 					break;
 				case "Salir al menu anterior":
@@ -522,7 +522,7 @@ public class func_main {
 					do {
 						func_create_users.crear_client_CURD();
 						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-						if (segundo_menu == op[2]) {
+						if (segundo_menu == op[3]) {
 							System.exit(0);
 							break;
 						}
@@ -532,7 +532,7 @@ public class func_main {
 					do {
 						func_read_users.read_client();
 						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-						if (segundo_menu == op[2]) {
+						if (segundo_menu == op[3]) {
 							System.exit(0);
 							break;
 						}
@@ -542,7 +542,7 @@ public class func_main {
 					do {
 						func_readone_users.read_one_client();
 						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-						if (segundo_menu == op[2]) {
+						if (segundo_menu == op[3]) {
 							System.exit(0);
 							break;
 						}
@@ -552,7 +552,7 @@ public class func_main {
 					do {
 						func_updates_users.update_client_CRUD(func_users.mostrar_username_client());
 						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-						if (segundo_menu == op[2]) {
+						if (segundo_menu == op[3]) {
 							System.exit(0);
 							break;
 						}
@@ -562,7 +562,7 @@ public class func_main {
 					do {
 						func_delete_users.delete_client();
 						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
-						if (segundo_menu == op[2]) {
+						if (segundo_menu == op[3]) {
 							System.exit(0);
 							break;
 						}
