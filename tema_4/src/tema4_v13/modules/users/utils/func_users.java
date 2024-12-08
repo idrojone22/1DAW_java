@@ -49,6 +49,19 @@ public class func_users {
 		Admin username = func_users.preguntar_username_admin();
 		localizacion =  func_find.find_admin(username);
 		if (localizacion != -1) {
+			if (username.get_username().equals("idrojone")|| username.get_username().equals("yomogan")) {
+				JOptionPane.showMessageDialog(null, "Entre");
+				do {
+					String password = validadors.validar_string("password", "password");
+					if (password.equals(Singleton_users.array_admin.get(localizacion).get_password())) {
+						JOptionPane.showMessageDialog(null, "Contraseña correcta");
+						func_main.menu_superadmin(username);
+						contra = true;
+					} else { 
+						JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+					}
+				}while(contra != true);
+			}
 			do {
 				String password = validadors.validar_string("password", "password");
 				if (password.equals(Singleton_users.array_admin.get(localizacion).get_password())) {

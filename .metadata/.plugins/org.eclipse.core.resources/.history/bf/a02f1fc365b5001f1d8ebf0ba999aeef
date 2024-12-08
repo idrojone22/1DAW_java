@@ -168,10 +168,10 @@ public class func_main {
 				salir = 1;
 				break;
 			case "CURD cursos":
-				func_main.CURD_cursos();
+				func_main.CRUD_cursos();
 				break;
 			case "CRUD users":
-				func_main.CURD_users();
+				func_main.CRUD_cliente();
 				break;
 			case "Salir":
 				System.exit(0);
@@ -187,6 +187,20 @@ public class func_main {
 		
 		do {
 			primer_menu = menus.combos("Selecciona la opción", "App", opciones_pm, opciones_pm);
+			switch(primer_menu.toString()) {
+			case "Log out":
+				salir = 1;
+				break;
+			case "CRUD cursos":
+				func_main.CRUD_cursos();
+				break;
+			case "CRUD users":
+				func_main.CRUD_users();
+				break;
+			case "Salir":
+				System.exit(0);
+				break;
+			}
 		}while(salir != 1);
 	}
 	
@@ -272,7 +286,7 @@ public class func_main {
 		}while(salir !=1);
 	}
 	
-	public static void CURD_cursos() {
+	public static void CRUD_cursos() {
 		Object primer_menu = null;
 		Object segundo_menu = null;
 		Object tercer_menu = null;
@@ -281,7 +295,7 @@ public class func_main {
 		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú princial" , "Salir"};
 		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
 		
-		int salir = 0;
+		boolean SalirDelMenu = false;
 		
 		do {
 			primer_menu = menus.combos("Selecciona el objeto", "Objeto", objetos, objetos[3]);
@@ -512,25 +526,50 @@ public class func_main {
 				}while(segundo_menu != op_CRUD[6]);
 				break;
 			case "Salir al menu anterior":
-				salir = 3;
+				SalirDelMenu = true;
 				break;
 			case "Salir":
 				System.exit(0);
 				break;
 			} // end switch
-		}while (salir != 3);
+		}while (!SalirDelMenu);
 	}
 	
-	public static void CURD_users() {
+	public static void CRUD_cliente()  {
+		Object primer_menu = null;
+		Object segundo_menu = null;
+		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú anterior" , "Salir"};
+		Object op[] = {"Seguir", "Salir al menu anterior", "Salir"};
+		int salir = 0;
+		
+		do {
+			primer_menu = menus.combos("Selecciona el objeto", "Objeto",op_CRUD, op_CRUD[5]);
+			switch(primer_menu.toString()) {
+				case "Create":
+					do {
+						func_create_users.crear_client_CURD();
+						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+						if (segundo_menu == op[3]) {
+							System.exit(0);
+							break;
+						}
+					}while(segundo_menu == op[0]);
+					break;
+				
+			}
+		}while(salir != 1);
+	}
+	
+	public static void CRUD_users() {
 		Object primer_menu = null;
 		Object segundo_menu = null;
 		Object tercer_menu = null;
 
 		Object objetos[] =  {"Client", "Admin", "Salir al menu anterior","Salir"};
-		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú anterior" , "Salir"};
+		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menu anterior" , "Salir"};
 		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
 		
-		int salir = 0;
+		boolean SalirDelMenu = false;
 		
 		do {
 			primer_menu = menus.combos("Selecciona el objeto", "Objeto", objetos, objetos[3]);
@@ -600,15 +639,13 @@ public class func_main {
 							}while(tercer_menu == op[0]);
 							break;
 						case "Salir al menu anterior":
+							segundo_menu = op_CRUD[5];
 							break;
 						case "Salir":
 							System.exit(0);
 							break;
 						} // end switch
-						if (segundo_menu == op_CRUD[5]) {
-							break;
-						} // end if 
-					}while(segundo_menu != op_CRUD[6]);
+					}while(segundo_menu != op_CRUD[5]);
 					break;
 				case "Admin":
 					do {
@@ -675,23 +712,21 @@ public class func_main {
 							}while(tercer_menu == op[0]);
 							break;
 						case "Salir al menu anterior":
+							segundo_menu = op_CRUD[5];
 							break;
 						case "Salir":
 							System.exit(0);
 							break;
 						} // end switch
-						if (segundo_menu == op_CRUD[5]) {
-							break;
-						} // end if 
-					}while(segundo_menu != op_CRUD[6]);
+					}while(segundo_menu != op_CRUD[5]);
 					break;
 				case "Salir al menu anterior":
-					salir = 1;
+					SalirDelMenu = true;
 					break;
 				case "Salir":
 					System.exit(0);
 					break;
 			}
-		}while(salir != 1);
+		}while(!SalirDelMenu);
 	}
 }

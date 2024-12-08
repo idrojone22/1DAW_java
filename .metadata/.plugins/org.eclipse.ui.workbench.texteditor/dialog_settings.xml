@@ -8,4 +8,10 @@
 			<item value=""/>
 		</list>
 	</section>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
+		<list key="findhistory">
+			<item value="log in"/>
+		</list>
+	</section>
 </section>

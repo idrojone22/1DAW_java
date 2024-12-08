@@ -10,6 +10,7 @@ import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton_users;
 import tema4_v13.modules.users.classes.User;
 import tema4_v13.utils.func_main;
+import tema4_v13.utils.menus;
 
 public class func_users {
 	
@@ -52,6 +53,7 @@ public class func_users {
 				String password = validadors.validar_string("password", "password");
 				if (password.equals(Singleton_users.array_admin.get(localizacion).get_password())) {
 					JOptionPane.showMessageDialog(null, "Contraseña correcta");
+					func_main.menu_admin(username);
 					contra = true;
 				} else {
 					JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
@@ -111,15 +113,87 @@ public class func_users {
 	}
 	/*CLIENT*/
 	
+	public static void update_username(User user) {
+		int localizacion = -1;
+		User  username= preguntar_username_admin();
+		localizacion = func_find.find(username);
+		if (localizacion != -1) {
+			JOptionPane.showMessageDialog(null,"El username ya está en uso");
+		} else {
+			user.set_username(Singleton_users.username);
+		}		
+	}
+	
+	
 	public static User update (User user) {
 		Object menu_update = null;
-		Object atributos_client[] = {""};
-		Object atributos_admin[] = {""};
+		Object atributos_client[] = {"username", "password", "email", "fecha nacimiento", "edad", "fecha_registro", "log", "Salir"};
+		Object atributos_admin[] = {"username", "password", "email", "fecha nacimiento", "edad","nombre", "apellidos", "DNI", "telefono", "Fecha_alta", "sueldo"};
 		int salir = 0;
 		if (user != null) {
 			if (user instanceof Client) {
-				
+				do {
+					menu_update = menus.combos("Selecciona el atributo", "Update", atributos_client, atributos_client[0]);
+					switch (menu_update.toString()) {
+						case "username":
+							update_username(user);
+							break;
+						case "password":
+							user.set_password(validadors.validar_string("Nueva contraseña", "Contraseña"));
+						case "email":
+							user.set_email(validar_regex.validar_email());
+						case "fecha nacimiento":
+							user.set_fecha_nacimiento(func_fecha.craar("fecha nacimiento"));
+						case "edad":
+							user.set_edad(validadors.validar_int("Tu edad", "Edad"));
+						case "fecha_registro":
+							((Client) user).set_fecha_registro(func_fecha.craar("fecha registro"));
+						case "log":
+							((Client) user).set_log(false); // Hacer validar boolean
+						case "Salir":
+							salir = 1;
+					} // end switch
+				}while(salir != 1);
+				return user;
 			}
+		
+			if (user instanceof Admin) {
+				do {
+					menu_update = menus.combos("Selecciona el atributo", "Update", atributos_client, atributos_client[0]);
+					switch (menu_update.toString()) {
+						case "username":
+							update_username(user);
+							break;
+						case "password":
+							user.set_password(validadors.validar_string("Nueva contraseña", "Contraseña"));
+						case "email":
+							user.set_email(validar_regex.validar_email());
+						case "fecha nacimiento":
+							user.set_fecha_nacimiento(func_fecha.craar("fecha nacimiento"));
+						case "edad":
+							user.set_edad(validadors.validar_int("Tu edad", "Edad"));
+						case "nombre":
+							((Admin) user).set_nombre(validadors.validar_string("Nombre", "Nombre"));
+						case "apellido":
+							((Admin) user).set_apellidos(validadors.validar_string("Apellidos", "Apellidos"));
+						case "DNI":
+							((Admin) user).set_dni(validadors.validar_string("DNI", "DNI"));
+						case "telefono":
+							((Admin) user).set_telefono(validadors.validar_int("Telefono", "Telefono"));
+						case "Fecha_alta":
+							((Admin) user).set_fecha_alta(func_fecha.craar("Fecha_alta"));
+						case "sueldo":
+							((Admin) user).set_sueldo(validadors.validar_int("sueldo", "sueldo"));
+						case "Salir":
+							salir = 1;
+					} // end switch
+				}while(salir != 1);
+				return user;
+			}
+			return user;
+		} else {
+			JOptionPane.showMessageDialog(null, "No exsiste el usuario");
+			return null;
 		}
 	}
 	

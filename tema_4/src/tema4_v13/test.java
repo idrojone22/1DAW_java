@@ -12,57 +12,182 @@ import tema4_v13.modules.users.classes.Singleton_users;
 import tema4_v13.modules.users.utils.CRUD.func_create_users;
 import tema4_v13.modules.users.utils.CRUD.func_delete_users;
 import tema4_v13.modules.users.utils.CRUD.func_read_users;
+import tema4_v13.modules.users.utils.CRUD.func_readone_users;
+import tema4_v13.modules.users.utils.CRUD.func_updates_users;
 import tema4_v13.utils.func_main;
 
 public class test {
 
     public static void main(String[] args) {
     	
-    	Singleton_users.array_admin = new ArrayList <Admin> ();
-    	Singleton_users.array_client = new ArrayList <Client> ();
-    	/*
-    	func_create.crear_admin();
-    	func_create.crear_client();
-    	
-    	func_read.read_admin();
-    	func_read.read_client();r
-    	
-    	func_delete.delete_admin();
-    	func_delete.delete_client();
-    	
-      	func_read.read_admin();
-    	func_read.read_client();
-	*/			
     	Object primer_menu = null;
-    	Object segundo_menu_client = null;
-    	Object segundo_menu_admin= null;
+		Object segundo_menu = null;
 		Object tercer_menu = null;
+
+		Object objetos[] =  {"Client", "Admin", "Salir al menu anterior","Salir"};
+		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menu anterior" , "Salir"};
+		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
 		
-		Object opciones_pm[] = {"Log in","Sign up", "Salir"};
-		Object opciones_sm_client[] = {"Read All" , "Read One", "Perfil", "Log out"};
-		Object opciones_sm_admin[] = {"CRUD cursos", "CRUD usuaris", "Perfil", "Log out"};
-		
-		int salir = 0;
-		
-		func_singleton.crear_singleton();
-		func_main.dummies();
+		boolean SalirDelMenu = false;
 		
 		do {
-			primer_menu = menus.combos("Selecciona la opción", "Selector de opciones", opciones_pm, opciones_pm[0]);
-			
-			switch (primer_menu.toString()) {
-				case "Log in":
-					func_main.log_in();
+			primer_menu = menus.combos("Selecciona el objeto", "Objeto", objetos, objetos[3]);
+			switch(primer_menu.toString()) {
+				case "Client":
+					do {
+						segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
+						switch(segundo_menu.toString()) {
+						case "Create":
+							do {
+								func_create_users.crear_client_CURD();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadAll":
+							do {
+								func_read_users.read_client();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadOne":
+							do {
+								func_readone_users.read_one_client();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Update":
+							do {
+								func_updates_users.update_client_CRUD(func_main.mostrar_username_client());
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Delete":
+							do {
+								//func_delete.delete_desarrollo();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Salir al menu anterior":
+							segundo_menu = op_CRUD[5];
+							break;
+						case "Salir":
+							System.exit(0);
+							break;
+						} // end switch
+					}while(segundo_menu != op_CRUD[5]);
 					break;
-				case "Sign up":
-					func_main.sign_up();
+				case "Admin":
+					do {
+						segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
+						switch(segundo_menu.toString()) {
+						case "Create":
+							do {
+								func_create_users.crear_admin_CRUD();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadAll":
+							do {
+								func_read_users.read_admin();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "ReadOne":
+							do {
+								func_readone_users.read_one_admin();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Update":
+							do {
+								func_updates_users.update_admin_CRUD(func_main.mostrar_username_admin());
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Delete":
+							do {
+								func_delete_users.delete_admin();
+								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+								if (tercer_menu == op[3]) {
+									System.exit(0);
+								} else if (tercer_menu == op[1]) {
+									segundo_menu = op_CRUD[5];
+									break;
+								} // end if 
+							}while(tercer_menu == op[0]);
+							break;
+						case "Salir al menu anterior":
+							segundo_menu = op_CRUD[5];
+							break;
+						case "Salir":
+							System.exit(0);
+							break;
+						} // end switch
+					}while(segundo_menu != op_CRUD[5]);
+					break;
+				case "Salir al menu anterior":
+					SalirDelMenu = true;
 					break;
 				case "Salir":
 					System.exit(0);
 					break;
-			} // END SWITCH
-		} while ( salir != 2);
-    }
+			}
+		}while(!SalirDelMenu);
+	}
 }
 
 
