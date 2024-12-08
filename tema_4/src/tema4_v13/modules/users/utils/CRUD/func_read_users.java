@@ -65,7 +65,7 @@ public class func_read_users {
 				}
 				break;
 			case "Leer_Uno":
-				username = (Client) func_users.username_client_dummies(func_main.mostrar_username_client());
+				username = (Client) func_users.username_client_dummies(func_users.mostrar_username_client());
 				localizacion = func_find.find(username);
 				if (localizacion != 1) {
 					username = Singleton_users.array_client.get(localizacion);

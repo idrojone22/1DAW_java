@@ -6,6 +6,7 @@ import tema4_v13.modules.cursos.classes.Desarrollo_web;
 import tema4_v13.modules.cursos.classes.Singleton;
 import tema4_v13.modules.cursos.classes.*;
 import tema4_v13.modules.cursos.dummies.dummies;
+import tema4_v13.modules.cursos.utils.func_cursos;
 import tema4_v13.modules.cursos.utils.CRUD.func_create;
 import tema4_v13.modules.cursos.utils.CRUD.func_delete;
 import tema4_v13.modules.cursos.utils.CRUD.func_read;
@@ -15,6 +16,7 @@ import tema4_v13.modules.users.classes.Admin;
 import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton_users;
 import tema4_v13.modules.users.dummies.dummies_admin;
+import tema4_v13.modules.users.dummies.dummies_client;
 import tema4_v13.modules.users.utils.func_find;
 import tema4_v13.modules.users.utils.func_users;
 import tema4_v13.modules.users.utils.CRUD.func_create_users;
@@ -25,39 +27,7 @@ import tema4_v13.modules.users.utils.CRUD.func_updates_users;
 
 
 public class func_main {
-	public static String mostrarID() {
-		Object ID_array = null;
-		String[] recorrer_array = new String[Singleton.array_desarrollo.size()];
-		 for (int i = 0; i < Singleton.array_desarrollo.size(); i++) {
-	            Desarrollo_web obj = Singleton.array_desarrollo.get(i);
-	            recorrer_array[i] = String.valueOf(obj.get_ID_course()); // Obtener solo el ID como String
-	        }
-		 ID_array = menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
-		 return ID_array.toString();
-	}
-	
-	public static String mostrar_username_client() {
-		Object username_array = null;
-		String[] recorrer_array = new String[Singleton_users.array_client.size()];
-		 for (int i = 0; i < Singleton_users.array_client.size(); i++) {
-	            Client obj = Singleton_users.array_client.get(i);
-	            recorrer_array[i] = String.valueOf(obj.get_username());
-	      }
-		 username_array =  menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
-		return username_array.toString();
-	}
-	
-	public static String mostrar_username_admin() {
-		Object username_array = null;
-		String[] recorrer_array = new String[Singleton_users.array_admin.size()];
-		 for (int i = 0; i < Singleton_users.array_admin.size(); i++) {
-	            Admin obj = Singleton_users.array_admin.get(i);
-	            recorrer_array[i] = String.valueOf(obj.get_username());
-	      }
-		 username_array =  menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
-		return username_array.toString();
-	}
-	
+
 	public static void dummies() {
 		Object manual_auto_menu = null;
 		Object manual_auto[] = {"auto", "manual"};
@@ -69,6 +39,7 @@ public class func_main {
 			n = validadors.validar_int("Cuántos objetos quieres automáticos", "Repeticiones");
 			for (int i = 0; i < n; i++) {
 				dummies.crear_cursos();
+				dummies_client.crear_client();
 			} // end for
 		} // end if
 
@@ -143,7 +114,8 @@ public class func_main {
 					func_main.leer_uno();
 					break;
 				case "Perfil":
-					func_main.perfil(username);
+					localizacion = func_find.find(username);
+					func_main.perfil(Singleton_users.array_client.get(localizacion));
 					localizacion =  func_find.find(username);
 					if (localizacion == -1) {
 						salir = 3;
@@ -165,13 +137,13 @@ public class func_main {
 			primer_menu = menus.combos("Seleccions la opción", "App", opciones_pm, opciones_pm[0]);
 			switch(primer_menu.toString()) {
 			case "Log out":
-				salir = 1;
+				func_main.log_in();
 				break;
 			case "CURD cursos":
 				func_main.CRUD_cursos();
 				break;
 			case "CRUD users":
-				//func_main.CRUD_cliente();
+				func_main.CRUD_cliente();
 				JOptionPane.showMessageDialog(null, "Haciendo");
 				break;
 			case "Salir":
@@ -190,7 +162,7 @@ public class func_main {
 			primer_menu = menus.combos("Selecciona la opción", "App", opciones_pm, opciones_pm);
 			switch(primer_menu.toString()) {
 			case "Log out":
-				salir = 1;
+				func_main.log_in();
 				break;
 			case "CRUD cursos":
 				func_main.CRUD_cursos();
@@ -344,7 +316,7 @@ public class func_main {
 						break;
 					case "Update":
 						do {
-							func_update.update_desarrollo(func_main.mostrarID());
+							func_update.update_desarrollo(func_cursos.mostrarID());
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);
@@ -556,7 +528,52 @@ public class func_main {
 						}
 					}while(segundo_menu == op[0]);
 					break;
-				
+				case "ReadAll":
+					do {
+						func_read_users.read_client();
+						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+						if (segundo_menu == op[3]) {
+							System.exit(0);
+							break;
+						}
+					}while(segundo_menu == op[0]);
+					break;
+				case "ReadOne":
+					do {
+						func_readone_users.read_one_client();
+						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+						if (segundo_menu == op[3]) {
+							System.exit(0);
+							break;
+						}
+					}while(segundo_menu == op[0]);
+					break;
+				case "Update":
+					do {
+						func_updates_users.update_client_CRUD(func_users.mostrar_username_client());
+						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+						if (segundo_menu == op[3]) {
+							System.exit(0);
+							break;
+						}
+					}while(segundo_menu == op[0]);
+					break;
+				case "Delete":
+					do {
+						func_delete_users.delete_client();
+						segundo_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+						if (segundo_menu == op[3]) {
+							System.exit(0);
+							break;
+						}
+					}while(segundo_menu == op[0]);
+					break;
+				case "Salir al menú anterior":
+					salir = 1;
+					break;
+				case "Salir":
+					System.exit(0);
+					break;
 			}
 		}while(salir != 1);
 	}
@@ -617,7 +634,7 @@ public class func_main {
 							break;
 						case "Update":
 							do {
-								func_updates_users.update_client_CRUD(func_main.mostrar_username_client());
+								func_updates_users.update_client_CRUD(func_users.mostrar_username_client());
 								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 								if (tercer_menu == op[3]) {
 									System.exit(0);
@@ -629,7 +646,7 @@ public class func_main {
 							break;
 						case "Delete":
 							do {
-								//func_delete.delete_desarrollo();
+								func_delete_users.delete_client();
 								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 								if (tercer_menu == op[3]) {
 									System.exit(0);
@@ -690,7 +707,7 @@ public class func_main {
 							break;
 						case "Update":
 							do {
-								func_updates_users.update_admin_CRUD(func_main.mostrar_username_admin());
+								func_updates_users.update_admin_CRUD(func_users.mostrar_username_admin());
 								tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 								if (tercer_menu == op[3]) {
 									System.exit(0);

@@ -25,7 +25,7 @@ public class func_readone_users {
 		if (Singleton_users.array_client.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
-			username = func_main.mostrar_username_client();
+			username = func_users.mostrar_username_client();
 			client = (Client) func_users.username_client_dummies(username);
 			localizacion = func_find.find(client);
 			
@@ -75,7 +75,7 @@ public class func_readone_users {
 		if (Singleton_users.array_client.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
-			username = func_main.mostrar_username_client();
+			username = func_users.mostrar_username_client();
 			admin = (Admin) func_users.username_admin_dummies(username);
 			localizacion = func_find.find(admin);
 			

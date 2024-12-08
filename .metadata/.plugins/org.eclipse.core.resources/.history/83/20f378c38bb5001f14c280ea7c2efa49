@@ -1,0 +1,8 @@
+package tema4_v13.modules.users.dummies;
+
+public class dummies_client {
+	public static void crear_client () {
+		
+	}
+	
+}

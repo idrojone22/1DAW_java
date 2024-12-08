@@ -14,10 +14,10 @@ public class func_precio {
 		int duracion = fecha_i.restarFechas(fecha_f);
 		int precio = duracion * horasDias * precioHora;
 		
-		System.out.println(fecha_compra.compararFechas(fecha1));
-		System.out.println(fecha_compra.compararFechas(fecha2));
-		System.out.println(duracion);
-		System.out.println(precio);
+		//System.out.println(fecha_compra.compararFechas(fecha1));
+		//System.out.println(fecha_compra.compararFechas(fecha2));
+		//System.out.println(duracion);
+		//System.out.println(precio);
 		
 		if (fecha_compra.compararFechas(fecha1) == 1 && fecha_compra.compararFechas(fecha2) == -1 ) {
 			System.out.println("Estem dins");

@@ -137,6 +137,36 @@ public class func_users {
 		}		
 	}
 	
+	public static void update_username_admin(Admin user) {
+		int localizacion = -1;
+		boolean salir = false;
+		do {
+			Admin username = preguntar_username_admin();
+			localizacion = func_find.find(username);
+			if (localizacion != -1) {
+				JOptionPane.showMessageDialog(null,"El username ya está en uso");
+			} else {
+				user.set_username(Singleton_users.username);
+				salir = true;
+			}
+		}while(!salir);
+	}
+	
+	public static void update_username_client(Client user) {
+		int localizacion = -1;
+		boolean salir = false;
+		do {
+			Client username = preguntar_username_client();
+			localizacion = func_find.find(username);
+			if (localizacion != -1) {
+				JOptionPane.showMessageDialog(null,"El username ya está en uso");
+			} else {
+				user.set_username(Singleton_users.username);
+				salir = true;
+			}
+		}while(!salir);
+	}
+	
 	
 	public static User update (User user) {
 		Object menu_update = null;
@@ -149,22 +179,29 @@ public class func_users {
 					menu_update = menus.combos("Selecciona el atributo", "Update", atributos_client, atributos_client[0]);
 					switch (menu_update.toString()) {
 						case "username":
-							update_username(user);
+							update_username_client((Client) user);
 							break;
 						case "password":
 							user.set_password(validadors.validar_string("Nueva contraseña", "Contraseña"));
+							break;
 						case "email":
 							user.set_email(validar_regex.validar_email());
+							break;
 						case "fecha nacimiento":
 							user.set_fecha_nacimiento(func_fecha.craar("fecha nacimiento"));
+							break;
 						case "edad":
 							user.set_edad(validadors.validar_int("Tu edad", "Edad"));
+							break;
 						case "fecha_registro":
 							((Client) user).set_fecha_registro(func_fecha.craar("fecha registro"));
+							break;
 						case "log":
 							((Client) user).set_log(false); // Hacer validar boolean
+							break;
 						case "Salir":
 							salir = 1;
+							break;
 					} // end switch
 				}while(salir != 1);
 				return user;
@@ -179,26 +216,37 @@ public class func_users {
 							break;
 						case "password":
 							user.set_password(validadors.validar_string("Nueva contraseña", "Contraseña"));
+							break;
 						case "email":
 							user.set_email(validar_regex.validar_email());
+							break;
 						case "fecha nacimiento":
 							user.set_fecha_nacimiento(func_fecha.craar("fecha nacimiento"));
+							break;
 						case "edad":
 							user.set_edad(validadors.validar_int("Tu edad", "Edad"));
+							break;
 						case "nombre":
 							((Admin) user).set_nombre(validadors.validar_string("Nombre", "Nombre"));
+							break;
 						case "apellido":
 							((Admin) user).set_apellidos(validadors.validar_string("Apellidos", "Apellidos"));
+							break;
 						case "DNI":
 							((Admin) user).set_dni(validadors.validar_string("DNI", "DNI"));
+							break;
 						case "telefono":
 							((Admin) user).set_telefono(validadors.validar_int("Telefono", "Telefono"));
+							break;
 						case "Fecha_alta":
 							((Admin) user).set_fecha_alta(func_fecha.craar("Fecha_alta"));
+							break;
 						case "sueldo":
 							((Admin) user).set_sueldo(validadors.validar_int("sueldo", "sueldo"));
+							break;
 						case "Salir":
 							salir = 1;
+							break;
 					} // end switch
 				}while(salir != 1);
 				return user;
@@ -210,5 +258,26 @@ public class func_users {
 		}
 	}
 	
+	public static String mostrar_username_client() {
+		Object username_array = null;
+		String[] recorrer_array = new String[Singleton_users.array_client.size()];
+		 for (int i = 0; i < Singleton_users.array_client.size(); i++) {
+	            Client obj = Singleton_users.array_client.get(i);
+	            recorrer_array[i] = String.valueOf(obj.get_username());
+	      }
+		 username_array =  menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
+		return username_array.toString();
+	}
+	
+	public static String mostrar_username_admin() {
+		Object username_array = null;
+		String[] recorrer_array = new String[Singleton_users.array_admin.size()];
+		 for (int i = 0; i < Singleton_users.array_admin.size(); i++) {
+	            Admin obj = Singleton_users.array_admin.get(i);
+	            recorrer_array[i] = String.valueOf(obj.get_username());
+	      }
+		 username_array =  menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
+		return username_array.toString();
+	}
 	
 }

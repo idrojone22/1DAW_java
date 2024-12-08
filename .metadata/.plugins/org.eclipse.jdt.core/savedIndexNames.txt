@@ -1,6 +1,5 @@
 INDEX VERSION 1.134+/home/idrojone/Dev/1DAW_java/.metadata/.plugins/org.eclipse.jdt.core
 1136377202.index
-4181072390.index
 1791329824.index
 2304568969.index
 274054963.index
