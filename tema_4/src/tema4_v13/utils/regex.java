@@ -13,6 +13,9 @@ public class regex {
 	private static final String plan_fecha="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$";
 	private static final String regex_horasDias= "^[1-8]$";
 	private static final String regex_email ="[^ @]+@(gmail|hotmail).[a-z]{1,3}";
+	private static final String regex_phone = "\\(?[0-9]{2,4}\\)?[ -]?[0-9]{3,4}[ -]?[0-9]{3,4}";
+
+
 	
 
 	
@@ -24,6 +27,18 @@ public class regex {
 			return true;
 		} 
 		JOptionPane.showMessageDialog(null, "El formato debe de ser 1 letra mayuscula 4 digitos");
+		return false;
+	}
+	
+	public static boolean validar_telefono(String tlf) {
+		Pattern pattern = Pattern.compile(regex_phone);
+		Matcher matcher = pattern.matcher(tlf);
+		
+		if (matcher.matches()) {
+			return true;
+		}
+		
+		JOptionPane.showMessageDialog(null,"Dame un telefono  válido" + "\n 912 345 678 \n 912345678 \n 91-234-5678 ");
 		return false;
 	}
 	

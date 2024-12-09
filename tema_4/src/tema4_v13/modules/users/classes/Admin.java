@@ -8,17 +8,16 @@ public class Admin  extends User{
     private String nombre;
     private String apellidos;
     private String dni;
-    private int telefono;
+    private String telefono;
     private Fecha fecha_alta;
     private int sueldo;
     /* ATRIBUTOS */
 
     /* CONSTRUCTOR */
-    public Admin(String username, String password, String email , Fecha fecha_nacimiento,  int edad,  String nombre, String apellidos, String dni, int telefono, Fecha fecha_alta, int sueldo) {
+    public Admin(String username, String password, String email , Fecha fecha_nacimiento,  int edad,  String nombre, String apellidos, String telefono, Fecha fecha_alta, int sueldo) {
         super(username, password, email, fecha_nacimiento, edad);
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.dni = dni;
         this.telefono = telefono;
         this.fecha_alta = fecha_alta;
         this.sueldo = sueldo; 
@@ -37,12 +36,8 @@ public class Admin  extends User{
     public String get_apellidos() {
         return this.apellidos;
     }
-
-    public String get_dni() {
-        return this.dni;
-    }
-
-    public int get_telefono() {
+    
+    public String get_telefono() {
         return this.telefono;
     }
 
@@ -71,7 +66,7 @@ public class Admin  extends User{
         return this.dni;
     }
 
-    public int set_telefono(int telefono) {
+    public String set_telefono(String telefono) {
         this.telefono = telefono;
         return this.telefono;
     }
@@ -96,7 +91,6 @@ public class Admin  extends User{
                     "edad: "  + super.get_edad() + "\n" +
                     "nombre: "  + get_nombre() + "\n" +
                     "apellidos: "  + get_apellidos() + "\n" +
-                    "dni: "  + get_dni() + "\n" +
                     "telefono: "  + get_telefono() + "\n" +
                     "fecha_alta: "  + get_fecha_alta() + "\n" +
                     "sueldo: "  + get_sueldo() + "\n";

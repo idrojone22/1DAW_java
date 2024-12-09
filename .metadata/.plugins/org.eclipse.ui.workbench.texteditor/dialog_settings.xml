@@ -11,6 +11,7 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
+			<item value="localizacion"/>
 			<item value="CRUD_client"/>
 			<item value="client"/>
 			<item value="update_username"/>

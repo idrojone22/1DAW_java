@@ -25,12 +25,11 @@ public class func_users {
 		int edad = func_edad.calcularEdad(fecha_nacimiento);
 		String nombre = validadors.validar_string("Nombre", "Nombre");
 		String apellidos = validadors.validar_string("Apellidos", "Apellidos");
-		String dni = "dni";
-		int telefono = 666666666;
+		String telefono = validar_regex.validar_tlf();
 		Fecha fecha_alta =  dummies_users.generarFechaPosterior(fecha_nacimiento);
-		int sueldo = 1400;
+		int sueldo = func_sueldo.calcularSueldo(fecha_alta);
 		
-		return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, dni, telefono, fecha_alta, sueldo);
+		return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos,  telefono, fecha_alta, sueldo);
 	}
 	
 	public static Admin preguntar_username_admin() {
@@ -172,7 +171,7 @@ public class func_users {
 	public static User update (User user) {
 		Object menu_update = null;
 		Object atributos_client[] = {"username", "password", "email", "fecha nacimiento",  "fecha_registro", "log", "Salir"};
-		Object atributos_admin[] = {"username", "password", "email", "fecha nacimiento", "edad","nombre", "apellidos", "DNI", "telefono", "Fecha_alta", "sueldo"};
+		Object atributos_admin[] = {"username", "password", "email", "fecha nacimiento","nombre", "apellidos", "telefono", "Fecha_alta", "sueldo"};
 		int salir = 0;
 		if (user != null) {
 			if (user instanceof Client) {
@@ -215,9 +214,7 @@ public class func_users {
 							break;
 						case "fecha nacimiento":
 							user.set_fecha_nacimiento(func_fecha.craar("fecha nacimiento"));
-							break;
-						case "edad":
-							user.set_edad(validadors.validar_int("Tu edad", "Edad"));
+							user.set_edad(func_edad.calcularEdad(user.get_fecha_nacimiento()));
 							break;
 						case "nombre":
 							((Admin) user).set_nombre(validadors.validar_string("Nombre", "Nombre"));
@@ -225,14 +222,12 @@ public class func_users {
 						case "apellido":
 							((Admin) user).set_apellidos(validadors.validar_string("Apellidos", "Apellidos"));
 							break;
-						case "DNI":
-							((Admin) user).set_dni(validadors.validar_string("DNI", "DNI"));
-							break;
 						case "telefono":
-							((Admin) user).set_telefono(validadors.validar_int("Telefono", "Telefono"));
+							((Admin) user).set_telefono(validar_regex.validar_tlf());
 							break;
 						case "Fecha_alta":
 							((Admin) user).set_fecha_alta(func_fecha.craar("Fecha_alta"));
+							((Admin) user).set_sueldo(func_sueldo.calcularSueldo(((Admin)user).get_fecha_alta()));
 							break;
 						case "sueldo":
 							((Admin) user).set_sueldo(validadors.validar_int("sueldo", "sueldo"));

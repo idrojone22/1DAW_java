@@ -1,0 +1,16 @@
+package tema4_v13.modules.users.utils;
+
+import java.util.Calendar;
+
+public class func_sueldo {
+	public int calcularSueldo(Fecha fecha_alta) {
+		int sueldoBase = 1400;
+		int incremento = 25;
+		
+		  Calendar fechaActual = Calendar.getInstance();
+		  
+		  int anioAlta = this.fecha_alta.getAnio(); // Suponiendo que Fecha tiene un método getAnio()
+		  int mesAlta = this.fecha_alta.getMes(); // Suponiendo que Fecha tiene un método getMes()
+		  int diaAlta = this.fecha_alta.getDia();
+	}
+}

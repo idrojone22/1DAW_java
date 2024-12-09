@@ -66,7 +66,7 @@ public class func_readone_users {
 	
 	public static void read_one_admin() {
 		Object menu_readone = null;
-		Object atributos_client[] = {"username", "password", "email", "fecha nacimiento", "edad", "nombre", "apellidos" , "dni", "telefono", "fecha_alta", "sueldo","Salir"};
+		Object atributos_client[] = {"username", "password", "email", "fecha nacimiento", "edad", "nombre", "apellidos" ,  "telefono", "fecha_alta", "sueldo","Salir"};
 		int salir = 0;
 		String username = "";
 		Admin admin = null;
@@ -104,9 +104,6 @@ public class func_readone_users {
 							break;
 						case "apellidos":
 							JOptionPane.showMessageDialog(null, admin.get_apellidos());						
-							break;
-						case "dni":
-							JOptionPane.showMessageDialog(null, admin.get_dni());						
 							break;
 						case "telefono":
 							JOptionPane.showMessageDialog(null, admin.get_telefono());						

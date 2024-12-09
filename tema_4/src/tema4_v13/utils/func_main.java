@@ -159,8 +159,9 @@ public class func_main {
 	
 	public static void menu_admin(Admin username) {
 		Object primer_menu = null;
-		Object opciones_pm[] = {"Log out", "CURD cursos", "CRUD users", "Salir"};
+		Object opciones_pm[] = {"Log out", "CURD cursos", "CRUD users", "Perfil","Salir"};
 		int salir = 0;
+		int localizacion = -1;
 		
 		do {
 			primer_menu = menus.combos("Seleccions la opción", "App", opciones_pm, opciones_pm[0]);
@@ -173,7 +174,10 @@ public class func_main {
 				break;
 			case "CRUD users":
 				func_main.CRUD_cliente();
-				JOptionPane.showMessageDialog(null, "Haciendo");
+				break;
+			case "Perfil":
+				localizacion = func_find.find(username);
+				JOptionPane.showMessageDialog(null, Singleton_users.array_admin.get(localizacion));
 				break;
 			case "Salir":
 				System.exit(0);
@@ -181,7 +185,7 @@ public class func_main {
 			}
 		}while(salir != 1);
 	}
-	
+
 	public static void menu_superadmin(Admin username) {
 		Object primer_menu = null;
 		Object opciones_pm[] = {"Log out", "CRUD cursos", "CRUD users", "Salir"};

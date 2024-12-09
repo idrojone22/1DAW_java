@@ -1,7 +1,9 @@
 package tema4_v13.modules.users.dummies;
 
 import tema4_v13.modules.users.classes.Singleton_users;
+import tema4_v13.modules.users.utils.func_edad;
 import tema4_v13.modules.users.utils.func_find;
+import tema4_v13.modules.users.utils.func_sueldo;
 
 import javax.swing.JOptionPane;
 
@@ -30,30 +32,28 @@ public class dummies_admin {
 			String username = Singleton_users.username;
 			String password = "1234";
 			String email = "superadmin@gmail.com";
-			Fecha fecha_nacimiento = null;
-			int edad = 18;
+			Fecha fecha_nacimiento = dummies_users.crear_fecha_random();
+			int edad = func_edad.calcularEdad(fecha_nacimiento);
 			String nombre = "Jordi";
 			String apellidos = "Valls";
-			String dni = "12345678A";
-			int telefono = 666666666;
-			Fecha fecha_alta =  null;	
-			int sueldo = 1400;	
+			String telefono = "666666666";
+			Fecha fecha_alta =  dummies_users.generarFechaPosterior(fecha_nacimiento);	
+			int sueldo = func_sueldo.calcularSueldo(fecha_alta);
 
-			return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, dni, telefono, fecha_alta, sueldo);
+			return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, telefono, fecha_alta, sueldo);
 		} else if(superadmin.equals("yomogan")) {
 			String username = Singleton_users.username;
 			String password = "1234";
 			String email = "superadmin@gmail.com";
-			Fecha fecha_nacimiento =  null;
-			int edad = 18;
+			Fecha fecha_nacimiento =  dummies_users.crear_fecha_random();;
+			int edad = func_edad.calcularEdad(fecha_nacimiento);
 			String nombre = "Yolanda";
 			String apellidos = "Yolanda";
-			String dni = "12345678A";
-			int telefono = 666666666;
-			Fecha fecha_alta = null;	
-			int sueldo = 1400;	
+			String telefono = "666666666";
+			Fecha fecha_alta = dummies_users.generarFechaPosterior(fecha_nacimiento);	
+			int sueldo = func_sueldo.calcularSueldo(fecha_alta);
 
-			return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, dni, telefono, fecha_alta, sueldo);
+			return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, telefono, fecha_alta, sueldo);
 		} else {
 			JOptionPane.showMessageDialog(null, "Error");
 			return null;
