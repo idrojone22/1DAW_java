@@ -24,7 +24,7 @@ public class func_readone {
 		if (Singleton.array_desarrollo.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
-			ID_a = func_cursos.mostrarID();
+			ID_a = func_cursos.mostrarID_desarrollo();
 			ID = (Desarrollo_web) func_cursos.preguntar_ID_desarrollo(ID_a);
 			localizacion =  func_buscar.find(ID);
 			if (localizacion != -1) {
@@ -114,7 +114,7 @@ public class func_readone {
 		if (Singleton.array_diseno.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
-			ID_a = func_cursos.mostrarID();
+			ID_a = func_cursos.mostrarID_diseno();
 			ID = (Diseno_web) func_cursos.preguntar_ID_diseno(ID_a);
 			localizacion =  func_buscar.find(ID);
 			if (localizacion != -1) {
@@ -193,7 +193,7 @@ public class func_readone {
 		if (Singleton.array_desplegamiento.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Error");
 		} else {
-			ID_a = func_cursos.mostrarID();
+			ID_a = func_cursos.mostrarID_desplegamiento();
 			ID = (Desplegamiento_web) func_cursos.preguntar_ID_desplegamiento1(ID_a);
 			localizacion =  func_buscar.find(ID);
 			if (localizacion != -1) {

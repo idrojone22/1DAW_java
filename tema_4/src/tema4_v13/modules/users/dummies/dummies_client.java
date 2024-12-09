@@ -9,6 +9,7 @@ import tema4_v13.modules.cursos.dummies.dummies;
 import tema4_v13.modules.users.classes.Admin;
 import tema4_v13.modules.users.classes.Client;
 import tema4_v13.modules.users.classes.Singleton_users;
+import tema4_v13.modules.users.utils.func_edad;
 import tema4_v13.modules.users.utils.func_find;
 
 public class dummies_client {
@@ -48,7 +49,7 @@ public class dummies_client {
 		String password = "password";
 		String email = "ejemplo.@gmail.com";
 		Fecha fecha_nacimiento = dummies.crear_fecha_random();
-		int edad = 18;
+		int edad = func_edad.calcularEdad(fecha_nacimiento);
 		boolean log = false;
 		Fecha fecha_registro = dummies.crear_fecha_random();
 		

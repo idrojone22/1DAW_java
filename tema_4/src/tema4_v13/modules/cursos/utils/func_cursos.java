@@ -307,7 +307,7 @@ public class func_cursos {
 		}
 	}
 	
-	public static String mostrarID() {
+	public static String mostrarID_desarrollo() {
 		Object ID_array = null;
 		String[] recorrer_array = new String[Singleton.array_desarrollo.size()];
 		 for (int i = 0; i < Singleton.array_desarrollo.size(); i++) {
@@ -317,6 +317,29 @@ public class func_cursos {
 		 ID_array = menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
 		 return ID_array.toString();
 	}
+	
+	public static String mostrarID_diseno() {
+		Object ID_array = null;
+		String[] recorrer_array = new String[Singleton.array_diseno.size()];
+		 for (int i = 0; i < Singleton.array_diseno.size(); i++) {
+	            Diseno_web obj = Singleton.array_diseno.get(i);
+	            recorrer_array[i] = String.valueOf(obj.get_ID_course()); // Obtener solo el ID como String
+	        }
+		 ID_array = menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
+		 return ID_array.toString();
+	}
+	
+	public static String mostrarID_desplegamiento() {
+		Object ID_array = null;
+		String[] recorrer_array = new String[Singleton.array_desplegamiento.size()];
+		 for (int i = 0; i < Singleton.array_desplegamiento.size(); i++) {
+	            Desplegamiento_web obj = Singleton.array_desplegamiento.get(i);
+	            recorrer_array[i] = String.valueOf(obj.get_ID_course()); // Obtener solo el ID como String
+	        }
+		 ID_array = menus.combos("Selecciona la opción", "Manual o Automático",recorrer_array , recorrer_array[0]);
+		 return ID_array.toString();
+	}
+	
 	
 	/*public static void update_ID(Cursos curso) {
 		

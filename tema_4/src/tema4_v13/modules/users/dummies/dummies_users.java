@@ -1,5 +1,6 @@
 package tema4_v13.modules.users.dummies;
 
+import java.util.Calendar;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -27,22 +28,39 @@ public class dummies_users {
 	}
 	
 	public static Fecha crear_fecha_random() {
-		Fecha fecha = null;
+		 Random random = new Random();
 
-		do {
-			String fecha_s = generarFechaAleatoria();//validar_regex.validar_reg_fecha(titulo);
+	        // Generar un año aleatorio entre 1900 y el año actual
+	        int anioActual = Calendar.getInstance().get(Calendar.YEAR);
+	        int anio = random.nextInt(anioActual - 1900 + 1) + 1900;
 
-			fecha = new Fecha(fecha_s);
+	        // Generar un mes aleatorio entre 1 y 12
+	        int mes = random.nextInt(12) + 1;
 
-			fecha.comprobarFechas();
+	        // Generar un día aleatorio válido para el mes y año
+	        int dia;
+	        switch (mes) {
+	            case 2: // Febrero
+	                if (esBisiesto(anio)) {
+	                    dia = random.nextInt(29) + 1;
+	                } else {
+	                    dia = random.nextInt(28) + 1;
+	                }
+	                break;
+	            case 4: case 6: case 9: case 11: // Meses con 30 días
+	                dia = random.nextInt(30) + 1;
+	                break;
+	            default: // Meses con 31 días
+	                dia = random.nextInt(31) + 1;
+	                break;
+	        }
 
-			if (!fecha.comprobarFechas()) {
-				JOptionPane.showMessageDialog(null, "Fecha Inválida");
-			}
-		} while (!fecha.comprobarFechas());
-
-		return fecha;
+	        // Construir y devolver la fecha
+	        return new Fecha(dia + "/" + mes + "/" + anio);
 	}
+	    private static boolean esBisiesto(int anio) {
+	        return (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
+	    }
 	
 	 public static String generarFechaAleatoria() {
 	        Random random = new Random();

@@ -21,9 +21,9 @@
 	<section name="NewClassCreationWizard.dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="760"/>
 		<item key="DIALOG_Y_ORIGIN" value="190"/>
-		<item key="DIALOG_WIDTH" value="673"/>
-		<item key="DIALOG_HEIGHT" value="772"/>
-		<item key="DIALOG_FONT_NAME" value="1|SF Pro Display|11.0|0|GTK|1|"/>
+		<item key="DIALOG_WIDTH" value="646"/>
+		<item key="DIALOG_HEIGHT" value="783"/>
+		<item key="DIALOG_FONT_NAME" value="1|Inter Display|11.0|0|GTK|1|"/>
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item key="org.eclipse.jdt.ui.typecomment.deprecated" value="true"/>

@@ -21,7 +21,7 @@ public class func_users {
 		String password = "password";
 		String email = "ejemplo@gmail.com";
 		Fecha fecha_nacimiento =  func_fecha.craar("fecha nacimiento");
-		int edad = 18;
+		int edad = func_edad.calcularEdad(fecha_nacimiento);
 		String nombre = "nombre";
 		String apellidos = "apellidos";
 		String dni = "dni";
@@ -86,7 +86,7 @@ public class func_users {
 		String password = "password";
 		String email = "ejemplo.@gmail.com";
 		Fecha fecha_nacimiento =  func_fecha.craar("fecha nacimiento");
-		int edad = 18;
+		int edad = func_edad.calcularEdad(fecha_nacimiento);
 		boolean log = false;
 		Fecha fecha_registro = func_fecha.craar("fecha fecha_registro");
 		
