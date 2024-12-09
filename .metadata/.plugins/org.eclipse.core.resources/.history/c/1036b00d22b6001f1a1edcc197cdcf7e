@@ -23,11 +23,11 @@ public class func_users {
 		String email = validar_regex.validar_email();
 		Fecha fecha_nacimiento =  func_fecha.craar("fecha nacimiento");
 		int edad = func_edad.calcularEdad(fecha_nacimiento);
-		String nombre = validadors.validar_string("Nombre", "Nombre");
-		String apellidos = validadors.validar_string("Apellidos", "Apellidos");
+		String nombre = "nombre";
+		String apellidos = "apellidos";
 		String dni = "dni";
 		int telefono = 666666666;
-		Fecha fecha_alta =  dummies_users.generarFechaPosterior(fecha_nacimiento);
+		Fecha fecha_alta =  func_fecha.craar("fecha fecha_alta");
 		int sueldo = 1400;
 		
 		return new Admin (username, password, email, fecha_nacimiento, edad, nombre, apellidos, dni, telefono, fecha_alta, sueldo);

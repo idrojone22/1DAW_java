@@ -87,44 +87,4 @@ public class dummies_users {
 	        return fecha;
 	    }
 	 
-	 public static Fecha generarFechaPosterior(Fecha fechaNacimiento) {
-	        Random random = new Random();
-
-	        // Extraemos el día, mes y año de la fecha de nacimiento
-	        int anioNacimiento = fechaNacimiento.get_anio();
-	        int mesNacimiento = fechaNacimiento.get_mes();
-	        int diaNacimiento = fechaNacimiento.get_dia();
-
-	        // Obtenemos la fecha actual
-	        Calendar fechaActual = Calendar.getInstance();
-	        int anioActual = fechaActual.get(Calendar.YEAR);
-
-	        // Generar un año aleatorio entre el año de nacimiento + 1 y el año actual
-	        int anio = random.nextInt(anioActual - anioNacimiento) + anioNacimiento + 1;
-
-	        // Generar un mes aleatorio entre 1 y 12
-	        int mes = random.nextInt(12) + 1;
-
-	        // Generar un día aleatorio válido para el mes y año
-	        int dia;
-	        switch (mes) {
-	            case 2: // Febrero
-	                if (esBisiesto(anio)) {
-	                    dia = random.nextInt(29) + 1;
-	                } else {
-	                    dia = random.nextInt(28) + 1;
-	                }
-	                break;
-	            case 4: case 6: case 9: case 11: // Meses con 30 días
-	                dia = random.nextInt(30) + 1;
-	                break;
-	            default: // Meses con 31 días
-	                dia = random.nextInt(31) + 1;
-	                break;
-	        }
-
-	        // Devolver la nueva fecha
-	        return new Fecha(dia + "/" + mes + "/" + anio);
-	    }
-	 
 }

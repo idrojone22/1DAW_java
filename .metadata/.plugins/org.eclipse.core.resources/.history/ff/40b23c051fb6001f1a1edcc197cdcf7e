@@ -48,7 +48,7 @@ public class dummies_client {
 		String username = Singleton_users.username;
 		String password = "password";
 		String email = "ejemplo.@gmail.com";
-		Fecha fecha_nacimiento  = dummies_users.crear_fecha_random();
+		Fecha fecha_nacimiento = dummies.crear_fecha_random();
 		int edad = func_edad.calcularEdad(fecha_nacimiento);
 		boolean log = false;
 		Fecha fecha_registro = dummies_users.generarFechaPosterior(fecha_nacimiento);
