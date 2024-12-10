@@ -5,6 +5,7 @@ import Examen_objetos.modules.cursos.classes.Cursos;
 import Examen_objetos.modules.cursos.classes.Desarrollo_web;
 import Examen_objetos.modules.cursos.classes.Desplegamiento_web;
 import Examen_objetos.modules.cursos.classes.Diseno_web;
+import Examen_objetos.modules.cursos.classes.IA;
 import Examen_objetos.utils.validadors;
 
 public class func_updates {
@@ -116,6 +117,19 @@ public class func_updates {
 		return fecha;
 	}
 	/*DISEÑO WEB*/
+	
+	public static Fecha f_cupon_ini (String titulo, Cursos curso) {
+		Fecha fecha = null;
+		fecha = func_fecha.crear_fecha_anterior(titulo,((IA) curso).get_f_cupon_fin());
+		return fecha;
+	}
+	
+	public static Fecha f_cupon_fin(String titulo, Cursos curso) {
+		Fecha fecha = null;
+		fecha = func_fecha.crear_entre2(titulo,((IA) curso).get_f_cupon_ini() , curso.get_fecha_i());
+		return fecha;
+	}
+	
 	
 	/*DESPLEGAMIENTO WEB*/
 	public static Fecha fecha_ultimas_plazas_i (String titulo, Cursos curso) {

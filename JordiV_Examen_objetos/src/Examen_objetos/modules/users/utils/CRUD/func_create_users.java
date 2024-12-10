@@ -6,6 +6,7 @@ import Examen_objetos.utils.validadors;
 import Examen_objetos.modules.users.classes.Admin;
 import Examen_objetos.modules.users.classes.Client;
 import Examen_objetos.modules.users.classes.Singleton_users;
+import Examen_objetos.modules.users.classes.Vip;
 import Examen_objetos.modules.users.utils.func_find;
 import Examen_objetos.modules.users.utils.func_users;
 import Examen_objetos.utils.func_main;
@@ -35,6 +36,19 @@ public class func_create_users {
 			Singleton_users.array_client.add((Client) username);
 			username.set_log(true);
 			func_main.menu_cliente(username);
+		}
+	}
+	
+	public static void crear_vip() {
+		int localizacion = -1;
+		Vip username = func_users.preguntar_username_vip();
+		localizacion =  func_find.find(username);
+		if (localizacion != -1) {
+				JOptionPane.showMessageDialog(null,"El username ya esta en uso");
+		} else {
+			username = func_users.crear_vip();
+			Singleton_users.array_vip.add((Vip) username);
+			func_main.menu_vip(username);
 		}
 	}
 	

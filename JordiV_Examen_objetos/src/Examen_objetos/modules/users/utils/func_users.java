@@ -8,6 +8,7 @@ import Examen_objetos.modules.users.classes.Admin;
 import Examen_objetos.modules.users.classes.Client;
 import Examen_objetos.modules.users.classes.Singleton_users;
 import Examen_objetos.modules.users.classes.User;
+import Examen_objetos.modules.users.classes.Vip;
 import Examen_objetos.modules.users.dummies.dummies_users;
 import Examen_objetos.utils.func_main;
 import Examen_objetos.utils.menus;
@@ -80,7 +81,45 @@ public class func_users {
 	}
 	
 	/*ADMIN*/
+	public static Vip crear_vip() {
+		String username = Singleton_users.username;
+		String password = validadors.validar_string("Contraseña", "Contraseña");
+		String email = validar_regex.validar_email();
+		Fecha fecha_nacimiento =  func_fecha.craar("fecha nacimiento");
+		int edad = func_edad.calcularEdad(fecha_nacimiento);
+		Fecha f_compra_ini = func_fecha.craar("fecha f_compra_ini");
+		Fecha f_compra_fin = func_fecha.crar_fecha_posterior("f_compra_fin", f_compra_ini);
+		int compra = validadors.validar_int("Compra", "Compra");
+		
+		return new Vip (username, password, email, fecha_nacimiento, edad, f_compra_ini, f_compra_fin, compra);
+	}
 	
+	public static Vip preguntar_username_vip() {
+		Singleton_users.username = validadors.validar_string("Username", "Username");
+		return new Vip (Singleton_users.username );
+	}
+	
+	public static void log_in_vip() {
+		int localizacion = -1;
+		boolean contra = false;
+		Vip username = func_users.preguntar_username_vip();
+		localizacion =  func_find.find_vip(username);
+		if (localizacion != -1) {
+			do {
+				String password = validadors.validar_string("password", "password");
+				if (password.equals(Singleton_users.array_vip.get(localizacion).get_password())) {
+					JOptionPane.showMessageDialog(null, "Contraseña correcta");
+					//func_main.menu_cliente(username);
+					func_main.menu_vip(username);
+					contra = true;
+				} else {
+					JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+				}
+			}while(contra != true);
+		} else {
+			JOptionPane.showMessageDialog(null, "El usuario no exsiste");
+		}
+	}
 	/*CLIENT*/
 	public static Client crear_client() {
 		
@@ -169,13 +208,54 @@ public class func_users {
 		}while(!salir);
 	}
 	
+	public static void update_username_vip (Vip user)  {
+		int localizacion = -1;
+		boolean salir = false;
+		do {
+			Vip username = preguntar_username_vip();
+			localizacion = func_find.find(username);
+			if (localizacion != -1) {
+				JOptionPane.showMessageDialog(null,"El username ya está en uso");
+			} else {
+				user.set_username(Singleton_users.username);
+				salir = true;
+			}
+		}while(!salir);
+	}
+	
 	
 	public static User update (User user) {
 		Object menu_update = null;
 		Object atributos_client[] = {"username", "password", "email", "fecha nacimiento",  "fecha_registro", "log", "Salir"};
 		Object atributos_admin[] = {"username", "password", "email", "telefono", "Fecha_alta", "sueldo", "Salir"};
+		Object atributos_vip[] = {"username", "password", "email", "fecha_nacimiento","Salir"};
 		int salir = 0;
 		if (user != null) {
+			if (user instanceof Vip) {
+				do {
+					menu_update = menus.combos("Selecciona el atributo", "Update", atributos_vip, atributos_vip[0]);
+					switch (menu_update.toString()) {
+						case "username":
+							update_username_vip((Vip) user);
+							break;
+						case "password":
+							user.set_password(validadors.validar_string("Nueva contraseña", "Contraseña"));
+							break;
+						case "email":
+							user.set_email(validar_regex.validar_email());
+							break;
+						case "fecha nacimiento":
+							user.set_fecha_nacimiento(func_fecha.craar("fecha nacimiento"));
+							user.set_edad(func_edad.calcularEdad(user.get_fecha_nacimiento()));
+							break;
+						case "Salir":
+							salir = 1;
+							break;
+					} // end switch
+				}while(salir != 1);
+				return user;
+			}
+			
 			if (user instanceof Client) {
 				do {
 					menu_update = menus.combos("Selecciona el atributo", "Update", atributos_client, atributos_client[0]);

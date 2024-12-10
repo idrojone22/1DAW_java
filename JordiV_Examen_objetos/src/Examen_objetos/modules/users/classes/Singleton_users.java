@@ -6,5 +6,6 @@ public class Singleton_users {
 
     public static ArrayList <Admin> array_admin;
     public static ArrayList <Client> array_client;
+    public static ArrayList <Vip> array_vip;
     public static String  username;
 }

@@ -3,6 +3,7 @@ package Examen_objetos.modules.users.utils.CRUD;
 import javax.swing.JOptionPane;
 
 import Examen_objetos.modules.users.classes.Singleton_users;
+import Examen_objetos.modules.users.classes.Vip;
 import Examen_objetos.modules.users.utils.func_find;
 import Examen_objetos.modules.users.utils.func_users;
 import Examen_objetos.utils.func_main;
@@ -86,5 +87,11 @@ public class func_read_users {
 		localizacion =  func_find.find(username);
 		JOptionPane.showMessageDialog(null,Singleton_users.array_client.get(localizacion));
 	
+	}
+	
+	public static void read_vip(Vip username) {
+		int localizacion = -1;
+		localizacion =  func_find.find(username);
+		JOptionPane.showMessageDialog(null,Singleton_users.array_vip.get(localizacion));
 	}
 }

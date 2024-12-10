@@ -11,6 +11,7 @@ import Examen_objetos.modules.cursos.utils.CRUD.func_update;
 import Examen_objetos.modules.users.classes.Admin;
 import Examen_objetos.modules.users.classes.Client;
 import Examen_objetos.modules.users.classes.Singleton_users;
+import Examen_objetos.modules.users.classes.Vip;
 import Examen_objetos.modules.users.dummies.dummies_admin;
 import Examen_objetos.modules.users.dummies.dummies_client;
 import Examen_objetos.modules.users.utils.func_find;
@@ -73,7 +74,7 @@ public class func_main {
 	
 	public static void log_in() {
 		Object primer_menu = null;
-		Object opciones_pm[] = {"Client", "Admin", "Salir al menú anterior", "Salir"};
+		Object opciones_pm[] = {"Client", "Admin", "Vip", "Salir al menú anterior", "Salir"};
 		int salir = 0;
 		
 		do {
@@ -84,6 +85,9 @@ public class func_main {
 					break;
 				case "Admin":
 					func_users. log_in_admin();
+					break;
+				case "Vip":
+					func_users.log_in_vip();
 					break;
 				case "Salir al menú anterior":
 					salir = 3;
@@ -97,7 +101,7 @@ public class func_main {
 	
 	public static void sign_up() {
 		Object primer_menu = null;
-		Object opciones_pm[] = {"Client", "Admin", "Salir al menú anterior", "Salir"};
+		Object opciones_pm[] = {"Client", "Admin", "Vip","Salir al menú anterior", "Salir"};
 		int salir = 0;
 		
 		do {
@@ -109,6 +113,8 @@ public class func_main {
 				case "Admin":
 					func_create_users.crear_admin();
 					break;
+				case "Vip":
+					func_create_users.crear_vip();
 				case "Salir al menú anterior":
 					salir = 3;
 					break;
@@ -141,6 +147,49 @@ public class func_main {
 				case "Perfil":
 					localizacion = func_find.find(username);
 					func_main.perfil(Singleton_users.array_client.get(localizacion));
+					localizacion =  func_find.find(username);
+					if (localizacion == -1) {
+						salir = 3;
+					}				
+					break;
+				case "Salir":
+					System.exit(0);
+					break;
+			} // END SWITCH
+		}while( salir != 3);
+	}
+	
+	public static void menu_vip (Vip username) {
+		Object primer_menu = null;
+		Object opciones_pm[] = {"Log out", "Leer Todos", "Leer Uno", "Perfil", "Salir"};
+		int localizacion = -1;
+		int salir = 0;
+		do {
+			primer_menu = menus.combos("Selecciona la opción", "App", opciones_pm, opciones_pm[0]);
+			switch (primer_menu.toString()) {
+				case "Log out":
+					main();
+					salir = 3;
+					break;
+				case "Leer Todos":
+					localizacion = func_find.find(username);
+					if (Singleton_users.array_vip.get(localizacion).get_compra() >= 3) {
+						func_main.leer_todos_vip();
+					} else {
+						func_main.leer_todos();
+					}
+					break;
+				case "Leer Uno":
+					localizacion = func_find.find(username);
+					if (Singleton_users.array_vip.get(localizacion).get_compra() >= 3) {
+						func_main.leer_uno_vip();
+					} else {
+						func_main.leer_uno();
+					}
+					break;
+				case "Perfil":
+					localizacion = func_find.find(username);
+					func_main.perfil_vip(Singleton_users.array_vip.get(localizacion));
 					localizacion =  func_find.find(username);
 					if (localizacion == -1) {
 						salir = 3;
@@ -233,6 +282,64 @@ public class func_main {
 		}while(salir !=1);
 	}
 	
+	public static void leer_todos_vip() {
+		Object primer_menu = null;
+		Object opciones_pm[] = {"Desarrollo", "Diseno", "Desplegamiento", "IA","Salir al menu anterior", "Salir"};
+		int salir = 0;
+		
+		do {
+			primer_menu = menus.combos("Selecciona la opción", "Leer Todos", opciones_pm, opciones_pm[0]);
+			switch (primer_menu.toString()) {
+				case "Desarrollo":
+					func_read.read_desarrollo();
+					break;
+				case "Diseno":
+					func_read.read_diseno();
+					break;
+				case "Desplegamiento":
+					func_read.read_desplegamiento();
+					break;
+				case "IA":
+					func_read.read_ia();
+				case "Salir al menu anterior":
+					salir = 1;
+					break;
+				case "Salir":
+					System.exit(0);
+					break;
+			}// END SWITCH
+		}while(salir !=1);
+	}
+	
+	public static void leer_uno_vip() {
+		Object primer_menu = null;
+		Object opciones_pm[] = {"Desarrollo", "Diseno", "Desplegamiento", "IA","Salir al menu anterior", "Salir"};
+		int salir = 0;
+		
+		do {
+			primer_menu = menus.combos("Selecciona la opción", "Sign up", opciones_pm, opciones_pm[0]);
+			switch (primer_menu.toString()) {
+				case "Desarrollo":
+					func_readone.read_one_desarrollo();
+					break;
+				case "Diseno":
+					func_readone.read_one_diseno();
+					break;
+				case "Desplegamiento":
+					func_readone.read_one_desplegamiento();
+					break;
+				case "IA":
+					func_readone.read_one_ia();
+				case "Salir al menu anterior":
+					salir = 1;
+					break;
+				case "Salir":
+					System.exit(0);
+					break;
+			}// END SWITCH
+		}while(salir !=1);
+	}
+	
 	public static void leer_uno() {
 		Object primer_menu = null;
 		Object opciones_pm[] = {"Desarrollo", "Diseno", "Desplegamiento", "Salir al menu anterior", "Salir"};
@@ -288,12 +395,41 @@ public class func_main {
 		}while(salir !=1);
 	}
 	
+	public static void perfil_vip(Vip username) {
+		Object primer_menu = null;
+		Object opciones_pm[] = {"Editar", "Ver Perfil", "Eliiminar Perfil", "Salir al menu anterior", "Salir"};
+		int salir = 0;
+		
+		do {
+			primer_menu = menus.combos("Selecciona la opción", "Perfil", opciones_pm, opciones_pm[0]);
+			switch (primer_menu.toString()) {
+				case "Editar":
+					func_updates_users.update_vip(username);
+					break;
+				case "Ver Perfil":
+					func_read_users.read_vip(username);
+					break;
+				case "Eliiminar Perfil":
+					func_delete_users.delete_vip(username);
+					salir = 1;
+					break;
+				case "Salir al menu anterior":
+					salir = 1;
+					break;
+				case "Salir":
+					System.exit(0);
+					break;
+			}// END SWITCH
+		}while(salir !=1);
+		
+	}
+	
 	public static void CRUD_cursos() {
 		Object primer_menu = null;
 		Object segundo_menu = null;
 		Object tercer_menu = null;
 
-		Object objetos[] =  {"Desarrollo web", "Diseño web", "Desplegament web", "Salir al menu anterior", "Salir"};
+		Object objetos[] =  {"Desarrollo web", "Diseño web", "Desplegament web", "IA", "Salir al menu anterior", "Salir"};
 		Object op_CRUD[] = {"Create", "ReadAll", "ReadOne","Update","Delete", "Salir al menú princial" , "Salir"};
 		Object op[] = {"Seguir", "Salir al menú principal", "Salir al menu anterior", "Salir"};
 		
@@ -358,6 +494,81 @@ public class func_main {
 					case "Delete":
 						do {
 							func_delete.delete_desarrollo();
+							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+							if (tercer_menu == op[3]) {
+								System.exit(0);
+							} else if (tercer_menu == op[1]) {
+								segundo_menu = op_CRUD[5];
+								break;
+							} // end if 
+						}while(tercer_menu == op[0]);
+						break;
+					case "Salir al menu principal":
+						break;
+					case "Salir":
+						System.exit(0);
+						break;
+					} // end switch
+					if (segundo_menu == op_CRUD[5]) {
+						break;
+					} // end if 
+				}while(segundo_menu != op_CRUD[6]);
+				break;
+			case "IA":
+				do{
+					segundo_menu = menus.combos("Selecciona la opción", "Selector de opciones", op_CRUD, op_CRUD[6]);
+					switch(segundo_menu.toString()) {
+					case "Create":
+						do {
+							func_create.crear_ia();
+							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+							if (tercer_menu == op[3]) {
+								System.exit(0);
+							} else if (tercer_menu == op[1]) {
+								segundo_menu = op_CRUD[5];
+								break;
+							} // end if 
+						}while(tercer_menu == op[0]);
+						break;
+					case "ReadAll":
+						do {
+							func_read.read_ia();
+							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+							if (tercer_menu == op[3]) {
+								System.exit(0);
+							} else if (tercer_menu == op[1]) {
+								segundo_menu = op_CRUD[5];
+								break;
+							} // end if 
+						}while(tercer_menu == op[0]);
+						break;
+					case "ReadOne":
+						do {
+							func_readone.read_one_ia();
+							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+							if (tercer_menu == op[3]) {
+								System.exit(0);
+							} else if (tercer_menu == op[1]) {
+								segundo_menu = op_CRUD[5];
+								break;
+							} // end if 
+						}while(tercer_menu == op[0]);
+						break;
+					case "Update":
+						do {
+							func_update.update_ia(func_cursos.mostrarID_ia());
+							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
+							if (tercer_menu == op[3]) {
+								System.exit(0);
+							} else if (tercer_menu == op[1]) {
+								segundo_menu = op_CRUD[5];
+								break;
+							} // end if 
+						}while(tercer_menu == op[0]);
+						break;
+					case "Delete":
+						do {
+							func_delete.delete_ia();
 							tercer_menu = menus.combos("Seleciona la opción", "Selector de opciones", op, op[0]);
 							if (tercer_menu == op[3]) {
 								System.exit(0);

@@ -3,6 +3,7 @@ package Examen_objetos.modules.users.utils.CRUD;
 import javax.swing.JOptionPane;
 
 import Examen_objetos.modules.users.classes.Singleton_users;
+import Examen_objetos.modules.users.classes.Vip;
 import Examen_objetos.modules.users.utils.func_find;
 import Examen_objetos.modules.users.utils.func_users;
 import Examen_objetos.utils.func_main;
@@ -48,6 +49,13 @@ public class func_delete_users {
 		int localizacion = -1;
 		localizacion = func_find.find(username);
 		username = Singleton_users.array_client.remove(localizacion);
+		JOptionPane.showMessageDialog(null, "Usuario borrado");
+	}
+	
+	public static void delete_vip(Vip username) {
+		int localizacion = -1;
+		localizacion = func_find.find(username);
+		username = Singleton_users.array_vip.remove(localizacion);
 		JOptionPane.showMessageDialog(null, "Usuario borrado");
 	}
 }

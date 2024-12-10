@@ -6,6 +6,7 @@ import Examen_objetos.modules.cursos.classes.Singleton;
 import Examen_objetos.modules.users.classes.Admin;
 import Examen_objetos.modules.users.classes.Client;
 import Examen_objetos.modules.users.classes.Singleton_users;
+import Examen_objetos.modules.users.classes.Vip;
 import Examen_objetos.modules.users.utils.func_find;
 import Examen_objetos.modules.users.utils.func_users;
 
@@ -46,6 +47,17 @@ public class func_updates_users {
 		if (localizacion != -1) {
 			username = (Client)func_users.update(username);
 			Singleton_users.array_client.set(localizacion, username);
+		} else {
+			JOptionPane.showMessageDialog(null, "Error no exsiste el objeto");
+		}
+	}
+	
+	public static void update_vip(Vip username) {
+		int localizacion = -1;
+		localizacion = func_find.find_vip(username);
+		if (localizacion != -1) {
+			username = (Vip)func_users.update(username);
+			Singleton_users.array_vip.set(localizacion, username);
 		} else {
 			JOptionPane.showMessageDialog(null, "Error no exsiste el objeto");
 		}

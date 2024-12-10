@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import Examen_objetos.modules.cursos.classes.Desarrollo_web;
 import Examen_objetos.modules.cursos.classes.Desplegamiento_web;
 import Examen_objetos.modules.cursos.classes.Diseno_web;
+import Examen_objetos.modules.cursos.classes.IA;
 import Examen_objetos.modules.cursos.classes.Singleton;
 import Examen_objetos.modules.cursos.utils.func_buscar;
 import Examen_objetos.modules.cursos.utils.func_cursos;
@@ -172,6 +173,87 @@ public class func_readone {
 							break;
 						case "fecha_compra":
 							JOptionPane.showMessageDialog(null, ID.get_fecha_compra());
+							salir = 15;
+							break;
+							}// end switch
+				} while (salir != 15);
+			} else {
+				JOptionPane.showMessageDialog(null, "Error el Curso no exsiste");
+			}
+		}
+	}
+	
+	public static void read_one_ia() {
+		Object menu_readone = null;
+		Object atributos_dw[] = { "ID_course", "titulo", "descripcion", "categoria", "dificultad", "fecha_i", "fecha_f", "f_cupon_ini","f_cupon_fin", "precioHora", "horasDias","fecha_compra", "precio", "salir" };
+		int salir = 0;
+		String ID_a = "";
+		IA ID = null;
+		int localizacion = -1;
+		
+		if (Singleton.array_ia.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Error");
+		} else {
+			ID_a = func_cursos.mostrarID_ia();
+			ID = (IA) func_cursos.preguntar_ID_ia_1(ID_a);
+			localizacion =  func_buscar.find(ID);
+			if (localizacion != -1) {
+				ID = Singleton.array_ia.get(localizacion);
+				menu_readone = menus.combos("Selecciona el atributo", "Selector de atributos", atributos_dw,atributos_dw[12]);
+				do {
+					switch (menu_readone.toString()) {
+						case "ID_course":
+							JOptionPane.showMessageDialog(null, ID.get_ID_course());
+							salir = 15;
+							break;
+						case "titulo":
+							JOptionPane.showMessageDialog(null, ID.get_titulo());
+							salir = 15;
+							break;
+						case "descripcion":
+							JOptionPane.showMessageDialog(null, ID.get_descripcion());
+							salir = 15;
+							break;
+						case "categoria":
+							JOptionPane.showMessageDialog(null, ID.get_categoria());
+							salir = 15;
+							break;
+						case "dificultad":
+							JOptionPane.showMessageDialog(null, ID.get_dificultad());
+							salir = 15;
+							break;
+						case "precio":
+							JOptionPane.showMessageDialog(null, ID.get_precio());
+							salir = 15;
+							break;
+						case "fecha_i":
+							JOptionPane.showMessageDialog(null, ID.get_fecha_i());
+							salir = 15;
+							break;
+						case "fecha_f":
+							JOptionPane.showMessageDialog(null, ID.get_fecha_f());
+							salir = 15;
+							break;
+						case "f_cupon_ini":
+							JOptionPane.showMessageDialog(null, ((IA) ID).get_f_cupon_ini());
+							salir = 15;
+							break;
+						case "f_cupon_fin":
+							JOptionPane.showMessageDialog(null, ((IA) ID).get_f_cupon_fin());
+							salir = 15;
+							break;
+						case "precioHora":
+							JOptionPane.showMessageDialog(null, ID.get_precioHora());
+							salir = 15;
+							break;
+						case "horasDias":
+							JOptionPane.showMessageDialog(null, ID.get_horasDias());
+							salir = 15;
+							break;
+						case "fecha_compra":
+							JOptionPane.showMessageDialog(null, ID.get_fecha_compra());
+							break;
+						case "Salir":
 							salir = 15;
 							break;
 							}// end switch
