@@ -171,7 +171,7 @@ public class func_users {
 	public static User update (User user) {
 		Object menu_update = null;
 		Object atributos_client[] = {"username", "password", "email", "fecha nacimiento",  "fecha_registro", "log", "Salir"};
-		Object atributos_admin[] = {"username", "password", "email", "fecha nacimiento","nombre", "apellidos", "telefono", "Fecha_alta", "sueldo"};
+		Object atributos_admin[] = {"username", "password", "email", "telefono", "Fecha_alta", "sueldo", "Salir"};
 		int salir = 0;
 		if (user != null) {
 			if (user instanceof Client) {
@@ -201,7 +201,7 @@ public class func_users {
 		
 			if (user instanceof Admin) {
 				do {
-					menu_update = menus.combos("Selecciona el atributo", "Update", atributos_client, atributos_client[0]);
+					menu_update = menus.combos("Selecciona el atributo", "Update", atributos_admin, atributos_admin[0]);
 					switch (menu_update.toString()) {
 						case "username":
 							update_username(user);
